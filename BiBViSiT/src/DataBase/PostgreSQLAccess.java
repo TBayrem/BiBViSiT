@@ -12,6 +12,8 @@ public class PostgreSQLAccess extends JDBCAccess {
 		dbPassword   = "pgusers";
 		dbSchema     = "bw440_632996";
 		
+		///waaaaaaaaaaaab,dbgskdgadkngsöldrdgsdtz
+		
 	}
 
 }
