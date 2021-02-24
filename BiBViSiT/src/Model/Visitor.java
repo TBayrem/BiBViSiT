@@ -16,9 +16,6 @@ public class Visitor {
 		Psydo = psydo;
 		String = string;
 	}
-
-	
-	
 	
 	public String getID() {
 		return ID;
