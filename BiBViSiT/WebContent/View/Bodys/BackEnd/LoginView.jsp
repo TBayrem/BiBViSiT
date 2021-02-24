@@ -3,23 +3,7 @@
 
     <body>
    
-        <div  class="footer">
-            <div class="form-wrapper">
-            <form class="form-signin wow fadeInUp animated" action="index.html" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-            <h2 class="form-signin-heading">sign in now</h2>
-            <div class="login-wrap">
-                <input type="text" class="form-control" placeholder="User ID" autofocus="">
-                <input type="password" class="form-control" placeholder="Password">
-                
-                <button class="btn btn-lg btn-login btn-block" type="submit">Sign in</button>
-                
-                
-                <div class="registration">
-                    Don't have an account yet?
-                    <a class="" href="registration.html">
-                        Create an account
-                    </a>
-                </div>
+       
 
             </div>
 
