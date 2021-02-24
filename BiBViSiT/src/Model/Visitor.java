@@ -2,7 +2,7 @@ package Model;
 
 public class Visitor {
 
-	//here
+
 	private String ID;// Serial back to createtables
 	private String Psydo;
 	private String String;
