@@ -25,7 +25,7 @@ public class CreateTables {
 	public void createTableOfAdmin() throws SQLException {
 
 		String sql = "create table bw440_632996.admin                ("
-				+ "				userid   CHAR(16) NOT NULL PRIMARY KEY,"
+				+ "				userid   SERIAL NOT NULL PRIMARY KEY," // Serielle UserId, wie wir bereits kommuniziert haben
 				+ "				password CHAR(32) NOT NULL            ,"
 				+ "				active   CHAR(1)  NOT NULL DEFAULT 'Y',"
 				+ "				admin    CHAR(1)  NOT NULL DEFAULT 'N',"
