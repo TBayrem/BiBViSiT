@@ -3,12 +3,9 @@
     
 <%@page import="Model.Place"%>
 <%@page import="java.util.Vector"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<jsp:include page="../../../Headers/BackEnd/Header.jsp"/>
+
+
+<jsp:include page="../../../Headers/FrontEnd/Header.jsp"/>
 </head>
 <body>
 	<jsp:useBean id="place" class="Model.Place" scope="session" />
