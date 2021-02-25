@@ -12,6 +12,7 @@ public class CreateTables {
 
 	public CreateTables() throws SQLException {
 		this.dbConn = new PostgreSQLAccess().getConnection();
+		
 		createTableOfAdmin();
 		createTableOfPlace();
 		createTableOfVisitor();
@@ -22,23 +23,24 @@ public class CreateTables {
 		insertFirstReservation();
 	}
 	
+	
 	public void createTableOfAdmin() throws SQLException {
 
-		String sql = "create table bw440_632996.admin                ("
-				+ "				userid   SERIAL NOT NULL PRIMARY KEY," // Serielle UserId, wie wir bereits kommuniziert haben
+		String sql = "create table admin                ("
+				+ "				userid   SERIAL  PRIMARY KEY," // Serielle UserId, wie wir bereits kommuniziert haben
 				+ "				password CHAR(32) NOT NULL            ,"
 				+ "				active   CHAR(1)  NOT NULL DEFAULT 'Y',"
 				+ "				admin    CHAR(1)  NOT NULL DEFAULT 'N',"
 				+ "				username VARCHAR(256)                 ,"
-				+ "				email    VARCHAR(256)                 )";
+				+ "				email    VARCHAR(256)                 )";///unique
 		Statement stmt = this.dbConn.createStatement();
 		stmt.executeUpdate(sql);
 	}
 
 	public void createTableOfPlace() throws SQLException {
 
-		String sql = "create table bw440_632996.place                ("
-				+ "				ID  CHAR(16) NOT NULL PRIMARY KEY,"
+		String sql = "create table place                ("
+				+ "				ID  Serial  PRIMARY KEY,"
 				+ "				NUM INT NOT NULL UNIQUE            ,"
 				+ "				Available   INT  NOT NULL DEFAULT 1)";
 		Statement stmt = this.dbConn.createStatement();
@@ -47,8 +49,8 @@ public class CreateTables {
 
 	public void createTableOfVisitor() throws SQLException {
 
-		String sql = "create table bw440_632996.visitor                ("
-				+ "				ID  CHAR(16) NOT NULL PRIMARY KEY,"
+		String sql = "create table visitor                ("
+				+ "				ID  Serial PRIMARY KEY,"
 				+ "				Psydo CHAR(30) Default 'Anonym',"
 				+ "				Fach CHAR(100) Not NULL)";
 		Statement stmt = this.dbConn.createStatement();
@@ -57,10 +59,10 @@ public class CreateTables {
 
 	public void createTableOfRservation() throws SQLException {
 
-		String sql = "create table bw440_632996.reservation                ("
-				+ "				ID  CHAR(16) NOT NULL PRIMARY KEY,"
-				+ "				place CHAR(16) ,"
-				+ "				visitor CHAR(16) ,"
+		String sql = "create table reservation                ("
+				+ "				ID  Serial PRIMARY KEY,"
+				+ "				place INT ,"
+				+ "				visitor INT ,"
 				+ "				R_start TIMESTAMP NOT NULL,"
 				+ "				R_end   TIMESTAMP NOT NULL,"
 				+ "             FOREIGN KEY (place) REFERENCES place(ID),"
@@ -70,33 +72,32 @@ public class CreateTables {
 	}
 
 	public void insertFirstAdmin() throws SQLException {
-		String sql = "insert into bw440_632996.admin " + "(userid, password, active, admin, username, email) "
-				+ "values" + "(?,?,?,?,?,?)";
+		String sql = "insert into admin " + "( password, active, admin, username, email) "
+				+ "values" + "(?,?,?,?,?)";
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
-		prep.setString(1, "00632996");
-		prep.setString(2, "S6ny+Va56");
+	
+		prep.setString(1, "S6ny+Va56");
+		prep.setString(2, "Y");
 		prep.setString(3, "Y");
-		prep.setString(4, "Y");
-		prep.setString(5, "BayremTr");
-		prep.setString(6, "bayrem.trabelsi@outlook.com");
+		prep.setString(4, "BayremTr");
+		prep.setString(5, "bayrem.trabelsi@outlook.com");
 		prep.executeUpdate();
 	}
 	
 	public void insertFirstPlace() throws SQLException {
-		String sql = "insert into bw440_632996.place " + "(ID, NUM, Available) " + "values" + "(?,?,?)";
+		String sql = "insert into place " + "( NUM, Available) " + "values" + "(?,?)";
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
-		prep.setString(1, "0000001");
-		prep.setInt(2, 1);
-		prep.setInt(3, 0);
+		
+		prep.setInt(1, 1);
+		prep.setInt(2, 0);
 		prep.executeUpdate();
 	}
 
 	public void insertFirstVisitor() throws SQLException {
-		String sql = "insert into bw440_632996.visitor " + "(ID, Psydo, Fach) " + "values" + "(?,?,?)";
+		String sql = "insert into visitor " + "( Psydo, Fach) " + "values" + "(?,?)";
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
-		prep.setString(1, "0000001");
-		prep.setString(2, "Bayrem");
-		prep.setString(3, "Wirtschaftsinformatik");
+		prep.setString(1, "Bayrem");
+		prep.setString(2, "Wirtschaftsinformatik");
 		prep.executeUpdate();
 	}
 	
@@ -110,13 +111,13 @@ public class CreateTables {
 
 
 		
-		String sql = "insert into bw440_632996.reservation " + "(ID, place, visitor, R_start, R_end) " + "values" + "(?,?,?,?,?)";
+		String sql = "insert into reservation " + "( place, visitor, R_start, R_end) " + "values" + "(?,?,?,?)";
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
-		prep.setString(1, "0000001");
-		prep.setString(2, "0000001");
-		prep.setString(3, "0000001");
-		prep.setTimestamp(4, todaySQL);
-		prep.setTimestamp(5, somedaySQL);
+		
+		prep.setInt(1, 1);
+		prep.setInt(2, 1);
+		prep.setTimestamp(3, todaySQL);
+		prep.setTimestamp(4, somedaySQL);
 		prep.executeUpdate();
 	}
 
