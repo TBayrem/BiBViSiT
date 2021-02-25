@@ -8,7 +8,7 @@
             </div>
 
               <!-- Modal -->
-              <div aria-hidden="true" aria-labelledby="myModal" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+              <div  aria-labelledby="myModal" role="dialog" tabindex="-1" id="myModal" class="modal fade">
                   <div class="modal-dialog">
                       <div class="modal-content">
                           <div class="modal-header">
