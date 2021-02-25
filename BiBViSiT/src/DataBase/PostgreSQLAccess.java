@@ -10,7 +10,7 @@ public class PostgreSQLAccess extends JDBCAccess {
 		dbURL        = "jdbc:postgresql://143.93.200.243:5432/BWUEBDB";
 		dbUser       = "user1";
 		dbPassword   = "pgusers";
-		dbSchema     = "bw440_632996";
+		dbSchema     = "BiBViSiT";
 		
 		///waaaaaaaaaaaab,dbgskdgadkngsöldrdgsdtz
 		
