@@ -15,7 +15,7 @@
                 <input type="password" class="form-control" placeholder="Password">
                 
                 
-                
+                <button class="btn btn-lg btn-login btn-block" type="submit">Sign in</button>
                 
                 <div class="registration">
                     Don't have an account yet?
