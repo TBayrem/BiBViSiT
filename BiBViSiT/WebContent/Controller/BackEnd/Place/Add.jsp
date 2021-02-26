@@ -1,35 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-////
-get from the form show add place OBJect P
+    <%@page import="Model.Place"%>
+<jsp:useBean id="place" class="Model.Place" scope="session" />
+<%
+	
+	String Snum = request.getParameter("Num");
+	
+	int Num = Integer.parseInt(Snum);
+	Place P = new Place (Num);
+	place.InsertPlace(P);
 
-boolean r = P.search (p.num)
+	response.sendRedirect("../../../View/Bodys/BackEnd/Place/Show.jsp");
+	
 
-if r = true 
-COntroller =
-P exist 
-make another input //
-
-if r false 
-insert place
-
-//MOdel//
-
-IINsert
-delete(num)
-update
- 
-search()
-
-SelectALL ()
-vector hash 
-
-
-
-///
-html input num [] num p1 
-
-P1 new place(inputnum,1);
-
-if (insertplace(P1))
-Redirect [/ergl]
+		
+%>
