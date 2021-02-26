@@ -89,6 +89,9 @@
       </div>
 
     </div>
-    
+    <div class="contact-map">
+      <iframe style="width: 100%; height: 400px; position: relative; overflow: hidden;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10368.392713017245!2d8.43373463687365!3d49.48265241803433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797cc7da5bc4b03%3A0x8d162eeb59f44ecf!2sUniversity%20of%20Ludwigshafen%20am%20Rhein!5e0!3m2!1sen!2sde!4v1614378922725!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      
+    </div>
     
 		<jsp:include page="../../../Footers/BackEnd/Footer.jsp"/>
