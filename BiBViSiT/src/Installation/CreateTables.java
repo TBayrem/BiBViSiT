@@ -26,7 +26,8 @@ public class CreateTables {
 	
 	public void createTableOfAdmin() throws SQLException {
 
-		String sql = "create table admin                ("
+		String sql = "DROP TABLE IF EXISTS admin CASCADE;"
+				+ "create table admin                ("
 				+ "				userid   SERIAL  PRIMARY KEY," // Serielle UserId, wie wir bereits kommuniziert haben
 				+ "				password CHAR(32) NOT NULL            ,"
 				+ "				active   CHAR(1)  NOT NULL DEFAULT 'Y',"
@@ -39,7 +40,8 @@ public class CreateTables {
 
 	public void createTableOfPlace() throws SQLException {
 
-		String sql = "create table place                ("
+		String sql = "DROP TABLE IF EXISTS place CASCADE;"
+				+ "create table place                ("
 				+ "				ID  Serial  PRIMARY KEY,"
 				+ "				NUM INT NOT NULL UNIQUE            ,"
 				+ "				Available   INT  NOT NULL DEFAULT 1)";
@@ -49,7 +51,8 @@ public class CreateTables {
 
 	public void createTableOfVisitor() throws SQLException {
 
-		String sql = "create table visitor                ("
+		String sql = "DROP TABLE IF EXISTS visitor CASCADE;"
+				+ "create table visitor                ("
 				+ "				ID  Serial PRIMARY KEY,"
 				+ "				Psydo CHAR(30) Default 'Anonym',"
 				+ "				Fach CHAR(100) Not NULL)";
@@ -59,7 +62,8 @@ public class CreateTables {
 
 	public void createTableOfRservation() throws SQLException {
 
-		String sql = "create table reservation                ("
+		String sql = "DROP TABLE IF EXISTS reservation CASCADE;"
+				+ "create table reservation                ("
 				+ "				ID  Serial PRIMARY KEY,"
 				+ "				place INT ,"
 				+ "				visitor INT ,"
