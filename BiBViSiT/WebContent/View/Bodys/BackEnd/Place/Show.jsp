@@ -1,28 +1,57 @@
-
-
-
 <jsp:include page="../../../Headers/BackEnd/Header.jsp"/>
-    
-<%@page import="Model.Place"%>
+ <%@page import="Model.Place"%>
 <%@page import="java.util.Vector"%>
-</head>
-<body>
 <jsp:useBean id="place" class="Model.Place" scope="session" />
-    <% Vector<Place> vectorofplaces = place.getAll(); int all_Places = vectorofplaces.size();%>
+ <% Vector<Place> vectorofplaces = place.getAll(); int all_Places = vectorofplaces.size();%>
 	<div class="bs-docs-section">
-		<h2 id="tables-example">Places</h2>
-		<p>You have<code><%=all_Places%></code>Places</p>
+		<h2 id="tables-example">Plätze</h2>
+		<p>Sie haben<code><%=all_Places%></code>Plätze</p>
+
+<div class="bs-example col-sm-6">
+    <form class="form-inline" action="../../../../Controller/BackEnd/Place/Add.jsp">
+        <div class="form-group">
+        <input type="text" class="form-control" name="Num"  placeholder="Nummer eingeben">
+        </div>
+      <button type="submit" class="btn btn-primary btn-flat">Platz Addieren</button>
+    </form>
+  </div>
+  
+ <div class="bs-example col-sm-6">
+ <input type="text" id="SearchInput" class="form-control"  onkeyup="SearchPlace(<%=vectorofplaces.size() %>)" placeholder="Platz Suchen">
+   
+  </div>
+		
+		
 		<div class="bs-example">
 		<table class="table">
-		<thead><tr><th>#</th><th>Num</th><th>Available</th><th>Delete</th><th>Update</th></tr></thead>
+		<thead><tr><th>#</th><th>Nummer</th><th>Verfügbarkeit</th><th>Löschen</th><th>Verfügbarkeit Ändern</th><th>Mehr Info</th></tr></thead>
 		<tbody>
-		<% for (Place P : vectorofplaces) {%>
-		<tr>
-		<td><%= P.getID()%></td><td><%= P.getNum()%></td><td><% if (P.getAvailable()==0) out.print("Free") ;else out.print("Occupied") ;%></td>
-	    <td><a href="../../../../Controller/BackEnd/Place/Show.jsp?Num=<%=P.getNum()%>&todo='update'&Availability=<%=P.getAvailable()%>">Change Availability</a></td>
-		<td><a href="../../../../Controller/BackEnd/Place/Show.jsp?Num=<%=P.getNum()%>&todo='delete'&Availability=<%=P.getAvailable()%>">Delete</a></td>
-		</tr>
-		<%} %>
+		<%
+		int i = 0;
+		
+		for (Place P : vectorofplaces) {%>
+		
+	    
+		<tr id="<%out.print(i+"tr");%>">
+		<td><%= P.getID()%></td><td id="<%= i%>"><%= P.getNum()%></td><td><% if (P.getAvailable()==0) out.print("Free") ;else out.print("Occupied") ;%></td>
+	    <td><a href="../../../../Controller/BackEnd/Place/Show.jsp?Num=<%=P.getNum()%>&delete=0&Availability=<%=P.getAvailable()%>">Change Availability</a></td>
+		<td><a href="../../../../Controller/BackEnd/Place/Show.jsp?Num=<%=P.getNum()%>&delete=1&Availability=<%=P.getAvailable()%>">Delete</a></td>
+		<td><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#<%out.print(i+"tr_inf");%>">
+                                   mehr info
+                                    </a></td>
+                                    
+                                    </tr>
+                                    
+                                
+                        <tr id="<%out.print(i+"tr_inf");%>" class="panel-collapse collapse" style="height: 0px;">
+            <td class="panel-body panel-faq" >Visitor</td>
+            <td class="panel-body panel-faq" >Fach</td>
+            <td class="panel-body panel-faq" >Reservation start</td>
+            <td class="panel-body panel-faq" >Reservation end</td>
+            <td class="panel-body panel-faq" ></td>
+            <td class="panel-body panel-faq" ></td>
+            </tr> 
+		<%i++;} %>
 		</tbody>
 		</table>
 		</div>
