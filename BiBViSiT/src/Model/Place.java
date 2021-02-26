@@ -49,7 +49,7 @@ public class Place {
 		else
 			return false;
 	}
-	
+
 	public boolean DeleteAllPlaces() throws SQLException {
 
 		String sql = "delete from Place";
@@ -65,7 +65,7 @@ public class Place {
 
 	public boolean InsertPlace(Place P) throws SQLException {
 
-		String sql = "insert into Place (ID, Num, Available) values (?,?)";
+		String sql = "insert into Place (Num, Available) values (?,?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 
@@ -80,23 +80,24 @@ public class Place {
 
 	public Vector<Place> getAll() throws SQLException {
 
-		Vector<Place> V = new Vector<Place>();
-		String sql = "select ID, Num, Available from Place ";
+		Vector<Place> Vectorofplaces = new Vector<Place>();
+		String sql = "select * from Place ";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		ResultSet dbRes = dbConn.createStatement().executeQuery(sql);
 		while (dbRes.next()) {
 			Place P = new Place(dbRes.getInt("ID"), dbRes.getInt("Num"), dbRes.getInt("Available"));
-			V.add(P);
+			Vectorofplaces.add(P);
 		}
-		return V;
+		return Vectorofplaces;
 	}
 
-	public boolean updateavailability(int Num) throws SQLException {
+	public boolean UpdateAvailability(int Num, int Availability) throws SQLException {
 
-		String sql = "update Place Set Available = 0 where Num = ?";
+		String sql = "update Place Set Available = ? where Num = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setInt(1, Num);
+		prep.setInt(1, Availability);
+		prep.setInt(2, Num);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
