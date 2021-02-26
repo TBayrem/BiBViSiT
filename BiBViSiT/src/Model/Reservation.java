@@ -11,7 +11,7 @@ public class Reservation {
 
 	}
 
-	public Reservation(int iD, int Place,int Visitor,Date R_startTIMESTAMP ,Date R_endTIMESTAMP) {
+	public Reservation(int ID, int Place,int Visitor,Date R_startTIMESTAMP ,Date R_endTIMESTAMP) {
 		this.ID = iD;
 		this.Place=place;
 		this.Visitor=visitor;
@@ -23,7 +23,7 @@ public class Reservation {
 		String sql = "select * from Reservation where Place = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setInt(1, num);
+		prep.setInt(1, Place);
 		ResultSet dbRes = prep.executeQuery();
 		return dbRes.next();
 
@@ -62,9 +62,11 @@ public class Reservation {
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 
-		prep.setInt(2, P.Num);
-		prep.setInt(2, P.Available);
-		int result = prep.executeUpdate();
+		prep.setInt(2,R.Place);
+		prep.setInt(3, R.Visitor);
+		prep.setInt(3, R.R_startTIMESTAMP);
+		prep.setInt(3, R.R_endTIMESTAMP);
+	    int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
 		else
@@ -83,6 +85,17 @@ public class Reservation {
 		}
 		return R;
 	}
+	 
+	public  Vector<Reservation> modify(Reservation r) throws SQLException {
+		Vector<Reservation> R = new Vector<Reservation>();
+		String sql = "select iD,  Place, Visitor, R_startTIMESTAMP , R_endTIMESTAMP from Reservation ";
+		Connection dbConn = new PostgreSQLAccess().getConnection();
+		ResultSet dbRes = dbConn.createStatement().executeQuery(sql);
+		
+		
+		
+	}
+	
 
 	
 	public String getID() {
