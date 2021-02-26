@@ -24,6 +24,12 @@ public class Place {
 		this.Num = num;
 		this.Available = available;
 	}
+	
+	public Place(int num) {
+
+		
+		this.Num = num;
+	}
 
 	public boolean SearchPlace(int num) throws SQLException {
 
@@ -65,12 +71,10 @@ public class Place {
 
 	public boolean InsertPlace(Place P) throws SQLException {
 
-		String sql = "insert into Place (Num, Available) values (?,?)";
+		String sql = "insert into Place (Num ) values (?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-
-		prep.setInt(2, P.Num);
-		prep.setInt(2, P.Available);
+		prep.setInt(1, P.Num);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
