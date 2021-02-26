@@ -10,10 +10,10 @@ import DataBase.PostgreSQLAccess;
 
 public class Admin {
 
-//	private int Userid; // wir brauchen diese Attribute nicht mehr? den UserId ist automatich angegeben jetzt oder?
+    private int Userid; // wir brauchen diese Attribute nicht mehr? den UserId ist automatich angegeben jetzt oder?
 	private String password;
-	private String active;
-	private String admin;
+	private String active ;
+	private String admin  ;
 	private String username;
 	private String email;
 
@@ -30,29 +30,55 @@ public class Admin {
 	}
 
 	// die suche ist mit den username in diesen fall da den id serial ist!
-	public boolean SearchAdmin(String username) throws SQLException {
+	public boolean SearchAdmin(String email, String password) throws SQLException {
 
-		String sql = "select * from admin where username = ?";
+		String sql = "select * from admin where username = ? and password = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setString(1, username);
+		prep.setString(1, email);
+		prep.setString(2,  this.password);
 		ResultSet dbRes = prep.executeQuery();
 		return dbRes.next();
 
 	}
+	public boolean DeleteAllAdmins() throws SQLException {
 
+		String sql = "delete from admin";
+		Connection dbConn = new PostgreSQLAccess().getConnection();
+		PreparedStatement prep = dbConn.prepareStatement(sql);
+
+		int result = prep.executeUpdate();
+		if (result != 0)
+			return true;
+		else
+			return false;
+	}
+
+	public boolean DeleteAdmin(String email) throws SQLException {
+
+		String sql = "delete from admin where email = ?";
+		Connection dbConn = new PostgreSQLAccess().getConnection();
+		PreparedStatement prep = dbConn.prepareStatement(sql);
+
+		prep.setString(1, email);
+		int result = prep.executeUpdate();
+		if (result != 0)
+			return true;
+		else
+			return false;
+	}
 // 2et Methode : einfach Admin einfügen !!
 
-	public boolean InsertAdmin(Admin A) throws SQLException {
+	public boolean InsertAdmin() throws SQLException {
 
 		String sql = "insert into admin (password, active, admin, username, email) values (?,?,?,?,?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setString(1, A.password);
-		prep.setString(2, A.active);
-		prep.setString(3, A.admin);
-		prep.setString(4, A.username);
-		prep.setString(5, A.email);
+		prep.setString(1, this.password);
+		prep.setString(2, this.active);
+		prep.setString(3, this.admin);
+		prep.setString(4, this.username);
+		prep.setString(5, this.email);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
@@ -63,12 +89,16 @@ public class Admin {
 	public Vector<Admin> getAll() throws SQLException {
 
 		Vector<Admin> Vectoradmin = new Vector<Admin>();
+		Vectoradmin.clear(); // ??
 		String sql = "select * from admin ";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		ResultSet dbRes = dbConn.createStatement().executeQuery(sql);
 		while (dbRes.next()) {
-			Admin A = new Admin(dbRes.getString("password"), dbRes.getString("active"), dbRes.getString("admin"),
-					dbRes.getString("username"), dbRes.getString("email"));
+			Admin A = new Admin(dbRes.getString("password"),
+								dbRes.getString("active"),
+								dbRes.getString("admin"),
+								dbRes.getString("username"),
+								dbRes.getString("email"));
 			Vectoradmin.add(A);
 		}
 		return Vectoradmin;
@@ -78,12 +108,13 @@ public class Admin {
 
 	// update admin : if admin = yes dann kan er andere admin loschen zB.
 
-	public boolean updateAdminSup(String username) throws SQLException {
+	public boolean updateAdminSup(String email, String password) throws SQLException {
 
 		String sql = "update admin Set admin = Y where username = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setString(1, username);
+		prep.setString(1, email);
+		prep.setString(2, password);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
@@ -94,12 +125,13 @@ public class Admin {
 	// update active : if active = yes dann ....... zB.
 	// diese Methode glaube und das atribute (active) brauchen wir nicht , glaube
 	// ich !!
-	public boolean updateActive(String username) throws SQLException {
+	public boolean updateActive(String email, String password) throws SQLException {
 
 		String sql = "update admin Set active = Y where username = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setString(1, username);
+		prep.setString(1, email);
+		prep.setString(2, password);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
@@ -146,5 +178,14 @@ public class Admin {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public int getUserid() {
+		return Userid;
+	}
+
+	public void setUserid(int userid) {
+		Userid = userid;
+	}
+	
 
 }
