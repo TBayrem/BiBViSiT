@@ -44,7 +44,7 @@ public class CreateTables {
 				+ "create table place                ("
 				+ "				ID  Serial  PRIMARY KEY,"
 				+ "				NUM INT NOT NULL UNIQUE            ,"
-				+ "				Available   INT  NOT NULL DEFAULT 1)";
+				+ "				Available   INT DEFAULT 1)";
 		Statement stmt = this.dbConn.createStatement();
 		stmt.executeUpdate(sql);
 	}
