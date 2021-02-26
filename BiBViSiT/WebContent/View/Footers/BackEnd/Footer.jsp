@@ -56,56 +56,67 @@
 
 
 <!-- js placed at the end of the document so the pages load faster -->
-    <script src="../../../Assets/JavaScript/jquery.js"></script>
-    <script src="../../../Assets/JavaScript/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../../../Assets/JavaScript/hover-dropdown.js"></script>
-    <script  src="../../../Assets/JavaScript/jquery.flexslider.js"></script>
-
-    <script src="../../../Assets/JavaScript/jquery.easing.min.js"></script>
-    <script src="../../../Assets/JavaScript/link-hover.js"></script>
-
-
-     <!--common script for all pages-->
-    <script src="../../../Assets/JavaScript/common-scripts.js"></script><i id="back-to-top" style="display: none;"></i>
-
-
-    <script src="../../../Assets/JavaScript/wow.min.js"></script>
-    <script>
-        wow = new WOW(
-          {
-            boxClass:     'wow',      // default
-            animateClass: 'animated', // default
-            offset:       0          // default
-          }
-        )
-        wow.init();
-     
-        function SearchPlace(sizeoftable) {
-        	 var Placenummer = document.getElementById("SearchInput").value;
-        	 var i;
-        	 var tdtext;
-        	 var tr;
-        	 for (i = 0; i < sizeoftable+1; i++)
-        	 {
-        		 
-        		 tdtext = document.getElementById(i).innerText;
-        		if (tdtext.search(Placenummer)=== -1)
-        		{
-        			document.getElementById(i+"tr").hidden = true ;
-        			document.getElementById(i+"tr_inf").hidden = true ;
-        			
-        		}
-        		else 
-        		{
-        			document.getElementById(i+"tr").hidden = false
-        			document.getElementById(i+"tr_inf").hidden = true ;
-        			
-        		}
-        		
-        		}
-        	}
-        
+ <script src="../../../Template/js/jquery.js">
+    </script>
+    <script src="../../../Template/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript" src="../../../Template/js/hover-dropdown.js">
+    </script>
+    <script type="text/javascript" src="../../../Template/assets/bxslider/jquery.bxslider.js">
     </script>
 
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false">
+    </script>
+
+    <!--common script for all pages-->
+    <script src="../../../Template/js/common-scripts.js">
+    </script><i id="back-to-top" style="display: none;"></i>
+    <script src="../../../Template/js/wow.min.js">
+    </script>
+    <script>
+      wow = new WOW(
+        {
+          boxClass:     'wow',      // default
+          animateClass: 'animated', // default
+          offset:       0          // default
+        }
+      )
+        wow.init();
+    </script>
+
+
+    <script>
+      $(document).ready(function() {
+        //Set the carousel options
+        $('#quote-carousel').carousel({
+          pause: true,
+          interval: 4000,
+        }
+                                     );
+      }
+                       );
+
+      //google map
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(51.508742,-0.120850);
+        var mapOptions = {
+          zoom: 5,
+          center: myLatlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          title: 'Contact'
+        }
+                                           );
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+    </script>
 </body>
 </html>
