@@ -10,45 +10,21 @@
 <jsp:useBean id="place" class="Model.Place" scope="session" />
     <% Vector<Place> v = place.getAll(); int all_Tisch=v.size();%>
 	<div class="bs-docs-section">
-
-
-
-
-
-
-		<h1 id="tables" class="page-header">Daten Banken</h1>
-
-		<h2 id="tables-example">Tisch Liste</h2>
-		<p>
-			diese Liste hat
-			<code><%= all_Tisch%></code>
-			Tisch
-		</p>
-
+		<h2 id="tables-example">Places</h2>
+		<p>You have<code><%= all_Tisch%></code>Places</p>
 		<div class="bs-example">
-			<table class="table">
-				<thead>
-					<tr>
-						<th>#</th>
-						<th>Num</th>
-						<th>Available</th>
-						<th>Delete</th>
-						<th>Update</th>
-					</tr>
-				</thead>
-				<tbody>
-				<% for (Place P : v) {%>
-					<tr>
-						<td><%= P.getID()%></td>
-						<td><%= P.getNum()%></td>
-						<td><%= P.getAvailable()%></td>
-						<td><a href="./SetPlaceavilability.jsp?Num=<%=P.getNum()%>&todo=delete">Delete</a></td>
-						<td><a href="./SetPlaceavilability.jsp?Num=<%=P.getNum()%>&todo=update">Update</a></td>
-					</tr>
-					<%} %>
-				</tbody>
-			</table>
+		<table class="table">
+		<thead><tr><th>#</th><th>Num</th><th>Available</th><th>Delete</th><th>Update</th></tr></thead>
+		<tbody>
+		<% for (Place P : v) {%>
+		<tr>
+		<td><%= P.getID()%></td><td><%= P.getNum()%></td><td><% if (P.getAvailable()==0) out.print("Free") ;else out.print("Occupied") ;%></td>
+	    <td><a href="../../../../Controller/BackEnd/Place/Show.jsp?Num=<%=P.getNum()%>&todo='update'&Availability=<%=P.getAvailable()%>">Change Availability</a></td>
+		<td><a href="../../../../Controller/BackEnd/Place/Show.jsp?Num=<%=P.getNum()%>&todo='delete'&Availability=<%=P.getAvailable()%>">Delete</a></td>
+		</tr>
+		<%} %>
+		</tbody>
+		</table>
 		</div>
-	</div>
-
-<jsp:include page="../../../Footers/BackEnd/Footer.jsp"/>
+		</div>
+		<jsp:include page="../../../Footers/BackEnd/Footer.jsp"/>
