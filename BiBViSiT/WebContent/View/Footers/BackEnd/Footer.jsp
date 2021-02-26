@@ -114,7 +114,30 @@
                                            );
       }
       google.maps.event.addDomListener(window, 'load', initialize);
-
+      function SearchPlace(sizeoftable) {
+     	 var Placenummer = document.getElementById("SearchInput").value;
+     	 var i;
+     	 var tdtext;
+     	 var tr;
+     	 for (i = 0; i < sizeoftable+1; i++)
+     	 {
+     		 
+     		 tdtext = document.getElementById(i).innerText;
+     		if (tdtext.search(Placenummer)=== -1)
+     		{
+     			document.getElementById(i+"tr").hidden = true ;
+     			document.getElementById(i+"tr_inf").hidden = true ;
+     			
+     		}
+     		else 
+     		{
+     			document.getElementById(i+"tr").hidden = false
+     			document.getElementById(i+"tr_inf").hidden = true ;
+     			
+     		}
+     		
+     		}
+     	}
 
 
     </script>
