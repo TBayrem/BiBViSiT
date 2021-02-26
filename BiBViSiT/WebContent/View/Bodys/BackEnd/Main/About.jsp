@@ -9,7 +9,7 @@
               <!-- Carousel items -->
               <div class="carousel-inner">
                 <div class="active item">
-                  <img src="img/service3.jpg" alt="">
+                  <img src="../../../Template/img/service3.jpg" alt="">
                   <div class="carousel-caption">
                     <p>
                       Lorem ipsum dolor sit amet.
@@ -17,7 +17,7 @@
                   </div>
                 </div>
                 <div class="item">
-                  <img src="img/service2.jpg" alt="">
+                  <img src="../../../Template/img/service2.jpg" alt="">
                   <div class="carousel-caption">
                     <p>
                       Blanditiis praesentium voluptatum
@@ -25,7 +25,7 @@
                   </div>
                 </div>
                 <div class="item">
-                  <img src="img/service5.jpg" alt="">
+                  <img src="../../../Template/img/service5.jpg" alt="">
                   <div class="carousel-caption">
                     <p>
                       Blanditiis praesentium voluptatum
@@ -176,7 +176,7 @@
                   
                 <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides about-flex-slides" style="width: 800%; transition-duration: 0s; transform: translate3d(-914px, 0px, 0px);"><li class="clone" style="width: 457px; float: left; display: block;">
                       <div class="about-testimonial-image ">
-                        <img alt="" src="img/person_2.png">
+                        <img alt="" src="../../../Template/img/person_2.png">
                       </div>
                       <a class="about-testimonial-author" href="#">
                         Steven gerrard
@@ -192,7 +192,7 @@
                     </li>
                     <li style="width: 457px; float: left; display: block;" class="">
                       <div class="about-testimonial-image ">
-                        <img alt="" src="img/person_1.png">
+                        <img alt="" src="../../../Template/img/person_1.png">
                       </div>
                       <a class="about-testimonial-author" href="#">
                         Russel Reagan
@@ -208,7 +208,7 @@
                     </li>
                     <li class="flex-active-slide" style="width: 457px; float: left; display: block;">
                       <div class="about-testimonial-image ">
-                        <img alt="" src="img/person_2.png">
+                        <img alt="" src="../../../Template/img/person_2.png">
                       </div>
                       <a class="about-testimonial-author" href="#">
                         Steven gerrard
@@ -224,7 +224,7 @@
                     </li>
                   <li style="width: 457px; float: left; display: block;" class="clone">
                       <div class="about-testimonial-image ">
-                        <img alt="" src="img/person_1.png">
+                        <img alt="" src="../../../Template/img/person_1.png">
                       </div>
                       <a class="about-testimonial-author" href="#">
                         Russel Reagan
@@ -293,7 +293,7 @@
           </h2>
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail wow fadeInUp animated" data-wow-delay=".1s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-              <img src="img/team/member1.jpg" alt="">
+              <img src="../../../Template/img/team/member1.jpg" alt="">
               <div class="caption">
                 <h4>
                   Thumbnail label
@@ -333,7 +333,7 @@
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail wow fadeInUp animated" data-wow-delay=".3s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-              <img src="img/team/member2.jpg" alt="">
+              <img src="../../../Template/img/team/member2.jpg" alt="">
               <div class="caption">
                 <h4>
                   Thumbnail label
@@ -373,7 +373,7 @@
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail wow fadeInUp animated" data-wow-delay=".5s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-              <img src="img/team/member3.jpg" alt="">
+              <img src="../../../Template/img/team/member3.jpg" alt="">
               <div class="caption">
                 <h4>
                   Thumbnail label
@@ -413,7 +413,7 @@
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail wow fadeInUp animated" data-wow-delay=".7s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
-              <img src="img/team/member4.jpg" alt="">
+              <img src="../../../Template/img/team/member4.jpg" alt="">
               <div class="caption">
                 <h4>
                   Thumbnail label
