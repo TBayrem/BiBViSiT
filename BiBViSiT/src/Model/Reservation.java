@@ -33,11 +33,13 @@ public class Reservation {
 		Expired = expired;
 	}
 
+
 	public Reservation( int place, int visitor, Timestamp r_start, Timestamp r_end) {
 		this.Place = place;
 		this.Visitor = visitor;
 		this.R_start = r_start;
 		this.R_end = r_end;
+	
 	}
 	
 
@@ -68,10 +70,13 @@ public class Reservation {
 				+ "where p.NUM = ? and r.R_start >= ? and r.R_end <= ?";		
 	Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
+		
 		prep.setInt(1, P.getNum());
 		prep.setTimestamp(2, R.R_start);
 		prep.setTimestamp(3, R.R_end);
 
+
+		prep.setInt(1, Place);
 		ResultSet dbRes = prep.executeQuery();
 		return dbRes.next();
 	}
@@ -145,11 +150,13 @@ public class Reservation {
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 
+
 		prep.setInt(1, R.Place);
 		prep.setInt(2, R.Visitor);
 		prep.setTimestamp(3, R.R_start);
 		prep.setTimestamp(4, R.R_end);
 		int result = prep.executeUpdate();
+
 		if (result != 0)
 			return true;
 		else
@@ -170,6 +177,12 @@ public class Reservation {
 		}
 		return Vectorofreservation;
 	}
+
+		
+		
+	
+	
+
 	
 	public Vector<Reservation> getAllexpiredreservations() throws SQLException {
 
