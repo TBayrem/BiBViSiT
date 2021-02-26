@@ -65,6 +65,7 @@ public class CreateTables {
 				+ "				visitor INT ,"
 				+ "				R_start TIMESTAMP NOT NULL,"
 				+ "				R_end   TIMESTAMP NOT NULL,"
+				+ "				expired INT Default 0,"
 				+ "             FOREIGN KEY (place) REFERENCES place(ID),"
 				+ "             FOREIGN KEY (visitor) REFERENCES visitor(ID))";
 		Statement stmt = this.dbConn.createStatement();
