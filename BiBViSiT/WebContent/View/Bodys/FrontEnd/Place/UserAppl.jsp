@@ -6,7 +6,7 @@
 <%
 String Snum = request.getParameter("Num");
 int Num = Integer.parseInt(Snum);
-place.updateavailability(Num);
+/* place.updateavailability(Num); */
 response.sendRedirect("./Show.jsp");
 
 %>
