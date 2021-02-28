@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <jsp:useBean id="admin" class="Model.Admin" scope="session" />
-
+<jsp:useBean id="msg" class="Model.Message" scope="session"></jsp:useBean>
 <%! 
 public String denullify(String s){
 	if (s == null) return "";
@@ -13,14 +13,9 @@ public String denullify(String s){
 	String username = request.getParameter("username");
 	String email = request.getParameter("email");
 	String register = this.denullify(request.getParameter("register"));
-	String zumLogin = this.denullify(request.getParameter("zumLogin"));
-	// wenn ein Button eingelesen wird, dann zuallererst null-check!
-	//if (register == null) register = "";
-	//if (zumLogin == null) zumLogin = "";
+	String zumLogin = this.denullify(request.getParameter("Anmelden"));
 
 	if (register.equals("Registrieren")){
-	//Registrierfunktion ausführen
-	System.out.println("register geklickt");
 	
 	admin.setPassword(password);
 	admin.setUsername(username);
@@ -29,24 +24,23 @@ public String denullify(String s){
 		boolean adminExist = admin.SearchAdmin(email, password);
 		if (!adminExist){//alles ok)
 			admin.InsertAdmin();
-			
+			msg.setAdminInserted(username);
 		}else{//userid schon belegt
-			
+			msg.setAdminAlreadyExists(username);
 		}
 	}catch(Exception e){//unerwarteter Fehler
 		e.printStackTrace();
+		msg.setUnexpectedError();
 		
 	}
 	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
-}else if(zumLogin.equals("zum Login")){
-	//zum Login geklickt -> Weiterleitung
-	System.out.println("zumLogin geklickt");
-	
+}else if(zumLogin.equals("Anmelden")){
+
+	msg.setGeneralWelcome();
 	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
 }else{
-	//Unerwartetes: Könnte ein bösartiger Angriff sein
-	System.out.println("nichts ordentliches geklickt");
-	
+
+	msg.setGeneralWelcome();
 	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
 }
 
