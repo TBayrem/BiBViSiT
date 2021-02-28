@@ -2,6 +2,11 @@
     
 
     <body>
+    <jsp:useBean id="msg" class="Model.Message" scope="session"></jsp:useBean>
+    <jsp:useBean id="admin" class="Model.Admin" scope="session"></jsp:useBean>
+    
+    
+    <jsp:getProperty name="messageBean" property="messageHtml" />
    
   <div class="container">
 
@@ -16,16 +21,26 @@
                  <!--   <input type="password" class="form-control" placeholder="Re-type Password">  --> 
                   
                     <input class="btn btn-lg btn-login btn-block" name="register" type="submit" value="registrieren"/>
-					<input class="btn btn-lg btn-login btn-block" name="zumLogin" type="submit" value="zum Login"/>
-                    <div class="registration">
-                        
-                        
-                       
-                    </div>
+					<input class="btn btn-lg btn-login btn-block" name="zumLogin" type="submit" value="Anmelden"/>
+                   
+                
+                <!--  
+                   
+                   <div class="registration">
+                    Bereits registriert
+                    <a  href="../../../View/Bodys/BackEnd/Admin/Registration.jsp?zumLogin=Anmelden">
+                        Anmelden
+                    </a>
+                </div> 
+                 
+                --> 			 
+                
                 </div>
             </form>
 
         </div>
+        
+        </body>
   
   	<jsp:include page="../../../Footers/BackEnd/Footer.jsp"/>
   
