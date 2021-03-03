@@ -11,7 +11,23 @@
  <div class="bs-docs-section">
 		<h2 id="tables-example">Admins</h2>
 		
-		<p>You have<code><%=all_Admins%></code>Admins</p>
+		<p> Wir Sind : <code><%=all_Admins%></code>Admins</p>
+		
+		<div class="bs-example col-sm-6">
+    <form class="form-inline" action="../../../../Controller/BackEnd/Admin/Add.jsp">
+        <div class="form-group">
+        <input type="text" class="form-control" name="username"  placeholder="username eingeben">
+        </div>
+      <button type="submit" class="btn btn-primary btn-flat">Supervisor Admin einfügen</button>
+    </form>
+  </div>
+  
+ <div class="bs-example col-sm-6">
+ <input type="text" id="SearchInput" class="form-control"  onkeyup="SearchPlace(<%= all_Admins %>)" placeholder="Admin Suchen">
+   
+  </div>
+		
+		
 		<div class="bs-example">
 		<table class="table">
 		<thead><tr><th>#</th><th>username</th><th>email</th><th>admin</th><th>active</th><th>Delete</th><th>Update</th></tr></thead>
