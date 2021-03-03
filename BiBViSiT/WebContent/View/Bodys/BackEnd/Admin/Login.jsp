@@ -11,7 +11,7 @@
         <div class="login-bg">
         <div class="container">
             <div class="form-wrapper">
-            <form class="form-signin wow fadeInUp animated" action="////////////" >
+            <form class="form-signin wow fadeInUp animated" action="../../../../Controller/BackEnd/Admin/Login.jsp" >
             <h2 class="form-signin-heading"></h2>
             <div class="login-wrap">
                 <input type="text" class="form-control" placeholder="E-mail" >
