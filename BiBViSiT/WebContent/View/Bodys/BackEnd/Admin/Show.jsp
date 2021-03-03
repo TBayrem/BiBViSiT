@@ -13,6 +13,7 @@
 		
 		<p> Wir Sind : <code><%=all_Admins%></code>Admins</p>
 		
+		
 		<div class="bs-example col-sm-6">
     <form class="form-inline" action="../../../../Controller/BackEnd/Admin/Add.jsp">
         <div class="form-group">
@@ -45,7 +46,7 @@
 		</table>
 		</div>
 		</div>
-		
-		
+	
+	
 		<jsp:include page="../../../Footers/BackEnd/Footer.jsp"/>
  
