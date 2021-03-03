@@ -12,7 +12,7 @@ public String denullify(String s){
 	String password = request.getParameter("password");
 	String username = request.getParameter("username");
 	String email = request.getParameter("email");
-	String register = this.denullify(request.getParameter("register"));
+	String register = this.denullify(request.getParameter("registrieren"));
 	String zumLogin = this.denullify(request.getParameter("Anmelden"));
 
 	if (register.equals("Registrieren")){
