@@ -30,13 +30,24 @@ public class Admin {
 	}
 
 	// die suche ist mit den username in diesen fall da den id serial ist!
+	public boolean SearchAdmin(String username) throws SQLException {
+
+		String sql = "select * from admin where username = ? and password = ?";
+		Connection dbConn = new PostgreSQLAccess().getConnection();
+		PreparedStatement prep = dbConn.prepareStatement(sql);
+		prep.setString(1, username);
+		ResultSet dbRes = prep.executeQuery();
+		return dbRes.next();
+
+	}
+	
 	public boolean SearchAdmin(String email, String password) throws SQLException {
 
 		String sql = "select * from admin where username = ? and password = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setString(1, email);
-		prep.setString(2,  this.password);
+		prep.setString(1, password);
 		ResultSet dbRes = prep.executeQuery();
 		return dbRes.next();
 
@@ -108,13 +119,13 @@ public class Admin {
 
 	// update admin : if admin = yes dann kan er andere admin loschen zB.
 
-	public boolean updateAdminSup(String email, String password) throws SQLException {
+	public boolean updateAdminSup(String username) throws SQLException {
 
 		String sql = "update admin Set admin = Y where username = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setString(1, email);
-		prep.setString(2, password);
+		prep.setString(1, username);
+		
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
