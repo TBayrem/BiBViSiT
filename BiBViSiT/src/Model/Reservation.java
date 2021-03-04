@@ -35,6 +35,7 @@ public class Reservation {
 
 
 	public Reservation( int place, int visitor, Timestamp r_start, Timestamp r_end) {
+	
 		this.Place = place;
 		this.Visitor = visitor;
 		this.R_start = r_start;
