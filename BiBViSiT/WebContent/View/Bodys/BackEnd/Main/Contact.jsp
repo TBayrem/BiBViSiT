@@ -7,7 +7,7 @@
         <div class="col-lg-5 col-sm-5 address">
           <section class="contact-infos">
             <h4 class="title custom-font text-black">
-              ADDRESS
+              Addressen
             </h4>
             <address>
               Revox
