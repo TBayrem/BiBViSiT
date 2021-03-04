@@ -12,7 +12,7 @@
                   <img src="../../../Template/img/service3.jpg" alt="">
                   <div class="carousel-caption">
                     <p>
-                      Lorem ipsum dolor sit amet.
+                      BiBVisit
                     </p>
                   </div>
                 </div>
@@ -101,7 +101,7 @@
       <div class="row">
         <div class="hiring">
           <h2 class="wow flipInX animated" data-wow-animation-name="flipInX" style="visibility: visible; animation-name: flipInX;">
-            we are hiring
+            Eigenschaften
           </h2>
           <div class="col-lg-6 col-sm-6 about-hiring">
             <div class="icon-wrap ico-bg round-five wow zoomIn animated" data-wow-duration="1s" data-wow-delay=".1s" data-wow-animation-name="zoomIn" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: zoomIn;">
@@ -110,7 +110,7 @@
             </div>
             <div class="content">
               <h3 class="title wow flipInX animated" data-wow-animation-name="flipInX" style="visibility: visible; animation-name: flipInX;">
-                iOS / Mac OS Developer
+                Responsive
               </h3>
               <p>
                 Suspendisse dignissim in sem eget pulvinar. Mauris aliquam nulla at libero pretium, eu tincidunt nulla molestie pulvinar posuere.
@@ -124,7 +124,7 @@
             </div>
             <div class="content">
               <h3 class="title wow flipInX animated" data-wow-animation-name="flipInX" style="visibility: visible; animation-name: flipInX;">
-                Frontend Developer
+                Benutzerfreundlich
               </h3>
               <p>
                 Suspendisse dignissim in sem eget pulvinar. Mauris aliquam nulla at libero pretium, eu tincidunt nulla molestie pulvinar posuere.
@@ -139,7 +139,7 @@
             </div>
             <div class="content">
               <h3 class="title wow flipInX animated" data-wow-animation-name="flipInX" style="visibility: visible; animation-name: flipInX;">
-                Rails Developer
+                EFFizient 
               </h3>
               <p>
                 Suspendisse dignissim in sem eget pulvinar. Mauris aliquam nulla at libero pretium, eu tincidunt nulla molestie pulvinar posuere.
