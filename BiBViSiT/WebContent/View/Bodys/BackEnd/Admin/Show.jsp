@@ -37,8 +37,8 @@
 			<td><%= A.getUserid()%></td><td><%= A.getUsername()%></td><td><%= A.getEmail()%></td><td><% if (A.getAdmin()=="Y") out.print("Is Admin") ;else out.print("is Not Admin") ;%></td><td><% if (A.getActive()=="Y") out.print("active") ;else out.print("desactivated") ;%></td>
 		   
 		   
-		    <td><a href="../../../../Controller/BackEnd/Place/Show.jsp?Num=<%=A.getUsername()%>&todo='update'&Admin=<%=A.getAdmin()%>">Delete</a></td>
-			<td><a href="../../../../Controller/BackEnd/Place/Show.jsp?Num=<%=A.getUsername()%>&todo='delete'&Admin=<%=A.getAdmin()%>">Change Admin Statut</a></td>
+		    <td><a href="../../../../Controller/BackEnd/Admin/Show.jsp?username=<%=A.getUsername()%>&todo='update'&Admin=<%=A.getAdmin()%>">Delete</a></td>
+			<td><a href="../../../../Controller/BackEnd/Admin/Show.jsp?username=<%=A.getUsername()%>&todo='delete'&Admin=<%=A.getAdmin()%>">Change Admin Statut</a></td>
 		</tr>
 		
 		<%i++;} %>
