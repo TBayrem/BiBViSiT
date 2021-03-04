@@ -12,10 +12,10 @@ public String denullify(String s){
 	String password = request.getParameter("password");
 	String username = request.getParameter("username");
 	String email = request.getParameter("email");
-	String register = this.denullify(request.getParameter("registrieren"));
+	String registrieren = this.denullify(request.getParameter("Registrieren"));
 	String zumLogin = this.denullify(request.getParameter("Anmelden"));
 
-	if (register.equals("Registrieren")){
+	if (registrieren.equals("Registrieren")){
 	
 	admin.setPassword(password);
 	admin.setUsername(username);
@@ -33,7 +33,7 @@ public String denullify(String s){
 		msg.setUnexpectedError();
 		
 	}
-	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
+	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Registration.jsp");
 }else if(zumLogin.equals("Anmelden")){
 
 	msg.setGeneralWelcome();
@@ -41,7 +41,7 @@ public String denullify(String s){
 }else{
 
 	msg.setGeneralWelcome();
-	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
+	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Registration.jsp");
 }
 
 %>
