@@ -31,6 +31,17 @@ public class Place {
 		this.Num = num;
 	}
 
+	
+	public Place getPlace(int num) throws SQLException {
+
+		String sql = "select * from Place where num = ?";
+		Connection dbConn = new PostgreSQLAccess().getConnection();
+		PreparedStatement prep = dbConn.prepareStatement(sql);
+		prep.setInt(1, num);
+		ResultSet dbRes = prep.executeQuery();
+		return new Place(dbRes.getInt("ID"), dbRes.getInt("Num"), dbRes.getInt("Available"));
+		
+	}
 	public boolean SearchPlace(int num) throws SQLException {
 
 		String sql = "select * from Place where num = ?";
