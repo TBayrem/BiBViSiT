@@ -5,6 +5,7 @@
 <%
 	
 	String Snum = request.getParameter("Num");
+
 	
 	int Num = Integer.parseInt(Snum);
 	Place P = new Place (Num);
