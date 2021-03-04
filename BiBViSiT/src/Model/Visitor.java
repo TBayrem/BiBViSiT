@@ -18,12 +18,24 @@ public class Visitor {
 
 	}
 
-	public Visitor(int ID, String Psydo, String Fach) {
-		this.ID = ID;
+	public Visitor( int ID ,String Psydo, String Fach) {
+		
 		this.Psydo = Psydo;
 		this.Fach = Fach;
 	}
 
+	
+	public  Visitor getVisitor(String Psydo) throws SQLException {
+
+		String sql = "select * from Place where Psydo = ?";
+		Connection dbConn = new PostgreSQLAccess().getConnection();
+		PreparedStatement prep = dbConn.prepareStatement(sql);
+		prep.setString(1, Psydo);
+		ResultSet dbRes = prep.executeQuery();
+		return  new Visitor(dbRes.getInt("ID"), dbRes.getString("Psydo"), dbRes.getString("Fach"));
+		
+
+	}
 	public boolean SearchVisitor(String Psydo) throws SQLException {
 
 		String sql = "select * from Place where Psydo = ?";
@@ -31,7 +43,7 @@ public class Visitor {
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setString(1, Psydo);
 		ResultSet dbRes = prep.executeQuery();
-		return dbRes.next();
+		return  dbRes.next();
 
 	}
 
@@ -63,14 +75,14 @@ public class Visitor {
 
 	}
 
-	public boolean InsertVisitor(Visitor v) throws SQLException {
+	public boolean InsertVisitor( String Psydo, String Fach) throws SQLException {
 
 		String sql = "insert into Visitor (Psydo, Fach) values (?,?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 
-		prep.setString(1, v.Psydo);
-		prep.setString(2, v.Fach);
+		prep.setString(1, Psydo);
+		prep.setString(2, Fach);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
@@ -81,7 +93,7 @@ public class Visitor {
 	public Vector<Visitor> getAll() throws SQLException {
 
 		Vector<Visitor> Vectorofvisitors = new Vector<Visitor>();
-		String sql = "select ID, Psyd, Fach from Visitor ";
+		String sql = "select ID, Psydo, Fach from Visitor ";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		ResultSet dbRes = dbConn.createStatement().executeQuery(sql);
 		while (dbRes.next()) {
