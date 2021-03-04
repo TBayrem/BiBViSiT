@@ -34,8 +34,8 @@
 	    
 		<tr id="<%out.print(i+"tr");%>">
 		<td><%= P.getID()%></td><td id="<%= i%>"><%= P.getNum()%></td><td><% if (P.getAvailable()==0) out.print("Free") ;else out.print("Occupied") ;%></td>
-	    <td><a href="../../../../Controller/BackEnd/Place/Show.jsp?Num=<%=P.getNum()%>&delete=0&Availability=<%=P.getAvailable()%>">Change Availability</a></td>
-		<td><a href="../../../../Controller/BackEnd/Place/Show.jsp?Num=<%=P.getNum()%>&delete=1&Availability=<%=P.getAvailable()%>">Delete</a></td>
+	    <td><a href="../../../../Controller/BackEnd/Place/Update.jsp?Num=<%=P.getNum()%>&Availability=<%=P.getAvailable()%>">Change Availability</a></td>
+		<td><a href="../../../../Controller/BackEnd/Place/Delete.jsp?Num=<%=P.getNum()%>">Delete</a></td>
 		<td><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#<%out.print(i+"tr_inf");%>">
                                    mehr info
                                     </a></td>
@@ -44,12 +44,11 @@
                                     
                                 
                         <tr id="<%out.print(i+"tr_inf");%>" class="panel-collapse collapse" style="height: 0px;">
-            <td class="panel-body panel-faq" >Visitor</td>
-            <td class="panel-body panel-faq" >Fach</td>
-            <td class="panel-body panel-faq" >Reservation start</td>
-            <td class="panel-body panel-faq" >Reservation end</td>
-            <td class="panel-body panel-faq" ></td>
-            <td class="panel-body panel-faq" ></td>
+            <td class="panel-body panel-faq" >Besucher</td>
+            <td class="panel-body panel-faq" >Studiengang</td>
+            <td class="panel-body panel-faq" >Buchung Beginn</td>
+            <td class="panel-body panel-faq" >Buchung schluss</td>
+            <td class="panel-body panel-faq"  colspan="2">Bwmwerkung </td>
             </tr> 
 		<%i++;} %>
 		</tbody>
