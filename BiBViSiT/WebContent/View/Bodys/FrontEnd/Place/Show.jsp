@@ -1,14 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    
+ <jsp:include page="../../../Headers/BackEnd/Header.jsp"/>
 <%@page import="Model.Place"%>
 <%@page import="java.util.Vector"%>
-
-
-<jsp:include page="../../../Headers/FrontEnd/Header.jsp"/>
-</head>
-<body>
-	<jsp:useBean id="place" class="Model.Place" scope="session" />
+<jsp:useBean id="place" class="Model.Place" scope="session" />
     <% Vector<Place> v = place.getAll(); int all_Tisch=v.size();%>
 	<div class="container">
 		<div class="row">
@@ -53,7 +46,7 @@
 					</div>
 					<ul class="list-unstyled">
 						<li>Frei</li>
-						<li><a href="../../../../Controller/FrontEnd/Place/Show.jsp?Num=<%=P.getNum()%>">Buchen</a>
+						<li><a data-toggle="modal" onclick="Providingplacenum(<%=P.getNum() %>)" href="#myModal">Buchen</a>
 						</li>
 					</ul>
 				</div>
@@ -66,5 +59,5 @@
 		</div>
 		</div>
 	</div>
-</body>
-</html>
+	
+<jsp:include page="../../../Footers/BackEnd/Footer.jsp"/>
