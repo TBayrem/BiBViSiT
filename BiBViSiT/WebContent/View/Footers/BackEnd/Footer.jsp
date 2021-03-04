@@ -12,7 +12,9 @@
                      </address>
                  </div>
                 <div class="col-lg-3 col-sm-3 wow fadeInUp animated" data-wow-duration="2s" data-wow-delay=".3s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-duration: 2s; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    <h1>latest tweet</h1>
+                    <h1>  Free Places </h1>
+                     <span id="text" class="FreePlaces"> </span> 
+                    
                     
                 </div>
                 <div class="col-lg-3 col-sm-3">
@@ -114,32 +116,78 @@
                                            );
       }
       google.maps.event.addDomListener(window, 'load', initialize);
+      
       function SearchPlace(sizeoftable) {
      	 var Placenummer = document.getElementById("SearchInput").value;
-     	 var i;
+     
      	 var tdtext;
-     	 var tr;
+   
      	 for (i = 0; i < sizeoftable+1; i++)
-     	 {
-     		 
-     		 tdtext = document.getElementById(i).innerText;
+     	 {	document.getElementById(i+"tr_inf").hidden = true ;
+      		tdtext = document.getElementById(i).innerText;
      		if (tdtext.search(Placenummer)=== -1)
      		{
-     			document.getElementById(i+"tr").hidden = true ;
-     			document.getElementById(i+"tr_inf").hidden = true ;
-     			
+     			document.getElementById(i+"tr").hidden = true ;	
      		}
      		else 
      		{
-     			document.getElementById(i+"tr").hidden = false
-     			document.getElementById(i+"tr_inf").hidden = true ;
-     			
+     			document.getElementById(i+"tr").hidden = false;     			
      		}
-     		
      		}
      	}
+      
+      
+
+      function liveCheck(){
+
+    	  const freePlaces = document.querySelector('.FreePlaces');
+          const storedInput = localStorage.getItem('FP')
+          const storedint = +localStorage.getItem('FP')
+
+       // document.getElementById("text-2").innerHTML = storedInput; 
+       freePlaces.textContent = storedInput;
+
+          
+       
+      }
+      
+      function Providingplacenum(Num){
+
+    	  document.getElementById("add_placenummer").innerText = Num ;
+    	  document.getElementById("inputnum").value = Num ;	
+    	
+
+          
+       
+      }
+
 
 
     </script>
+    
+    <div aria-hidden="true" aria-labelledby="myModal" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                              <h4 class="modal-title">Platz Nummer  <span id = "add_placenummer"></span> reservieren</h4> 
+                             
+                          </div>
+                          <form action="../../../../Controller/FrontEnd/Reservation/Add.jsp">
+                          <div class="modal-body">
+                              <p>Bitte Ihre Psydo sowie Ihre Studiengang eintippen</p>
+                              <input type="text" name="Psydo" placeholder="Psydo" class="form-control placeholder-no-fix">
+                              <input type="text" name="Fach" placeholder="Studiengang" class="form-control placeholder-no-fix">
+                              <input type="text" id ="inputnum" name="Num"  class="form-control placeholder-no-fix">
+
+                          </div>
+                          <div class="modal-footer">
+                              <button data-dismiss="modal" class="btn btn-default" type="reset">Absagen</button>
+                              <button class="btn btn-success" type="submit">Buchen</button>
+                          </div>
+                            </form>
+                      </div>
+                  </div>
+              </div>
 </body>
 </html>
