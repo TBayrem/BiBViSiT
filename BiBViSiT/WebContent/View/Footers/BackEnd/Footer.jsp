@@ -12,8 +12,9 @@
                      </address>
                  </div>
                 <div class="col-lg-3 col-sm-3 wow fadeInUp animated" data-wow-duration="2s" data-wow-delay=".3s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-duration: 2s; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    <h1>latest tweet</h1>
-                    
+                    <h1> Freie Besuchplätze</h1>
+                     
+	   			<span id="text" class="FreePlaces"> </span> 
                 </div>
                 <div class="col-lg-3 col-sm-3">
                 <div class="page-footer wow fadeInUp animated" data-wow-duration="2s" data-wow-delay=".5s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-duration: 2s; animation-delay: 0.5s; animation-name: fadeInUp;">
@@ -139,6 +140,44 @@
      		}
      	}
 
+      function SearchAdmin(sizeoftable) {
+      	 var Admin = document.getElementById("SearchAdmin").value;
+      	 var i;
+      	 var tdtext;
+      	 var tr;
+      	 for (i = 0; i < sizeoftable+1; i++)
+      	 {
+      		 
+      		 tdtext = document.getElementById(i).innerText;
+      		if (tdtext.search(Admin)=== -1)
+      		{
+      			document.getElementById(i+"tr").hidden = true ;
+      			document.getElementById(i+"tr_inf").hidden = true ;
+      			
+      		}
+      		else 
+      		{
+      			document.getElementById(i+"tr").hidden = false
+      			document.getElementById(i+"tr_inf").hidden = true ;
+      			
+      		}
+      		
+      		}
+      	}
+
+   
+
+
+      function myFunction(){
+    	   const freePlaces = document.querySelector('.FreePlaces');
+    	      const storedInput = localStorage.getItem('FP')
+    	      const storedint = +localStorage.getItem('FP')
+       // document.getElementById("text-2").innerHTML = storedInput; 
+       freePlaces.textContent = storedInput;
+
+          
+       
+      }
 
     </script>
 </body>
