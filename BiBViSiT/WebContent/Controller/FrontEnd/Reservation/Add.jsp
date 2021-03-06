@@ -1,32 +1,69 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@page import="Model.Place"%>
-        <%@page import="Model.Reservation"%>
-        <%@page import="Model.Visitor"%>
-    
-<jsp:useBean id="place" class="Model.Place" scope="session" />
-<jsp:useBean id="reserv" class="Model.Reservation" scope="session" />
-<jsp:useBean id="visitor" class="Model.Visitor" scope="session" />
-<%
-	
-	String SPsydo = request.getParameter("Psydo");
-    String SFach = request.getParameter("Fach");
-    String Snum = request.getParameter("Num");
-	int Num = Integer.parseInt(Snum);
-	final java.util.Date today = new java.util.Date();
-	final java.util.Date someday = new java.util.Date(121,2,15,00,00,00);
-	final java.sql.Timestamp todaySQL = new java.sql.Timestamp(today.getTime());
-	final java.sql.Timestamp somedaySQL = new java.sql.Timestamp(someday.getTime());
-	
-	visitor.InsertVisitor(SPsydo, SFach);
-	Visitor v = visitor.getVisitor(SPsydo);
-	
-	Place p = place.getPlace(Num);
-	
-	Reservation R = new Reservation(p.getID(),v.getID(),todaySQL,somedaySQL);
-	
-	response.sendRedirect("../../../View/Bodys/FrontEnd/Place/Show.jsp");
-	
 
-		
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+	<%@page import="java.text.DateFormat"%>
+	<%@page import="java.text.SimpleDateFormat"%>
+	<%@page import="java.util.Date"%>
+		<%@page import="java.sql.Timestamp"%>
+	
+<%@page import="Model.Reservation"%>
+<%@page import="Model.Visitor"%>
+<%@page import="Model.Place"%>
+<jsp:useBean id="visitor" class="Model.Visitor" scope="session" />
+<jsp:useBean id="reserv" class="Model.Reservation" scope="session" />
+<jsp:useBean id="place" class="Model.Place" scope="session" />
+
+
+
+<%
+
+String SImma = request.getParameter("Imma");
+String SPsydo = request.getParameter("Psydo");
+String SFach = request.getParameter("Fach");
+String Snum = request.getParameter("Num");
+String SR_start =  request.getParameter("Start_r");
+String SR_end =  request.getParameter("End_r");
+
+
+
+ int Imma = Integer.parseInt(SImma);
+int Num = Integer.parseInt(Snum);
+DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm");   
+Date DR_start = (Date)formatter.parse(SR_start); 
+Date DR_end = (Date)formatter.parse(SR_end); 
+
+Timestamp R_start = new Timestamp(DR_start.getTime());
+Timestamp R_end = new Timestamp(DR_end.getTime()); 
+
+if(visitor.SearchVisitor(Imma)){
+	if (reserv.InsertReservation(Num,Imma,R_start,R_end)){
+		if(place.getPlace(Num)!=null){
+			place.UpdateAvailability(Num, 0);
+			response.sendRedirect("../../../View/Bodys/FrontEnd/Place/Show.jsp");
+
+			
+			}else{
+				out.print("Platz nicht gefunden");
+				}
+		}else{
+			out.print("fehler bei reservation ");
+			}
+	}else{
+		if(visitor.InsertVisitor(Imma, SPsydo, SFach)){
+			if (reserv.InsertReservation(Num,Imma,R_start,R_end)){
+				if(place.getPlace(Num)!=null){
+					place.UpdateAvailability(Num, 0);
+					response.sendRedirect("../../../View/Bodys/FrontEnd/Place/Show.jsp");
+
+					}else{
+						out.print("Platz nicht gefunden");
+						}
+				}else{
+					out.print("fehler bei reservation ");
+					}
+			}else{
+				out.print("visitor not inserted");
+				}
+		}
+
 %>
