@@ -28,7 +28,6 @@
 					</div>
 					<ul class="list-unstyled">
 						<li>Belegt</li>
-						<li>Verlängern</li>
 					</ul>
 				</div>
 			</div>
@@ -37,7 +36,7 @@
 				} else {
 			%>
 			<div class="col-lg-2 col-sm-2 mar-two">
-				<div class="pricing-table btn btn-success" style="width: 100%;">
+				<a data-toggle="modal" onclick="Providingplacenum(<%=P.getNum() %>)" href="#myModal" class="pricing-table btn btn-success" style="width: 100%;">
 					<div class="pricing-head">
 						<h1>
 							<%=P.getNum()%>
@@ -45,11 +44,10 @@
 
 					</div>
 					<ul class="list-unstyled">
-						<li>Frei</li>
-						<li><a data-toggle="modal" onclick="Providingplacenum(<%=P.getNum() %>)" href="#myModal">Buchen</a>
+						<li>Zum Buchen</li>
 						</li>
 					</ul>
-				</div>
+				</a>
 			</div>
 			<%
 				}
