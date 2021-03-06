@@ -33,7 +33,7 @@
 		
 	    
 		<tr id="<%out.print(i+"tr");%>">
-		<td><%= P.getID()%></td><td id="<%= i%>"><%= P.getNum()%></td><td><% if (P.getAvailable()==0) out.print("Free") ;else out.print("Occupied") ;%></td>
+		<td><%= P.getID()%></td><td id="<%= i%>"><%= P.getNum()%></td><td><% if (P.getAvailable()==1) out.print("Free") ;else out.print("Occupied") ;%></td>
 	    <td><a href="../../../../Controller/BackEnd/Place/Update.jsp?Num=<%=P.getNum()%>&Availability=<%=P.getAvailable()%>">Change Availability</a></td>
 		<td><a href="../../../../Controller/BackEnd/Place/Delete.jsp?Num=<%=P.getNum()%>">Delete</a></td>
 		<td><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#<%out.print(i+"tr_inf");%>">
