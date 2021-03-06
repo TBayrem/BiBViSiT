@@ -155,13 +155,25 @@
 
     	  document.getElementById("add_placenummer").innerText = Num ;
     	  document.getElementById("inputnum").value = Num ;	
-    	
-
-          
+    
        
       }
+      
+   <% int x=2; %>
 
-
+      function func(){
+    	  
+    	  
+    	  
+    	  setInterval(function(){ alert(<%=x%>);
+    	  
+    	  localStorage.setItem('try',<%=x%>);
+    	  var y = <%=x+3%>;
+    	  
+    	  localStorage.setItem('try1',y);
+    	  var z = localStorage.getItem('try1'); }, 300);
+      
+      }
 
     </script>
     
@@ -175,11 +187,19 @@
                           </div>
                           <form action="../../../../Controller/FrontEnd/Reservation/Add.jsp">
                           <div class="modal-body">
-                              <p>Bitte Ihre Psydo sowie Ihre Studiengang eintippen</p>
-                              <input type="text" name="Psydo" placeholder="Psydo" class="form-control placeholder-no-fix">
-                              <input type="text" name="Fach" placeholder="Studiengang" class="form-control placeholder-no-fix">
-                              <input type="text" id ="inputnum" name="Num"  class="form-control placeholder-no-fix">
-
+                              <p>Bitte Ihre Imma, Psydo sowie Ihre Studiengang eintippen</p>
+							  <input type="number" id="Imma" name="Imma" placeholder="Immatrikulationsnummer" class="form-control placeholder-no-fix">
+                              <input type="text"  id="Psydo" name="Psydo" placeholder="Psydo" class="form-control placeholder-no-fix">
+                              <input type="text"  id="Fach" name="Fach" maxlength="100" placeholder="Studiengang" class="form-control placeholder-no-fix">
+                              <input type="text" id ="inputnum" hidden="true" name="Num"  >
+                              <label class="input-inline">
+                              Reservations Beginn 
+                              <input type="datetime-local" name="Start_r"  class="form-control placeholder-no-fix">
+                              </label>
+ 							  <label class="input-inline">
+                              Reservations Ende 
+                              <input type="datetime-local" name="End_r"  class="form-control placeholder-no-fix">
+                              </label>
                           </div>
                           <div class="modal-footer">
                               <button data-dismiss="modal" class="btn btn-default" type="reset">Absagen</button>
