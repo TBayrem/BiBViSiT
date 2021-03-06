@@ -54,6 +54,7 @@ public class CreateTables {
 		String sql = "DROP TABLE IF EXISTS visitor CASCADE;"
 				+ "create table visitor                ("
 				+ "				ID  Serial PRIMARY KEY,"
+				+ "				Imma  INT Not NUll UNIQUE,"
 				+ "				Psydo CHAR(30) Default 'Anonym',"
 				+ "				Fach CHAR(100) Not NULL)";
 		Statement stmt = this.dbConn.createStatement();
@@ -70,8 +71,8 @@ public class CreateTables {
 				+ "				R_start TIMESTAMP NOT NULL,"
 				+ "				R_end   TIMESTAMP NOT NULL,"
 				+ "				expired INT Default 0,"
-				+ "             FOREIGN KEY (place) REFERENCES place(ID),"
-				+ "             FOREIGN KEY (visitor) REFERENCES visitor(ID))";
+				+ "             FOREIGN KEY (place) REFERENCES place(Num),"
+				+ "             FOREIGN KEY (visitor) REFERENCES visitor(Imma))";
 		Statement stmt = this.dbConn.createStatement();
 		stmt.executeUpdate(sql);
 	}
@@ -99,10 +100,12 @@ public class CreateTables {
 	}
 
 	public void insertFirstVisitor() throws SQLException {
-		String sql = "insert into visitor " + "( Psydo, Fach) " + "values" + "(?,?)";
+		String sql = "insert into visitor " + "(Imma, Psydo, Fach) " + "values" + "(?,?,?)";
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
-		prep.setString(1, "Bayrem");
-		prep.setString(2, "Wirtschaftsinformatik");
+		prep.setInt(1, 632996);
+
+		prep.setString(2, "Bayrem");
+		prep.setString(3, "Wirtschaftsinformatik");
 		prep.executeUpdate();
 	}
 	
@@ -120,7 +123,7 @@ public class CreateTables {
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
 		
 		prep.setInt(1, 1);
-		prep.setInt(2, 1);
+		prep.setInt(2, 632996);
 		prep.setTimestamp(3, todaySQL);
 		prep.setTimestamp(4, somedaySQL);
 		prep.executeUpdate();
