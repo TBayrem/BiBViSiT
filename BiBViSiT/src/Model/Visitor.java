@@ -11,6 +11,7 @@ import DataBase.PostgreSQLAccess;
 public class Visitor {
 
 	private int ID;// Serial back to createtables//
+	private int Imma;
 	private String Psydo;
 	private String Fach;
 
@@ -36,12 +37,14 @@ public class Visitor {
 		
 
 	}
-	public boolean SearchVisitor(String Psydo) throws SQLException {
+	public boolean SearchVisitor(int Imma) throws SQLException {
+		
+		
 
-		String sql = "select * from Place where Psydo = ?";
+		String sql = "select * from Visitor where Imma = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setString(1, Psydo);
+		prep.setInt(1, Imma);
 		ResultSet dbRes = prep.executeQuery();
 		return  dbRes.next();
 
@@ -75,14 +78,15 @@ public class Visitor {
 
 	}
 
-	public boolean InsertVisitor( String Psydo, String Fach) throws SQLException {
+	public boolean InsertVisitor(int Imma, String Psydo, String Fach) throws SQLException {
 
-		String sql = "insert into Visitor (Psydo, Fach) values (?,?)";
+	
+		String sql = "insert into Visitor (Imma, Psydo, Fach) values (?,?,?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-
-		prep.setString(1, Psydo);
-		prep.setString(2, Fach);
+		prep.setInt(1, Imma);
+		prep.setString(2, Psydo);
+		prep.setString(3, Fach);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
