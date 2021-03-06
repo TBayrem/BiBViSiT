@@ -5,8 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.util.Vector;
-
 import DataBase.PostgreSQLAccess;
 
 public class Reservation {
@@ -145,17 +145,22 @@ public class Reservation {
 			return false;
 	}
 	
-	public boolean InsertReservation(Reservation R) throws SQLException {
+	public boolean InsertReservation(int Num, int Imma, Timestamp R_start, Timestamp R_end ) throws SQLException, ParseException {
 
+        
+		
+
+		
+   		
 		String sql = "insert into reservation (place, visitor, R_start, R_end) values (?,?,?,?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 
 
-		prep.setInt(1, R.Place);
-		prep.setInt(2, R.Visitor);
-		prep.setTimestamp(3, R.R_start);
-		prep.setTimestamp(4, R.R_end);
+		prep.setInt(1, Num);
+		prep.setInt(2, Imma);
+		prep.setTimestamp(3, R_start);
+		prep.setTimestamp(4, R_end);
 		int result = prep.executeUpdate();
 
 		if (result != 0)
