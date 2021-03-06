@@ -39,7 +39,11 @@ public class Place {
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setInt(1, num);
 		ResultSet dbRes = prep.executeQuery();
-		return new Place(dbRes.getInt("ID"), dbRes.getInt("Num"), dbRes.getInt("Available"));
+		if (dbRes.next()) {
+			return new Place(dbRes.getInt("ID"), dbRes.getInt("Num"), dbRes.getInt("Available"));
+		}
+		else return null;
+		
 		
 	}
 	public boolean SearchPlace(int num) throws SQLException {
