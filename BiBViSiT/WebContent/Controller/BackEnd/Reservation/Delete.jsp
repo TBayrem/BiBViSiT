@@ -6,7 +6,6 @@
 	
 
 	int ID = Integer.parseInt(request.getParameter("ID"));
-		//delete all reservation under that place nummer Cascade problem  
 		reservation.DeleteReservation(ID);
 
 		response.sendRedirect("../../../View/Bodys/BackEnd/Place/Show.jsp");
