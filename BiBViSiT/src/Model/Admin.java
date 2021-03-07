@@ -22,6 +22,7 @@ public class Admin {
 	}
 
 	public Admin(int Userid, String password, String active, String admin, String username, String email) {
+		this.Userid = Userid;
 		this.password = password;
 		this.active = active;
 		this.admin = admin;
@@ -32,7 +33,7 @@ public class Admin {
 	
 	public Admin AdminperEmailPassword(String email, String password) throws SQLException {
 
-		String sql = "select * from admin where email = ?, password=?";
+		String sql = "select * from admin where email = ? and password = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setString(1, email);
@@ -138,30 +139,26 @@ public class Admin {
 
 	// update admin : if admin = yes dann kan er andere admin loschen zB.
 
-	public boolean updateAdminSup(String username) throws SQLException {
+	public boolean updateAdmin(String email, String admin ) throws SQLException {
 
-		String sql = "update admin Set admin = 'Y' where username = ?";
+		String sql = "update admin Set admin = ? where  email = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setString(1, username);
-		
+		prep.setString(1, admin);
+		prep.setString(2, email);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
 		else
 			return false;
 	}
+	public boolean updateActive(String email, String activ ) throws SQLException {
 
-	// update active : if active = yes dann ....... zB.
-	// diese Methode glaube und das atribute (active) brauchen wir nicht , glaube
-	// ich !!
-	public boolean updateActive(String email, String password) throws SQLException {
-
-		String sql = "update admin Set active = Y where username = ?";
+		String sql = "update admin Set active = ? where  email = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setString(1, email);
-		prep.setString(2, password);
+		prep.setString(1, activ);
+		prep.setString(2, email);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
@@ -217,5 +214,13 @@ public class Admin {
 		Userid = userid;
 	}
 	
-
+//	public String getAdminsaccess() {
+//	if (admin.equalsIgnoreCase("Y"))
+//	{
+//		
+//		return "<li><a href='../../../Bodys/BackEnd/Main/Admins.jsp'>Admins</a> </li>";
+//	}
+//	else return "";
+//	}
+	
 }
