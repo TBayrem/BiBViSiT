@@ -52,7 +52,7 @@
       <div class="navbar navbar-default navbar-static-top container">
           <div class="navbar-header">
               <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button"><span class="icon-bar"></span> <span class="icon-bar"></span>
-              <span class="icon-bar"></span></button> <a class="navbar-brand" href="../../../Bodys/BackEnd/Main/Home.jsp">
+              <span class="icon-bar"></span></button> <a class="navbar-brand" href="../../../Bodys/FrontEnd/Main/Home.jsp">
               B<span>i</span>B <span  style="color:red;">|</span> V<span>i</span>S<span>i</span>T</a>
           </div>
 
