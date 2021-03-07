@@ -37,6 +37,9 @@
       }
       google.maps.event.addDomListener(window, 'load', initialize);
       
+      
+      
+      
       function SearchPlace(sizeoftable) {
      	 var Placenummer = document.getElementById("SearchInput").value;
      
@@ -70,12 +73,15 @@
 
 
       function SearchAdmin(sizeoftable) {
-      	 var Username = document.getElementById("SearchAdmin").value;
+      var Username = document.getElementById("SearchAdmin").value;
       	 var tdtext;
-         
-     	 for (i = 0; i < sizeoftable+1; i++)
-     	 {	document.getElementById(i+"tr_inf").hidden = true ;
-      		tdtext = document.getElementById(i).innerText;
+       for (i = 0; i < sizeoftable+1; i++)
+       
+     	 {	
+     	 tdtext = document.getElementById(i).innerText;
+     	 
+      		
+      		
      		if (tdtext.search(Username)=== -1)
      		{
      			document.getElementById(i+"tr").hidden = true ;	
