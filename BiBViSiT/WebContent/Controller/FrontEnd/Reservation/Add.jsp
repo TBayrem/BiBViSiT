@@ -17,6 +17,9 @@
 <%
 
 
+ 
+
+
 String Psydo = request.getParameter("Psydo");
 String Fach = request.getParameter("Fach");
   
@@ -25,16 +28,14 @@ String Fach = request.getParameter("Fach");
  int Imma = Integer.parseInt( request.getParameter("Imma"));
 int Num = Integer.parseInt(request.getParameter("Num"));
 
-
-DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");   
-Date day = (Date)formatter.parse(request.getParameter("day")); 
+Date day = Date.valueOf((request.getParameter("day"))); 
 
 
 if(visitor.SearchVisitor(Imma)){
 	if (reserv.InsertReservation(Num,Imma,day)){
 		if(place.getPlace(Num)!=null){
 			place.UpdateAvailability(Num, 0);
-			response.sendRedirect("../../../View/Bodys/FrontEnd/Place/Show.jsp");
+			response.sendRedirect("../../../View/Bodys/FrontEnd/Main/Home.jsp");
 
 			
 			}else{
@@ -48,7 +49,7 @@ if(visitor.SearchVisitor(Imma)){
 			if (reserv.InsertReservation(Num,Imma,day)){
 				if(place.getPlace(Num)!=null){
 					place.UpdateAvailability(Num, 0);
-					response.sendRedirect("../../../View/Bodys/FrontEnd/Place/Show.jsp");
+					response.sendRedirect("../../../View/Bodys/FrontEnd/Main/Home.jsp");
 
 					}else{
 						out.print("Platz nicht gefunden");
