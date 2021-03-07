@@ -1,6 +1,7 @@
 package Installation;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -110,21 +111,18 @@ public class CreateTables {
 	
 	@SuppressWarnings("deprecation")
 	public void insertFirstReservation() throws SQLException {
-		final java.util.Date today = new java.util.Date();
-		final java.util.Date someday = new java.util.Date(121,2,15,00,00,00);
-   		final java.sql.Timestamp todaySQL = new java.sql.Timestamp(today.getTime());
-   		final java.sql.Timestamp somedaySQL = new java.sql.Timestamp(someday.getTime());
+		
+		Date day = Date.valueOf("2021-03-09"); 
 
 
 
 		
-		String sql = "insert into reservation " + "( place, visitor, R_start, R_end) " + "values" + "(?,?,?,?)";
+		String sql = "insert into reservation " + "( place, visitor, day) " + "values" + "(?,?,?)";
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
 		
 		prep.setInt(1, 1);
 		prep.setInt(2, 632996);
-		prep.setTimestamp(3, todaySQL);
-		prep.setTimestamp(4, somedaySQL);
+		prep.setDate(3, day);
 		prep.executeUpdate();
 	}
 
