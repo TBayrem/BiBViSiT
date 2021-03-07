@@ -37,7 +37,10 @@
 		   
 		   
 		    <td><a href="../../../../Controller/BackEnd/Admin/Delete.jsp?Email=<%=A.getEmail()%>">Delete</a></td>
-			<td><a href="../../../../Controller/BackEnd/Admin/Update.jsp?username=<%=A.getUsername()%>">Change Admin Statut</a></td>
+			<td><a href="../../../../Controller/BackEnd/Admin/Update.jsp?username=<%=A.getUsername()%>">Status der Admin ändern</a></td>
+			<td><a href="../../../../Controller/BackEnd/Admin/UpdateActivity.jsp?username=<%=A.getUsername()%>">atikvation verändern</a></td>
+		
+			
 		</tr>
 		
 		<%i++;} %>
