@@ -3,7 +3,7 @@
 	pageEncoding="ISO-8859-1"%>
 	<%@page import="java.text.DateFormat"%>
 	<%@page import="java.text.SimpleDateFormat"%>
-	<%@page import="java.util.Date"%>
+	<%@page import="java.sql.Date"%>
 		<%@page import="java.sql.Timestamp"%>
 	
 <%@page import="Model.Reservation"%>
@@ -17,17 +17,16 @@
 
 <%
 
-String SImma = request.getParameter("Imma");
-String SPsydo = request.getParameter("Psydo");
-String SFach = request.getParameter("Fach");
-String Snum = request.getParameter("Num");
-String SR_start =  request.getParameter("day");
+
+String Psydo = request.getParameter("Psydo");
+String Fach = request.getParameter("Fach");
+  
 
 
- int Imma = Integer.parseInt(SImma);
-int Num = Integer.parseInt(Snum);
+ int Imma = Integer.parseInt( request.getParameter("Imma"));
+int Num = Integer.parseInt(request.getParameter("Num"));
 DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");   
-Date day = (Date)formatter.parse(SR_start); 
+Date day = (Date)formatter.parse(request.getParameter("day")); 
 
 
 if(visitor.SearchVisitor(Imma)){
@@ -44,7 +43,7 @@ if(visitor.SearchVisitor(Imma)){
 			out.print("fehler bei reservation ");
 			}
 	}else{
-		if(visitor.InsertVisitor(Imma, SPsydo, SFach)){
+		if(visitor.InsertVisitor(Imma, Psydo, Fach)){
 			if (reserv.InsertReservation(Num,Imma,day)){
 				if(place.getPlace(Num)!=null){
 					place.UpdateAvailability(Num, 0);
