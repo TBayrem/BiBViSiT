@@ -1,10 +1,11 @@
 package Model;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
+
 import java.text.ParseException;
 import java.util.Vector;
 import DataBase.PostgreSQLAccess;
@@ -12,95 +13,58 @@ import DataBase.PostgreSQLAccess;
 public class Reservation {
 	
 
+
 	private int ID;
 	private int Place;
 	private int  Visitor;
-	private Timestamp R_start ;
-	private Timestamp R_end;
+	private Date day; 
 	private int Expired ;
 	
-	public Reservation() {
+	
+	
+public Reservation() {
+	
+	}
+
+	
+public Reservation(int iD, int place, int visitor, Date day, int expired) {
 		
-	}
-
-	public Reservation(int iD, int place, int visitor, Timestamp r_start, Timestamp r_end, int expired) {
-	
-		ID = iD;
-		Place = place;
-		Visitor = visitor;
-		R_start = r_start;
-		R_end = r_end;
-		Expired = expired;
-	}
-
-
-	public Reservation( int place, int visitor, Timestamp r_start, Timestamp r_end) {
-	
+		this.ID = iD;
 		this.Place = place;
 		this.Visitor = visitor;
-		this.R_start = r_start;
-		this.R_end = r_end;
-	
+		this.day = day;
+		this.Expired = expired;
 	}
-	
+
 
 	
-//	
-//	public boolean SearchReservation(int placenummer, Timestamp Starttimeofreservation, Timestamp Endtimeofreservation ) throws SQLException {
-//
-//		String sql = "select r.ID, r.place, r.visitor, r.R_start, r.R_end r.expired v.Psydo v.ID v.Fach from reservation as r "
-//				+ "join place as p on r.place = p.ID join visitor as v on r.visitor = v.ID "
-//				+ "where p.NUM = ? and r.R_start >= ? and r.R_end <= ?";
-//		
-//		Connection dbConn = new PostgreSQLAccess().getConnection();
-//		PreparedStatement prep = dbConn.prepareStatement(sql);
-//		prep.setInt(1, placenummer);
-//		prep.setTimestamp(2, Starttimeofreservation);
-//		prep.setTimestamp(3, Endtimeofreservation);
-//
-//		ResultSet dbRes = prep.executeQuery();
-//		return dbRes.next();
-//	}
-//	////////////////////////////////////////////////Besser Interpritiert //////////////////////////////////////
-	//////////////////////////////////////////////////////Hier unten///////////////////////////////////////
-	
-	public boolean SearchReservation(Place P ,  Visitor V, Reservation R) throws SQLException {
+public  Reservation getReservation(int ID) throws SQLException {
 
-		String sql = "select r.ID, r.place, r.visitor, r.R_start, r.R_end r.expired v.Psydo v.ID v.Fach from reservation as r "
-				+ "join place as p on r.place = p.ID join visitor as v on r.visitor = v.ID "
-				+ "where p.NUM = ? and r.R_start >= ? and r.R_end <= ?";		
+	String sql = "select * from Place where ID = ?";
 	Connection dbConn = new PostgreSQLAccess().getConnection();
-		PreparedStatement prep = dbConn.prepareStatement(sql);
-		
-		prep.setInt(1, P.getNum());
-		prep.setTimestamp(2, R.R_start);
-		prep.setTimestamp(3, R.R_end);
-
-
-		prep.setInt(1, Place);
-		ResultSet dbRes = prep.executeQuery();
-		return dbRes.next();
-	}
+	PreparedStatement prep = dbConn.prepareStatement(sql);
+	prep.setInt(1, ID);
+	ResultSet dbRes = prep.executeQuery();
+	return  new Reservation(dbRes.getInt("ID"), dbRes.getInt("place"), dbRes.getInt("visitor"),
+			dbRes.getDate("Day"),dbRes.getInt("expired"));
 	
+
+}
 	
-	public boolean DeleteReservation(int placenummer, Timestamp Starttimeofreservation, Timestamp Endtimeofreservation) throws SQLException {
+public boolean DeleteReservation(int ID) throws SQLException {
 
-		String sql = "delete from reservation as r "
-				+ "join place as p on r.place = p.ID "
-				+ "where p.ID = ? and R_start >= ? and R_end <= ?";
-		
-		Connection dbConn = new PostgreSQLAccess().getConnection();
-		PreparedStatement prep = dbConn.prepareStatement(sql);
+	String sql = "delete from reservation where ID = ?";
+	Connection dbConn = new PostgreSQLAccess().getConnection();
+	PreparedStatement prep = dbConn.prepareStatement(sql);
 
-		prep.setInt(1, placenummer);
-		prep.setTimestamp(2, Starttimeofreservation);
-		prep.setTimestamp(3, Endtimeofreservation);
-		int result = prep.executeUpdate();
-		if (result != 0)
-			return true;
-		else
-			return false;
-	}
+	
+	prep.setInt(1, ID);
+	int result = prep.executeUpdate();
+	if (result != 0)
+		return true;
+	else
+		return false;
+}
 	
 	
 	public boolean DeleteexpiredReservation() throws SQLException {
@@ -130,37 +94,18 @@ public class Reservation {
 			return false;
 	}
 	
-	public boolean Extensionreservation(Reservation R, Timestamp NewR_end) throws SQLException {
 
-		String sql = "update reservation set R_end = ? where ID = ?";
-		Connection dbConn = new PostgreSQLAccess().getConnection();
-		PreparedStatement prep = dbConn.prepareStatement(sql);
-
-		prep.setTimestamp(1, NewR_end);
-		prep.setInt(2, R.ID);
-		int result = prep.executeUpdate();
-		if (result != 0)
-			return true;
-		else
-			return false;
-	}
 	
-	public boolean InsertReservation(int Num, int Imma, Timestamp R_start, Timestamp R_end ) throws SQLException, ParseException {
+	public boolean InsertReservation(int Num, int Imma, Date day  ) throws SQLException, ParseException {
 
-        
-		
-
-		
-   		
-		String sql = "insert into reservation (place, visitor, R_start, R_end) values (?,?,?,?)";
+		String sql = "insert into reservation (place, visitor, R_start, R_end) values (?,?,?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 
 
 		prep.setInt(1, Num);
 		prep.setInt(2, Imma);
-		prep.setTimestamp(3, R_start);
-		prep.setTimestamp(4, R_end);
+		prep.setDate(3, day);
 		int result = prep.executeUpdate();
 
 		if (result != 0)
@@ -177,7 +122,7 @@ public class Reservation {
 		ResultSet dbRes = dbConn.createStatement().executeQuery(sql);
 		while (dbRes.next()) {
 			Reservation R = new Reservation(dbRes.getInt("ID"), dbRes.getInt("place"), dbRes.getInt("visitor"),
-											dbRes.getTimestamp("R_start"),dbRes.getTimestamp("R_end"),dbRes.getInt("expired"));
+											dbRes.getDate("Day"),dbRes.getInt("expired"));
 			
 			Vectorofreservation.add(R);
 		}
@@ -185,9 +130,6 @@ public class Reservation {
 	}
 
 		
-		
-	
-	
 
 	
 	public Vector<Reservation> getAllexpiredreservations() throws SQLException {
@@ -199,8 +141,7 @@ public class Reservation {
 		ResultSet dbRes = dbConn.createStatement().executeQuery(sql);
 		while (dbRes.next()) {
 			Reservation R = new Reservation(dbRes.getInt("ID"), dbRes.getInt("place"), dbRes.getInt("visitor"),
-											dbRes.getTimestamp("R_start"),dbRes.getTimestamp("R_end"),dbRes.getInt("expired"));
-			
+					dbRes.getDate("Day"),dbRes.getInt("expired"));
 			Vectorofreservation.add(R);
 		}
 		return Vectorofreservation;
@@ -232,20 +173,14 @@ public class Reservation {
 		Visitor = visitor;
 	}
 
-	public Timestamp getR_start() {
-		return R_start;
+
+	public Date getDay() {
+		return day;
 	}
 
-	public void setR_start(Timestamp r_start) {
-		R_start = r_start;
-	}
 
-	public Timestamp getR_end() {
-		return R_end;
-	}
-
-	public void setR_end(Timestamp r_end) {
-		R_end = r_end;
+	public void setDay(Date day) {
+		this.day = day;
 	}
 
 	public int getExpired() {
