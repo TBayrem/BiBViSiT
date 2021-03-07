@@ -16,6 +16,6 @@
 		
 		//update reservation expirecy 
 
-		response.sendRedirect("../../../View/Bodys/BackEnd/Place/Show.jsp");
+		response.sendRedirect("../../../View/Bodys/BackEnd/Main/Home.jsp");
 		
 %>
