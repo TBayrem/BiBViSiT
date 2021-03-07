@@ -5,7 +5,7 @@
 
     
    
-        Free Places: <span id="text" class="FreePlaces"> </span> 
+        Free Places: 
        
     
             
