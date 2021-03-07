@@ -12,10 +12,12 @@
                      </address>
                  </div>
                 <div class="col-lg-3 col-sm-3 wow fadeInUp animated" data-wow-duration="2s" data-wow-delay=".3s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-duration: 2s; animation-delay: 0.3s; animation-name: fadeInUp;">
-                    <h1>  Free Places </h1>
-                     <span id="text" class="FreePlaces"> </span> 
+
+                   
                     
-                    
+ 
+                    <h1> Freie Besuchplätze</h1>
+                     <span id="Capa_show" > </span> 
                 </div>
                 <div class="col-lg-3 col-sm-3">
                 <div class="page-footer wow fadeInUp animated" data-wow-duration="2s" data-wow-delay=".5s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-duration: 2s; animation-delay: 0.5s; animation-name: fadeInUp;">
@@ -70,12 +72,17 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false">
     </script>
+    
 
     <!--common script for all pages-->
     <script src="../../../Template/js/common-scripts.js">
     </script><i id="back-to-top" style="display: none;"></i>
     <script src="../../../Template/js/wow.min.js">
     </script>
+    
+    <script src="../../../Template/js/admin1.js"></script>
+     <script src="../../../Template/js/Visitor1.js"></script>
+    
     <script>
       wow = new WOW(
         {
@@ -138,18 +145,6 @@
       
       
 
-      function liveCheck(){
-
-    	  const freePlaces = document.querySelector('.FreePlaces');
-          const storedInput = localStorage.getItem('FP')
-          const storedint = +localStorage.getItem('FP')
-
-       // document.getElementById("text-2").innerHTML = storedInput; 
-       freePlaces.textContent = storedInput;
-
-          
-       
-      }
       
       function Providingplacenum(Num){
 
@@ -172,8 +167,31 @@
     	  
     	  localStorage.setItem('try1',y);
     	  var z = localStorage.getItem('try1'); }, 300);
-      
       }
+
+      function SearchAdmin(sizeoftable) {
+      	 var Username = document.getElementById("SearchAdmin").value;
+      	 var tdtext;
+         
+     	 for (i = 0; i < sizeoftable+1; i++)
+     	 {	document.getElementById(i+"tr_inf").hidden = true ;
+      		tdtext = document.getElementById(i).innerText;
+     		if (tdtext.search(Username)=== -1)
+     		{
+     			document.getElementById(i+"tr").hidden = true ;	
+     		}
+     		else 
+     		{
+     			document.getElementById(i+"tr").hidden = false;     			
+     		}
+     		}
+     	}
+      	}
+
+   
+
+
+      
 
     </script>
     

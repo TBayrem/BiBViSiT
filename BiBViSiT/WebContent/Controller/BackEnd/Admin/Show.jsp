@@ -16,7 +16,7 @@
 		response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Show.jsp");
 		}
 	else {
-		admin.updateAdminSup(email, password);
+		admin.updateAdminSup(username);
 
 		response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Show.jsp");
 		}
