@@ -12,7 +12,7 @@
         <div class="form-group">
         <input type="text" class="form-control" name="Num"  placeholder="Nummer eingeben">
         </div>
-      <button type="submit" class="btn btn-primary btn-flat">Platz Addieren</button>
+      <input type="submit" name="Add" class="btn btn-primary btn-flat" Value="Platz Addieren"/>
     </form>
   </div>
   
