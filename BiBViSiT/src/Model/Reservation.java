@@ -48,9 +48,25 @@ public  Reservation getReservation(int ID) throws SQLException {
 	return  new Reservation(dbRes.getInt("ID"), dbRes.getInt("place"), dbRes.getInt("visitor"),
 			dbRes.getDate("Day"),dbRes.getInt("expired"));
 	
-
 }
+
 	
+
+//public Place getPlace(int num) throws SQLException {
+//
+//	String sql = "select * from Place where num = ?";
+//	Connection dbConn = new PostgreSQLAccess().getConnection();
+//	PreparedStatement prep = dbConn.prepareStatement(sql);
+//	prep.setInt(1, num);
+//	ResultSet dbRes = prep.executeQuery();
+//	if (dbRes.next()) {
+//		return new Place(dbRes.getInt("ID"), dbRes.getInt("Num"), dbRes.getInt("Available"));
+//	}
+//	else return null;
+//	
+//	
+//}
+
 public boolean DeleteReservation(int ID) throws SQLException {
 
 	String sql = "delete from reservation where ID = ?";
@@ -79,14 +95,14 @@ public boolean DeleteReservation(int ID) throws SQLException {
 			return false;
 	}
 	
-	public boolean renewalreservation(Reservation R) throws SQLException {
+	public boolean renewalreservation(int ID) throws SQLException {
 
 		String sql = "update reservation set expired = 0 where ID = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 
 		
-		prep.setInt(1, R.ID);
+		prep.setInt(1, ID);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
