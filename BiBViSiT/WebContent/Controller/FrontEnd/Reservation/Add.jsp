@@ -21,22 +21,17 @@ String SImma = request.getParameter("Imma");
 String SPsydo = request.getParameter("Psydo");
 String SFach = request.getParameter("Fach");
 String Snum = request.getParameter("Num");
-String SR_start =  request.getParameter("Start_r");
-String SR_end =  request.getParameter("End_r");
-
+String SR_start =  request.getParameter("day");
 
 
  int Imma = Integer.parseInt(SImma);
 int Num = Integer.parseInt(Snum);
-DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm");   
-Date DR_start = (Date)formatter.parse(SR_start); 
-Date DR_end = (Date)formatter.parse(SR_end); 
+DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");   
+Date day = (Date)formatter.parse(SR_start); 
 
-Timestamp R_start = new Timestamp(DR_start.getTime());
-Timestamp R_end = new Timestamp(DR_end.getTime()); 
 
 if(visitor.SearchVisitor(Imma)){
-	if (reserv.InsertReservation(Num,Imma,R_start,R_end)){
+	if (reserv.InsertReservation(Num,Imma,day)){
 		if(place.getPlace(Num)!=null){
 			place.UpdateAvailability(Num, 0);
 			response.sendRedirect("../../../View/Bodys/FrontEnd/Place/Show.jsp");
@@ -50,7 +45,7 @@ if(visitor.SearchVisitor(Imma)){
 			}
 	}else{
 		if(visitor.InsertVisitor(Imma, SPsydo, SFach)){
-			if (reserv.InsertReservation(Num,Imma,R_start,R_end)){
+			if (reserv.InsertReservation(Num,Imma,day)){
 				if(place.getPlace(Num)!=null){
 					place.UpdateAvailability(Num, 0);
 					response.sendRedirect("../../../View/Bodys/FrontEnd/Place/Show.jsp");
