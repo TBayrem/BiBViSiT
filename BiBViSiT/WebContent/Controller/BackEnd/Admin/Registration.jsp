@@ -23,7 +23,7 @@ public String denullify(String s){
 
 	try{	
 		
-		boolean adminExist = admin.SearchAdmin(email, password);
+		boolean adminExist = admin.SearchAdminperemail(email, password);
 		if (!adminExist){//alles ok)
 			
 			admin.InsertAdmin();
@@ -38,7 +38,7 @@ public String denullify(String s){
 		msg.setUnexpectedError();
 		
 	}
-	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Registration.jsp");
+   response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Registration.jsp");
 }else if(zumLogin.equals("Anmelden")){
 	
 	msg.setGeneralWelcome();
