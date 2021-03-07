@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+    <jsp:useBean id="admin" class="Model.Admin" scope="session" />
+    
+<%
 
-</body>
-</html>
+String username = request.getParameter("username");
+
+admin.updateAdminSup(username);
+out.print("ddd");
+//response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Show.jsp");
+
+%>
