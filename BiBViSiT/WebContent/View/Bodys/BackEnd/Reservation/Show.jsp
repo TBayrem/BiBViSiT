@@ -24,7 +24,7 @@
 		
 		<div class="bs-example">
 		<table class="table">
-		<thead><tr><th>#</th><th>Place</th><th>Visitor</th><th>Start</th><th>End</th><th>Expired</th><th>Delete</th><th>Update</th></tr></thead>
+		<thead><tr><th>#</th><th>Place</th><th>Visitor</th><th>Day</th><th>Expired</th><th>Delete</th><th>Update</th></tr></thead>
 		<tbody>
 		<%
 		int i = 0;
@@ -33,9 +33,9 @@
 		
 	    
 		<tr id="<%out.print(i+"tr");%>">
-		<td><%= R.getID()%></td><td id="<%= i%>"><%= R.getPlace()%></td><td><%=R.getVisitor()%></td><td><%=R.getR_start() %></td><td><%=R.getR_end()%></td><td><%=R.getExpired()%></td>
-	    <td><a href="../../../../Controller/BackEnd/Place/Update.jsp?Num=<%=R.getID()%>">Change Availability</a></td>
-		<td><a href="../../../../Controller/BackEnd/Place/Delete.jsp?Num=<%=R.getID()%>">Delete</a></td>
+		<td><%= R.getID()%></td><td id="<%= i%>"><%= R.getPlace()%></td><td><%=R.getVisitor()%></td><td><%=R.getDay() %></td><td><%=R.getExpired()%></td>
+	    <td><a href="../../../../Controller/BackEnd/Place/Update.jsp?ID=<%=R.getID()%>">Renewal</a></td>
+		<td><a href="../../../../Controller/BackEnd/Place/Delete.jsp?ID=<%=R.getID()%>">Delete</a></td>
 
                                     
                                     </tr>
