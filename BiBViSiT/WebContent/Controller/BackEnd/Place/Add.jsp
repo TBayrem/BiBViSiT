@@ -11,7 +11,7 @@
 	Place P = new Place (Num);
 	place.InsertPlace(P);
 
-	response.sendRedirect("../../../View/Bodys/BackEnd/Place/Show.jsp");
+	response.sendRedirect("../../../View/Bodys/BackEnd/Main/Home.jsp");
 	
 
 		
