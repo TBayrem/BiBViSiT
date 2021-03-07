@@ -10,7 +10,7 @@
 		//delete all reservation under that place nummer Cascade problem  
 		place.DeletePlace(Num);
 
-		response.sendRedirect("../../../View/Bodys/BackEnd/Main/Home.jsp");
+		response.sendRedirect("../../../Bodys/BackEnd/Main/Places.jsp");
 
 
 		
