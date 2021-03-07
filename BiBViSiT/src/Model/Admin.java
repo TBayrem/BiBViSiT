@@ -41,9 +41,9 @@ public class Admin {
 
 	}
 	
-	public boolean SearchAdmin(String email, String password) throws SQLException {
+	public boolean SearchAdminperemail(String email, String password) throws SQLException {
 
-		String sql = "select * from admin where username = ? and password = ?";
+		String sql = "select * from admin where email = ? and password = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setString(1, email);
