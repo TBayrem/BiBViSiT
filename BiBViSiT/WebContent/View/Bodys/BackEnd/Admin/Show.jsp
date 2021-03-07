@@ -1,6 +1,5 @@
 <%@page import="Model.Admin"%>
 <%@page import="java.util.Vector"%>
-<jsp:include page="../../../Headers/BackEnd/Header.jsp"/>
 
 
 <jsp:useBean id="admin" class="Model.Admin" scope="session" />
@@ -47,6 +46,4 @@
 		</div>
 		</div>
 	
-	
-		<jsp:include page="../../../Footers/BackEnd/Footer.jsp"/>
  
