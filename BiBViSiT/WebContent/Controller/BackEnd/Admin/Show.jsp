@@ -6,8 +6,6 @@
 	String todo     = request.getParameter("todo");
 	String username = request.getParameter("username");
 	String email    = request.getParameter("email");
-	String password =request.getParameter("password");
-	String isadmin  = request.getParameter("admin");
 	
 
 	if (todo.equalsIgnoreCase("delete")) {
