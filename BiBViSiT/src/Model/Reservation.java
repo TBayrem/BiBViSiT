@@ -103,7 +103,7 @@ public boolean DeleteReservation(int ID) throws SQLException {
 	
 	public boolean InsertReservation(int Num, int Imma, Date day  ) throws SQLException, ParseException {
 
-		String sql = "insert into reservation (place, visitor, R_start, R_end) values (?,?,?)";
+		String sql = "insert into reservation (place, visitor, day) values (?,?,?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 
