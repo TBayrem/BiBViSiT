@@ -17,19 +17,17 @@
                 <div class="login-wrap">
                 
                     <input type="text" class="form-control" placeholder="User Name" autofocus="" name="username" >
-                    <input type="email" class="form-control" placeholder="Email" autofocus="" name="email" >
-                  
+                    <input type="email" class="form-control" placeholder="Email" autofocus="" name="email" > <br>
                     <input type="password" class="form-control" placeholder="Password" name="password" >
-                       <input class="btn btn-lg btn-login btn-block" type="submit" name="registrieren" value="Registrieren">
-
-                    <div class="registration">
+                    <input class="btn btn-lg btn-login btn-block" type="submit" name="registrieren" value="Registrieren">
+             </form>  
+             <div class="registration">
                         Already Registered ?
-                        <a class="" href="login.html">
+                        <a href="../../../../Controller/BackEnd/Admin/Login.jsp?zumLogin=zumLogin">
                             Login
                         </a>
                     </div>
-                </div>
-            </form>
+                 </div>
 
         </div>
      </div>
