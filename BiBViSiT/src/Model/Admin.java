@@ -21,7 +21,7 @@ public class Admin {
 
 	}
 
-	public Admin(String password, String active, String admin, String username, String email) {
+	public Admin(int Userid, String password, String active, String admin, String username, String email) {
 		this.password = password;
 		this.active = active;
 		this.admin = admin;
@@ -32,7 +32,7 @@ public class Admin {
 	// die suche ist mit den username in diesen fall da den id serial ist!
 	public boolean SearchAdmin(String username) throws SQLException {
 
-		String sql = "select * from admin where username = ? and password = ?";
+		String sql = "select * from admin where username = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setString(1, username);
@@ -47,7 +47,7 @@ public class Admin {
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setString(1, email);
-		prep.setString(1, password);
+		prep.setString(2, password);
 		ResultSet dbRes = prep.executeQuery();
 		return dbRes.next();
 
@@ -82,14 +82,12 @@ public class Admin {
 
 	public boolean InsertAdmin() throws SQLException {
 
-		String sql = "insert into admin (password, active, admin, username, email) values (?,?,?,?,?)";
+		String sql = "insert into admin (password, username, email) values (?,?,?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setString(1, this.password);
-		prep.setString(2, this.active);
-		prep.setString(3, this.admin);
-		prep.setString(4, this.username);
-		prep.setString(5, this.email);
+		prep.setString(2, this.username);
+		prep.setString(3, this.email);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
@@ -105,7 +103,8 @@ public class Admin {
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		ResultSet dbRes = dbConn.createStatement().executeQuery(sql);
 		while (dbRes.next()) {
-			Admin A = new Admin(dbRes.getString("password"),
+			Admin A = new Admin(dbRes.getInt("userid"),
+					 			dbRes.getString("password"),
 								dbRes.getString("active"),
 								dbRes.getString("admin"),
 								dbRes.getString("username"),
@@ -121,7 +120,7 @@ public class Admin {
 
 	public boolean updateAdminSup(String username) throws SQLException {
 
-		String sql = "update admin Set admin = Y where username = ?";
+		String sql = "update admin Set admin = 'Y' where username = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setString(1, username);
