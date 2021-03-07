@@ -18,15 +18,33 @@ String password = request.getParameter("password");
 String login    = this.denullify(request.getParameter("login"));
 String zurReg   = this.denullify(request.getParameter("zurReg"));
 
+
+
 if (login.equals("Anmelden")){//Anmeldefunktion
+	admin.setPassword(password);
+	admin.setEmail(email);
 	
-	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/admin1.html");
+	try{	
+		boolean adminExist = admin.SearchAdminperEmail(email, password);
+		if (adminExist){
+			msg.setLoginSuccessful();
+			response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Verwaltung.jsp");			
+		}else{
+			msg.setLoginFailed();
+			response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
+		}
+	}catch(Exception e){//unerwarteter Fehler
+		e.printStackTrace();
+		msg.setUnexpectedError();
+		response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
+	}
+	
 }else if(zurReg.equals("zurReg")){
 	msg.setGeneralWelcome();
-	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Show.jsp");
+	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Registration.jsp");
 }else{
 	msg.setGeneralWelcome();
-	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Show.jsp");
+	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
 }
 
 
