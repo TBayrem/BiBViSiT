@@ -16,13 +16,11 @@
                 <h2 class="form-signin-heading">Jetzt registrieren</h2>
                 <div class="login-wrap">
                 
-                    <input type="text" class="form-control" placeholder="User Name" autofocus="" name="username" value="">
-                    <input type="email" class="form-control" placeholder="Email" autofocus="" name="email" value="">
-                    <p></p>
-                    <input type="password" class="form-control" placeholder="Password" name="password" value="">
-                <!--    <input type="password" class="form-control" placeholder="Re-type Password" name="repassword" value=""> -->
-                       
-                    <input class="btn btn-lg btn-login btn-block" type="submit" name="registrieren" value="Registrieren">
+                    <input type="text" class="form-control" placeholder="User Name" autofocus="" name="username" >
+                    <input type="email" class="form-control" placeholder="Email" autofocus="" name="email" >
+                  
+                    <input type="password" class="form-control" placeholder="Password" name="password" >
+                       <input class="btn btn-lg btn-login btn-block" type="submit" name="registrieren" value="Registrieren">
 
                     <div class="registration">
                         Already Registered ?
