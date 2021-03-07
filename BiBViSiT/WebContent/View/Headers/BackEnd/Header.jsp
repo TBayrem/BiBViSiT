@@ -73,16 +73,29 @@
 <div class="breadcrumbs">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-sm-4">
-                    <h1>Page</h1>
-                </div>
-                <div class="col-lg-8 col-sm-8">
-                    <ol class="breadcrumb pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Pxxxx</a></li>
-                        <li class="active">xxxx</li>
+            
+            <div class="col-md-4">
+             <ol class="breadcrumb pull-right">
+             <p><span class="note">maximale Kapazität:</span><span class="text"></span></p>
+                      <div class="input-group margin">
+                                        <input type="text"  class="Storage form-control" type="text" onkeypress="isInputNumber(event)">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info btn-flat button"  type="button">Go!</button>
+                                        </span>
+                                    </div>
                     </ol>
-                </div>
+            </div>
+            <div class="col-md-4">
+             <ol class="breadcrumb pull-right">
+                    <p> Verfügbarkeit:<span class="text-2"></span></p>
+                        <div class="btn-group">
+                                                    <button type="button" class="btn btn-info add">Add</button>
+                                                    <button type="button" class="btn btn-info res">Res</button>
+                                                    <button type="button" class="btn btn-info sub">Sub</button>
+                                                </div>
+                    </ol>
+            </div>
+                
             </div>
         </div>
     </div>
