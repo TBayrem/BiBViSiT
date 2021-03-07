@@ -28,6 +28,24 @@ public class Admin {
 		this.username = username;
 		this.email = email;
 	}
+	
+	
+	public Admin AdminperEmailPassword(String email, String password) throws SQLException {
+
+		String sql = "select * from admin where email = ?, password=?";
+		Connection dbConn = new PostgreSQLAccess().getConnection();
+		PreparedStatement prep = dbConn.prepareStatement(sql);
+		prep.setString(1, email);
+		prep.setString(2, password);
+		ResultSet dbRes = prep.executeQuery();
+		if (dbRes.next()) {
+			return new Admin(dbRes.getInt("userid"),dbRes.getString("password"),dbRes.getString("active"),dbRes.getString("admin"), dbRes.getString("username"), dbRes.getString("email"));
+		}
+		else return null;
+		
+		
+	}
+
 
 	// die suche ist mit den username in diesen fall da den id serial ist!
 	public boolean SearchAdmin(String username) throws SQLException {
@@ -41,17 +59,19 @@ public class Admin {
 
 	}
 	
-	public boolean SearchAdminperemail(String email, String password) throws SQLException {
+	public boolean SearchAdminperEmail(String email, String password) throws SQLException {
 
-		String sql = "select * from admin where email = ? and password = ?";
+		String sql = "select * from admin where email= ? and password = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setString(1, email);
 		prep.setString(2, password);
 		ResultSet dbRes = prep.executeQuery();
 		return dbRes.next();
+	
 
 	}
+
 	public boolean DeleteAllAdmins() throws SQLException {
 
 		String sql = "delete from admin";
