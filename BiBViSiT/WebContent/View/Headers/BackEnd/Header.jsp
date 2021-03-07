@@ -3,6 +3,8 @@
 
 
 
+
+<html>
 <head><style>.gm-control-active>img{box-sizing:content-box;display:none;left:50%;pointer-events:none;position:absolute;top:50%;transform:translate(-50%,-50%)}.gm-control-active>img:nth-child(1){display:block}.gm-control-active:hover>img:nth-child(1),.gm-control-active:active>img:nth-child(1){display:none}.gm-control-active:hover>img:nth-child(2),.gm-control-active:active>img:nth-child(3){display:block}
 </style><link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700"><style>.gm-ui-hover-effect{opacity:.6}.gm-ui-hover-effect:hover{opacity:1}
 </style><style>.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px;box-sizing:border-box}
@@ -75,7 +77,6 @@
                           <li>
                               <a href="../../../Bodys/BackEnd/Main/Admins.jsp">Admins</a>
                           </li>
-
                           <li>
                               <a href="../../../Bodys/BackEnd/Main/Places.jsp">Plätze</a>
                           </li>
