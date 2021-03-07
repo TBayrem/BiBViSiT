@@ -60,6 +60,8 @@
 
 
 <!-- js placed at the end of the document so the pages load faster -->
+    <script src="../../../Template/js/footer.js">
+    </script>
  <script src="../../../Template/js/jquery.js">
     </script>
     <script src="../../../Template/js/bootstrap.min.js">
@@ -83,10 +85,7 @@
     <script src="../../../Template/js/admin1.js"></script>
      <script src="../../../Template/js/Visitor1.js"></script>
     
-    <script>
 
-    src="../../../Template/js/footer.js">
-    </script>
     
  <jsp:include page="../../Bodys/FrontEnd/Reservation/Add.jsp" />
 </body>
