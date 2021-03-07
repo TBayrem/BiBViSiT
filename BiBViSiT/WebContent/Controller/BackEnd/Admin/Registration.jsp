@@ -13,7 +13,7 @@ public String denullify(String s){
 	String username = request.getParameter("username");
 	String email = request.getParameter("email");
 	String registrieren = this.denullify(request.getParameter("registrieren"));
-	String zumLogin = this.denullify(request.getParameter("Anmelden"));
+	String zumLogin   = this.denullify(request.getParameter("zumLogin"));
 	
  
 	if (registrieren.equals("Registrieren")){
@@ -22,8 +22,7 @@ public String denullify(String s){
 	admin.setEmail(email);
 
 	try{	
-		
-		boolean adminExist = admin.SearchAdminperemail(email, password);
+		boolean adminExist = admin.SearchAdminperEmail(email, password);
 		if (!adminExist){//alles ok)
 			
 			admin.InsertAdmin();
@@ -38,11 +37,10 @@ public String denullify(String s){
 		msg.setUnexpectedError();
 		
 	}
-   response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Registration.jsp");
-}else if(zumLogin.equals("Anmelden")){
-	
-	msg.setGeneralWelcome();
 	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
+}else if(zumLogin.equals("zumLogin")){
+	msg.setGeneralWelcome();
+	response.sendRedirect("../../../View/Bodys/BackEnd/Main/Home.jsp");
 }else{
 	
 
