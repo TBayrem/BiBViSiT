@@ -1,18 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@page import="Model.Place"%>
+	pageEncoding="ISO-8859-1"%>
+<%@page import="Model.Place"%>
 <jsp:useBean id="place" class="Model.Place" scope="session" />
+
+<%!public String denullify(String s) {
+		if (s == null)
+			return "";
+		else
+			return s;
+	}%>
 <%
-	
-	String Snum = request.getParameter("Num");
+	int Num = Integer.parseInt(request.getParameter("Num"));
+String Add = this.denullify(request.getParameter("Add"));
 
-	
-	int Num = Integer.parseInt(Snum);
-	Place P = new Place (Num);
-	place.InsertPlace(P);
+if (Add.equals("Platz Addieren")) {
 
-	response.sendRedirect("../../../View/Bodys/BackEnd/Main/Home.jsp");
-	
+	try {
+		Place P = new Place(Num);
 
-		
+		place.InsertPlace(P);
+
+		response.sendRedirect("../../../View/Bodys/BackEnd/Main/Places.jsp");
+
+	} catch (Exception e) {//unerwarteter Fehler
+
+		response.sendRedirect("../../../View/Bodys/BackEnd/Main/Places.jsp");
+
+	}
+} else {
+
+	response.sendRedirect("../../../View/Bodys/BackEnd/Main/Places.jsp");
+
+}
 %>
