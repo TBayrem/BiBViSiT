@@ -8,7 +8,7 @@
 	int ID = Integer.parseInt(request.getParameter("ID"));
 		reservation.DeleteReservation(ID);
 
-		response.sendRedirect("../../../View/Bodys/BackEnd/Place/Show.jsp");
+		response.sendRedirect("../../../View/Bodys/BackEnd/Reservation/Show.jsp");
 
 
 		
