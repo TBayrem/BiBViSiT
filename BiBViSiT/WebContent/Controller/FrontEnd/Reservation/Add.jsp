@@ -4,7 +4,6 @@
 	<%@page import="java.text.DateFormat"%>
 	<%@page import="java.text.SimpleDateFormat"%>
 	<%@page import="java.sql.Date"%>
-		<%@page import="java.sql.Timestamp"%>
 	
 <%@page import="Model.Reservation"%>
 <%@page import="Model.Visitor"%>
@@ -25,6 +24,8 @@ String Fach = request.getParameter("Fach");
 
  int Imma = Integer.parseInt( request.getParameter("Imma"));
 int Num = Integer.parseInt(request.getParameter("Num"));
+
+
 DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");   
 Date day = (Date)formatter.parse(request.getParameter("day")); 
 
