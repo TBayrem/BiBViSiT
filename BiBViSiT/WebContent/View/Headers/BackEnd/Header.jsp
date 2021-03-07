@@ -60,13 +60,38 @@
               <ul class="nav navbar-nav">
 
                   <li>
-                      <a href="../../../Bodys/BackEnd/Main/Home.jsp">Places</a>
+                      <a href="../../../Bodys/BackEnd/Main/Home.jsp">Home</a>
                   </li>                 
               <li>
                       <a href="../../../Bodys/BackEnd/Main/About.jsp">Über uns</a>
                   </li><li>
                       <a href="../../../Bodys/BackEnd/Main/Contact.jsp">Kontakt</a>
-                  </li></ul>
+                  </li>
+                  <li class="dropdown">
+                      <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover="dropdown" data-toggle="dropdown" href="#">DatenBank<i class="fa fa-angle-down"></i>
+                      </a>
+
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="../../../Bodys/BackEnd/Main/Admins.jsp">Admins</a>
+                          </li>
+
+                          <li>
+                              <a href="../../../Bodys/BackEnd/Main/Places.jsp">Plätze</a>
+                          </li>
+
+                          <li>
+                              <a href="../../../Bodys/BackEnd/Main/Visitors.jsp">Besucher</a>
+                          </li>
+
+                          <li>
+                              <a href="../../../Bodys/BackEnd/Main/Reservations.jsp">Buchungen</a>
+                          </li>
+
+                          
+                      </ul>
+                  </li>                  
+                  </ul>
                   
           </div>
       </div>
@@ -76,7 +101,7 @@
             <div class="row">
             
             <div class="col-md-4">
-             <ol class="breadcrumb pull-right">
+             <ol class="breadcrumb pull-left">
              <p><span class="note">maximale Kapazität:</span><span class="text"></span></p>
                       <div class="input-group margin">
                                         <input type="text"  class="Storage form-control" type="text" onkeypress="isInputNumber(event)">
@@ -100,4 +125,6 @@
             </div>
         </div>
     </div>
-    
+    <div class="container">
+            <div class="row">
+            
