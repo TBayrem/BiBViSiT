@@ -4,10 +4,18 @@
     
 <%
 
-String username = request.getParameter("username");
 
-admin.updateAdminSup(username);
-out.print("ddd");
-//response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Show.jsp");
+
+if(request.getParameter("Att").equals("Admin")){
+	String A =request.getParameter("A");
+	if (A.equals("Y")) A = "N"; else A = "Y"; 
+	admin.updateAdmin(request.getParameter("Email"), A);
+}
+else if(request.getParameter("Att").equals("Activ")){
+	String A =request.getParameter("A");
+	if (A.equals("Y")) A = "N"; else A = "Y"; 
+	admin.updateActive(request.getParameter("Email"), A);
+}
+response.sendRedirect("../../../View/Bodys/BackEnd/Main/Admins.jsp");
 
 %>
