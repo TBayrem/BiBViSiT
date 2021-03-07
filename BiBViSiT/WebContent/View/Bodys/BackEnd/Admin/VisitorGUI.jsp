@@ -1,11 +1,11 @@
-<jsp:include page="../../../Headers/BackEnd/Header.jsp"/>
+
 
 <body onload= "GastCheck()">
 
 
     
    
-        Free Places: 
+        Free Places: <span class="frei"> </span> 
        
     
             
