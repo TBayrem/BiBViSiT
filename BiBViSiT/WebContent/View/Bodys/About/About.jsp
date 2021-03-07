@@ -12,15 +12,7 @@
                   <img src="../../../Template/img/service3.jpg" alt="">
                   <div class="carousel-caption">
                     <p>
-                      BiBVisit
-                    </p>
-                  </div>
-                </div>
-                <div class="item">
-                  <img src="../../../Template/img/service2.jpg" alt="">
-                  <div class="carousel-caption">
-                    <p>
-                      Blanditiis praesentium voluptatum
+                      dfasdfasdfas
                     </p>
                   </div>
                 </div>
@@ -289,44 +281,18 @@
       <div class="row">
         <div class="profile">
           <h2>
-            OUR TEAM
+            Unsere TEAM
           </h2>
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail wow fadeInUp animated" data-wow-delay=".1s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
               <img src="../../../Template/img/team/member1.jpg" alt="">
               <div class="caption">
                 <h4>
-                  Thumbnail label
+                  Chaima
                 </h4>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit
                 </p>
-                <div class="team-social-link">
-                  <a href="#">
-                    <i class="fa fa-facebook">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-twitter">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-pinterest">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-linkedin">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-google-plus">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-github">
-                    </i>
-                  </a>
-                </div>
               </div>
             </div>
           </div>
