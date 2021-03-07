@@ -1,4 +1,4 @@
-<jsp:include page="../../../Headers/BackEnd/Header.jsp"/>
+
     
 
    <body> 
@@ -20,9 +20,10 @@
                 
              	<input type="submit" class="btn btn-lg btn-login btn-block" name="login" value="Anmelden"/>
                 
+          </form>
                 <div class="registration">
                     Sie sind noch nicht eingetragen?
-                    <a  href="../../../View/Bodys/BackEnd/Admin/Login.jsp?zurReg=zurReg">
+                    <a  href="../../../../Controller/BackEnd/Admin/Login.jsp?zurReg=zurReg">
                         Admin anlegen
                     </a>
                 </div>
@@ -33,12 +34,10 @@
               
               
 
-          </form>
           </div>
         </div>
     </div>
     
      </body>
-    
-<jsp:include page="../../../Footers/BackEnd/Footer.jsp"/>
+
     
