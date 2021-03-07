@@ -60,13 +60,14 @@
               <ul class="nav navbar-nav">
 
                   <li>
-                      <a href="../../../Bodys/BackEnd/Main/Home.jsp">Home</a>
+                      <a href="../../../Bodys/BackEnd/Main/Home.jsp">Places</a>
                   </li>                 
               <li>
                       <a href="../../../Bodys/BackEnd/Main/About.jsp">Über uns</a>
                   </li><li>
                       <a href="../../../Bodys/BackEnd/Main/Contact.jsp">Kontakt</a>
                   </li></ul>
+                  
           </div>
       </div>
     </header>
