@@ -1,4 +1,4 @@
-<jsp:include page="../../../Headers/BackEnd/Header.jsp"/>
+
  <%@page import="Model.Reservation"%>
 <%@page import="java.util.Vector"%>
 <jsp:useBean id="reserv" class="Model.Reservation" scope="session" />
@@ -45,4 +45,3 @@
 		</table>
 		</div>
 		</div>
-		<jsp:include page="../../../Footers/BackEnd/Footer.jsp"/>
