@@ -1,3 +1,5 @@
+      
+   
       wow = new WOW(
         {
           boxClass:     'wow',      // default
@@ -58,7 +60,7 @@
 
       
       function Providingplacenum(Num){
-
+ alert(Num);
     	  document.getElementById("add_placenummer").innerText = Num ;
     	  document.getElementById("inputnum").value = Num ;	
     
