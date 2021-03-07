@@ -3,11 +3,13 @@
     
     <jsp:useBean id="admin" class="Model.Admin" scope="session" />
     
-<%String email    = request.getParameter("email");
-if(admin.DeleteAdmin(email)){
-out.print("d");}else{out.print("not");}
+<%
 
-//response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Show.jsp");
+admin.DeleteAdmin( request.getParameter("Email"));
+
+response.sendRedirect("../../../View/Bodys/BackEnd/Main/Admins.jsp");
+
+
 
 
 
