@@ -50,13 +50,13 @@ public class Visitor {
 
 	}
 
-	public boolean DeleteVisitor(String Psydo) throws SQLException {
+	public boolean DeleteVisitor(int Imma) throws SQLException {
 
-		String sql = "delete from Visitor where Psydo = ?";
+		String sql = "delete from Visitor where Imma = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 
-		prep.setString(1, Psydo);
+		prep.setInt(1, Imma);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
