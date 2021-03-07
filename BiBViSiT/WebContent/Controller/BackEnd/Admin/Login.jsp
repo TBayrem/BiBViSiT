@@ -20,15 +20,22 @@ String zurReg   = this.denullify(request.getParameter("zurReg"));
 
 
 
-if (login.equals("Anmelden")){//Anmeldefunktion
-	admin.setPassword(password);
-	admin.setEmail(email);
+
+
+if  (login.equals("Anmelden")){//Anmeldefunktion
+	admin = admin.AdminperEmailPassword(email, password);
 	
 	try{	
-		boolean adminExist = admin.SearchAdminperEmail(email, password);
-		if (adminExist){
+		
+		if (admin != null){
+			if(admin.getActive().equalsIgnoreCase("Y"))
+			{
 			msg.setLoginSuccessful();
-			response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Verwaltung.jsp");			
+			response.sendRedirect("../../../View/Bodys/BackEnd/Main/Home.jsp");
+			}else{
+			msg.setLoginFailed();
+			response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
+		}
 		}else{
 			msg.setLoginFailed();
 			response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
