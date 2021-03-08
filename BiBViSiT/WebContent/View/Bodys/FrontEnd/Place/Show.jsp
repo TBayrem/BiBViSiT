@@ -3,7 +3,7 @@
 <%@page import="java.util.Vector"%>
 <jsp:useBean id="place" class="Model.Place" scope="session" />
 
-<div class="col-lg-9" Style="height:58%; overflow-y: true; ">
+<div class="col-lg-9" >
 <%Vector<Place> vectorofplaces = place.getAll();
 
 
@@ -92,7 +92,7 @@ for (Place P : vectorofplaces) {
 
             <div class="archive">
               <h3>
-               Kalendar
+           
               </h3>
               
             </div>
