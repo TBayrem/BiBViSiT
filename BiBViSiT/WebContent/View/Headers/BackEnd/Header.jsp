@@ -100,7 +100,19 @@
 <div class="breadcrumbs">
         <div class="container">
        <div class="row">
-            
+       
+       
+          <div class="col-md-4">
+             <ol class="breadcrumb pull-left">
+             <h4> Verwaltung der :</h4>
+                      <div class="input-group margin">
+                        Bibliotheksbesucherkapazität <br>
+                        Anzahl der Bibliothesbesucher               
+                          
+                       </div>
+                    </ol>
+            </div>
+       
             <div class="col-md-4">
              <ol class="breadcrumb pull-left">
              <p><span class="note">maximale Kapazität:</span><span class="ShowCap"></span></p>
@@ -126,6 +138,5 @@
             </div>
         </div>
     </div>
-    <div class="container">
-            <div class="row">
+  
             
