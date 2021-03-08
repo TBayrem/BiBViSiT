@@ -31,7 +31,7 @@ public class CreateTables {
 				+ "create table admin                ("
 				+ "				userid   SERIAL  PRIMARY KEY," // Serielle UserId, wie wir bereits kommuniziert haben
 				+ "				password CHAR(32) NOT NULL            ,"
-				+ "				active   CHAR(1)  NOT NULL DEFAULT 'Y',"
+				+ "				active   CHAR(1)  NOT NULL DEFAULT 'N',"
 				+ "				admin    CHAR(1)  NOT NULL DEFAULT 'N',"
 				+ "				username VARCHAR(256)                 ,"
 				+ "				email    VARCHAR(256)                 )";///unique
