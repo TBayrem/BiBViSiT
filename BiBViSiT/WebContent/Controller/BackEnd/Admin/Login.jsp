@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <jsp:useBean id="admin1" class="Model.Admin" scope="session" />
+<jsp:useBean id="msg" class="Model.Message" scope="session"></jsp:useBean>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:useBean id="admin" class="Model.Admin" scope="session" />
-<jsp:useBean id="msg" class="Model.Message" scope="session"></jsp:useBean>
+
 
 <%! public String denullify(String s){if (s == null) return ""; else return s;} %>
 
@@ -23,12 +24,12 @@ String zurReg   = this.denullify(request.getParameter("zurReg"));
 
 
 if  (login.equals("Anmelden")){//Anmeldefunktion
-	admin = admin.AdminperEmailPassword(email, password);
-	
+	admin1 = admin1.AdminperEmailPassword(email, password);
+	admin1.setActive("Y");
 	try{	
 		
-		if (admin != null){
-			if(admin.getActive().equalsIgnoreCase("Y"))
+		if (admin1 != null){
+			if(admin1.getActive().equalsIgnoreCase("Y"))
 			{
 			msg.setLoginSuccessful();
 			response.sendRedirect("../../../View/Bodys/BackEnd/Main/Home.jsp");
