@@ -99,26 +99,26 @@
     </header>
 <div class="breadcrumbs">
         <div class="container">
-            <div class="row">
+       <div class="row">
             
             <div class="col-md-4">
              <ol class="breadcrumb pull-left">
-             <p><span class="note">maximale Kapazität:</span><span class="text"></span></p>
+             <p><span class="note">maximale Kapazität:</span><span class="ShowCap"></span></p>
                       <div class="input-group margin">
-                                        <input type="text"  class="Storage form-control" type="text" onkeypress="isInputNumber(event)">
+                                        <input class="newCap" type="text" onkeypress="isInputNumber(event)">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-info btn-flat button"  type="button">Go!</button>
+                                            <button class="btn btn-info btn-flat speichern"  type="button">Speichern!</button>
                                         </span>
                                     </div>
                     </ol>
             </div>
             <div class="col-md-4">
              <ol class="breadcrumb pull-right">
-                    <p> Verfügbarkeit:<span class="text-2"></span></p>
+                    <p> Verfügbarkeit:<span class="ShowFreePlaces"></span></p>
                         <div class="btn-group">
-                                                    <button type="button" class="btn btn-info add">Add</button>
-                                                    <button type="button" class="btn btn-info res">Res</button>
-                                                    <button type="button" class="btn btn-info sub">Sub</button>
+                                                    <button type="button" class="btn btn-info addVisitor">Add</button>
+                                                    <button type="button" class="btn btn-info resVisitor">Res</button>
+                                                    <button type="button" class="btn btn-info subVisitor">Sub</button>
                                                 </div>
                     </ol>
             </div>
