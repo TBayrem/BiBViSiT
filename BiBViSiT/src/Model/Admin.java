@@ -16,6 +16,9 @@ public class Admin {
 	private String admin  ;
 	private String username;
 	private String email;
+	boolean isLoggedIn = false;
+	
+
 
 	public Admin() {
 
@@ -28,6 +31,22 @@ public class Admin {
 		this.admin = admin;
 		this.username = username;
 		this.email = email;
+	}
+	
+	public String getLoginCheckRedirectHtml() {
+		String html = "";
+		if (!this.isLoggedIn()){
+			html += "<meta http-equiv='refresh' content='0; URL=../../../../Controller/BackEnd/Admin/Home.jsp' >";
+		}
+		return html;
+	}
+
+	public boolean isLoggedIn() {
+		return isLoggedIn;
+	}
+
+	public void setLoggedIn(boolean isLoggedIn) {
+		this.isLoggedIn = isLoggedIn;
 	}
 	
 	
