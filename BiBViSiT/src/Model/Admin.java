@@ -31,6 +31,7 @@ public class Admin {
 		this.admin = admin;
 		this.username = username;
 		this.email = email;
+		
 	}
 	
 	public String getLoginCheckRedirectHtml() {
