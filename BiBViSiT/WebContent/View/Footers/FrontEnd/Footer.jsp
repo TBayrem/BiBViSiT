@@ -14,14 +14,8 @@
                  </div>
                 <div class="col-lg-3 col-sm-3 wow fadeInUp animated" data-wow-duration="2s" data-wow-delay=".3s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-duration: 2s; animation-delay: 0.3s; animation-name: fadeInUp;">
 
-                   
-                    
- 
-                    
                 <h1>Free Places: <span id="texti" class="FreePlaces"> </span>  </h1>
                  
-       
-                
                 </div>
                 <div class="col-lg-3 col-sm-3">
                 <div class="page-footer wow fadeInUp animated" data-wow-duration="2s" data-wow-delay=".5s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-duration: 2s; animation-delay: 0.5s; animation-name: fadeInUp;">
