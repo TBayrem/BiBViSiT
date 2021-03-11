@@ -1,3 +1,4 @@
+
 <%@page import="Model.Admin"%>
 <%@page import="Model.Message"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -13,14 +14,19 @@
 <jsp:useBean id="admin" class="Model.Admin" scope="session"/>
 <jsp:useBean id="msg" class="Model.Message" scope="session"></jsp:useBean>
 
+
+
+
+
 <%! public String denullify(String s){if (s == null) return ""; else return s;} %>
 
 <% 
+
+
 String email  = request.getParameter("email");
 String password = request.getParameter("password");
 String login    = this.denullify(request.getParameter("login"));
 String zurReg   = this.denullify(request.getParameter("zurReg"));
-
 
 
 
@@ -33,8 +39,12 @@ if  (login.equals("Anmelden")){//Anmeldefunktion
 		if (admin != null){
 			if(admin.getActive().equalsIgnoreCase("Y"))
 			{
+				
 			msg.setLoginSuccessful();
 			admin.setLoggedIn(true);
+
+				
+
 			response.sendRedirect("../../../View/Bodys/BackEnd/Main/Home.jsp");
 			}else{
 			msg.setLoginFailed();
@@ -44,6 +54,8 @@ if  (login.equals("Anmelden")){//Anmeldefunktion
 		}else{
 			msg.setLoginFailed();
 			response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
+		
+			
 		}
 	}catch(Exception e){//unerwarteter Fehler
 		e.printStackTrace();
@@ -59,9 +71,9 @@ if  (login.equals("Anmelden")){//Anmeldefunktion
 	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
 }
 
+//session.invalidate();
+
 
 
 
 %>
-</body>
-</html>

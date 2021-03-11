@@ -3,7 +3,6 @@
    <jsp:useBean id="msg" class="Model.Message" scope="session"></jsp:useBean>
     <jsp:useBean id="admin" class="Model.Admin" scope="session"></jsp:useBean>
     
-  
 
 
 
