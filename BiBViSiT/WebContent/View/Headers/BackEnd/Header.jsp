@@ -57,9 +57,14 @@
                       </a>
 
                       <ul class="dropdown-menu">
-                          <li>
-                              <a href="../../../Bodys/BackEnd/Main/Admins.jsp">Admins</a>
-                          </li>
+                          <%   if(session.getAttribute("isAdmin").equals("Y")){ %>
+                          
+                    	  <li>
+                           <a href="../../../Bodys/BackEnd/Main/Admins.jsp">Admins</a>
+                         </li> 
+                       
+                        <% } %>
+
                           <li>
                               <a href="../../../Bodys/BackEnd/Main/Places.jsp">Plätze</a>
                           </li>
