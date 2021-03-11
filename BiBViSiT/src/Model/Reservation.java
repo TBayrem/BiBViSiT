@@ -69,7 +69,7 @@ public boolean DeleteReservation(int ID) throws SQLException {
 		return true;
 	else
 		return false;
-}
+} 
 	
 	
 	public boolean DeleteexpiredReservation() throws SQLException {
@@ -132,6 +132,24 @@ public boolean DeleteReservation(int ID) throws SQLException {
 			Vectorofreservation.add(R);
 		}
 		return Vectorofreservation;
+	}
+	
+	//blayess reservee fi nhar day
+	public Vector<Integer> getAlldayplaces(Date Day) throws SQLException {
+
+		Vector<Integer> VectorAlldayplaces = new Vector<Integer>();
+		String sql = "select place from Reservation where Day = ? ";
+		Connection dbConn = new PostgreSQLAccess().getConnection();
+		PreparedStatement prep = dbConn.prepareStatement(sql);
+		prep.setDate(1, Day);
+		
+		ResultSet dbRes = prep.executeQuery();
+		while (dbRes.next()) {
+			int Place = dbRes.getInt("place");
+			
+			VectorAlldayplaces.add(Place);
+		}
+		return VectorAlldayplaces;
 	}
 
 		
