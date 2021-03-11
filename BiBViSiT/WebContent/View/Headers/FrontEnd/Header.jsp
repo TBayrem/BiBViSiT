@@ -43,7 +43,7 @@
 <script type="text/javascript" charset="UTF-8"
 	src="https://maps.googleapis.com/maps-api-v3/api/js/44/2/onion.js"></script>
 </head>
-<body onload="myVisitor()">
+<body onload="myVisitorX()">
 
 <header class="head-section">
       <div class="navbar navbar-default navbar-static-top container">
