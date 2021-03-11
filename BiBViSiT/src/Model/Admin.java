@@ -10,18 +10,19 @@ import DataBase.PostgreSQLAccess;
 
 public class Admin {
 
-    private int Userid; // wir brauchen diese Attribute nicht mehr? den UserId ist automatich angegeben jetzt oder?
+  
+	private int Userid; // wir brauchen diese Attribute nicht mehr? den UserId ist automatich angegeben jetzt oder?
 	private String password;
 	private String active ;
 	private String admin  ;
 	private String username;
 	private String email;
+
 	boolean isLoggedIn = false;
 	
 
 
 	public Admin() {
-
 	}
 
 	public Admin(int Userid, String password, String active, String admin, String username, String email) {
