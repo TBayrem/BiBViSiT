@@ -16,12 +16,12 @@ public class Admin {
 	private String admin  ;
 	private String username;
 	private String email;
-	boolean isLoggedIn = false;
-	
-
+	boolean isLoggedIn;
 
 	public Admin() {
-
+		this.email = "";
+		this.password = "";
+		this.isLoggedIn = false;
 	}
 
 	public Admin(int Userid, String password, String active, String admin, String username, String email) {
