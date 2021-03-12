@@ -34,12 +34,13 @@ if  (login.equals("Anmelden")){//Anmeldefunktion
 			if(admin.getActive().equalsIgnoreCase("Y"))
 			{
 			msg.setLoginSuccessful();
-			admin.setLoggedIn(true);
+			//admin.setLoggedIn(true);
+			//session.setAttribute("isLoggedIn", true);
 			session.setAttribute("isAdmin", admin.getAdmin());
 			response.sendRedirect("../../../View/Bodys/BackEnd/Main/Home.jsp");
 			}else{
 			msg.setLoginFailed();
-			admin.setLoggedIn(false);
+			//admin.setLoggedIn(false);
 			response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
 		    }
 		}else{
