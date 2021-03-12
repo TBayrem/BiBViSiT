@@ -50,7 +50,8 @@
               <li>
                       <a href="../../../Bodys/BackEnd/Main/About.jsp">Über uns</a>
                   </li><li>
-                      <a href="../../../Bodys/BackEnd/Main/Contact.jsp">Kontakt</a>
+                    <!--  <a href="../../../Bodys/BackEnd/Main/Contact.jsp">Kontakt</a> -->
+                     <a  href="../../../../Controller/BackEnd/Admin/Contact.jsp?zurContact=zurContact"> Feedback </a>
                   </li>
                   <li class="dropdown">
                       <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover="dropdown" data-toggle="dropdown" href="#">DatenBank<i class="fa fa-angle-down"></i>
@@ -82,7 +83,7 @@
                   </li>  
                   
                     <li>
-                      <a href="../../../Bodys/BackEnd/Admin/Logout.jsp">Logout</a>
+                      <a href="../../../../Controller/BackEnd/Admin/Login.jsp?zurLogout=zurLogout">Abmelden</a>
                   </li>                
                   </ul>
                   
