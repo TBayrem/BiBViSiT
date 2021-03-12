@@ -11,17 +11,12 @@
                 <div class="active item">
                   <img src="../../../Template/img/service3.jpg" alt="">
                   <div class="carousel-caption">
-                    <p>
-                      dfasdfasdfas
-                    </p>
+                   
                   </div>
                 </div>
                 <div class="item">
-                  <img src="../../../Template/img/service5.jpg" alt="">
+                  <img src="../../../Template/img/hochschule.jpg" alt="">
                   <div class="carousel-caption">
-                    <p>
-                      Blanditiis praesentium voluptatum
-                    </p>
                   </div>
                 </div>
               </div>
@@ -40,52 +35,45 @@
         <div class="col-lg-7 about wow fadeInRight animated" data-wow-animation-name="fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
 
           <p>
-            Aenean nibh ante, lacinia non tincidunt nec, lobortis ut tellus. Sed in porta diam. Suspendisse potenti. Donec luctus ullamcorper nulla. Duis nec velit odio.Suspendisse potenti. Donec luctus ullamcorper nulla. Duis nec velit odio.
+            Nach einer persönlichen Erfahrung in einer deutschen Bibliothek wird der Kapazität-Grenzwert auf "TRADITIONELLE" Weise geprüft.
           </p>
           <ul class="list-unstyled">
             <li>
               <i class="fa fa-angle-right pr-10">
               </i>
-              Vestibulum auctor dapibus neque.
+             Es wird angenommen, dass die maximale Kapazität 20 beträgt.
             </li>
 
             <li>
               <i class="fa fa-angle-right pr-10">
               </i>
-              Lorem ipsum dolor sit amet adipiscing elit.
+          In diesem Fall stehen 20 Streifen zur Verfügung, jeder Besucher erhält beim Betreten einen Streifen, wenn keine Streifen mehr vorhanden sind, bedeutet dies, dass die Besucher die Bibliothek nicht betreten dürfen.
             </li>
 
             <li>
               <i class="fa fa-angle-right pr-10">
               </i>
-              Aliquam tincidunt mauris eu risus.
+Diese Lücke hat uns auf die Idee gebracht, eine Webseite BIBVISIT zu erstellen, auf der Sie die Bibliothekskapazität überprüfen, einen Platz reservieren und garantieren können, dass Sie die Bibliothek betreten können
             </li>
 
             <li>
               <i class="fa fa-angle-right pr-10">
               </i>
-              Vestibulum auctor dapibus neque
+              Wir hoffen, dass unsere neue Homepage für Sie nützlich sein wird
             </li>
 
-            <li>
-              <i class="fa fa-angle-right pr-10">
-              </i>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-            </li>
+           
 
-            <li>
-              <i class="fa fa-angle-right pr-10">
-              </i>
-              Aliquam tincidunt mauris eu risus.
-            </li>
+           
 
           </ul>
           <blockquote>
             <p>
-              Award winning digital agency. We bring a personal and effective approach to every project we work on, which is why.
+              Freuen uns auf Ihr Feedback
+             
             </p>
             <small>
-              CEO Jack Bour
+              BIBVISIT Team
             </small>
           </blockquote>
         </div>
@@ -105,8 +93,8 @@
                 Responsive
               </h3>
               <p>
-                Suspendisse dignissim in sem eget pulvinar. Mauris aliquam nulla at libero pretium, eu tincidunt nulla molestie pulvinar posuere.
-              </p>
+ Entwickelte Webseiten, die dem Benutzer unabhängig von seinem Endgerät ein optimales Lese- und Browsing-Erlebnis bieten  
+            </p>
             </div>
           </div>
           <div class="col-lg-6 col-sm-6 about-hiring">
@@ -119,8 +107,7 @@
                 Benutzerfreundlich
               </h3>
               <p>
-                Suspendisse dignissim in sem eget pulvinar. Mauris aliquam nulla at libero pretium, eu tincidunt nulla molestie pulvinar posuere.
-              </p>
+             Beschreibt die Qualität der Nutzung, die der Benutzer bei der Interaktion mit einem System empfindet.  eine besonders einfache Bedienung              </p>
             </div>
           </div>
 
@@ -131,10 +118,10 @@
             </div>
             <div class="content">
               <h3 class="title wow flipInX animated" data-wow-animation-name="flipInX" style="visibility: visible; animation-name: flipInX;">
-                EFFizient 
+                Effizient
               </h3>
               <p>
-                Suspendisse dignissim in sem eget pulvinar. Mauris aliquam nulla at libero pretium, eu tincidunt nulla molestie pulvinar posuere.
+              Unsere Homepage wird Ihnen helfen, Ihr Ziel schnell zu erreichen.
               </p>
             </div>
           </div>
@@ -145,11 +132,10 @@
             </div>
             <div class="content">
               <h3 class="title wow flipInX animated" data-wow-animation-name="flipInX" style="visibility: visible; animation-name: flipInX;">
-                PHP Developer
+                Einfachbarkeit
               </h3>
               <p>
-                Suspendisse dignissim in sem eget pulvinar. Mauris aliquam nulla at libero pretium, eu tincidunt nulla molestie pulvinar posuere.
-              </p>
+Unsere Website ist einfach zu verwalten              </p>
             </div>
           </div>
 
@@ -159,84 +145,28 @@
 
     <div class="gray-box">
       <div class="container">
+     
+     
         <div class="row">
           <div class="col-lg-5">
+         
+         <h3>        Unsere gesammelten <br>
+         Skills <br>
+         während unserer Studium :
+                   </h3>
+       
+         
             <!--testimonial start-->
-            <div class="about-testimonial boxed-style about-flexslider ">
-              <section class="slider wow fadeInRight animated" data-wow-animation-name="fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
-                <div class="flexslider">
-                  
-                <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides about-flex-slides" style="width: 800%; transition-duration: 0s; transform: translate3d(-914px, 0px, 0px);"><li class="clone" style="width: 457px; float: left; display: block;">
-                      <div class="about-testimonial-image ">
-                        <img alt="" src="../../../Template/img/person_2.png">
-                      </div>
-                      <a class="about-testimonial-author" href="#">
-                        Steven gerrard
-                      </a>
-                      <span class="about-testimonial-company">
-                        Molt BVG
-                      </span>
-                      <div class="about-testimonial-content">
-                        <p class="about-testimonial-quote">
-                          Pellentesque et pulvinar enim. Quisque at tempor ligula. Maecenas augue ante, euismod vitae egestas sit amet, accumsan eu nulla. Nullam tempor lectus a ligula lobortis pretium. Donec ut purus sed tortor malesuada venenatis eget eget lorem.
-                        </p>
-                      </div>
-                    </li>
-                    <li style="width: 457px; float: left; display: block;" class="">
-                      <div class="about-testimonial-image ">
-                        <img alt="" src="../../../Template/img/person_1.png">
-                      </div>
-                      <a class="about-testimonial-author" href="#">
-                        Russel Reagan
-                      </a>
-                      <span class="about-testimonial-company">
-                        CCD Realestate
-                      </span>
-                      <div class="about-testimonial-content">
-                        <p class="about-testimonial-quote">
-                          Donec ut purus sed tortor malesuada venenatis eget eget lorem. Nullam tempor lectus a ligula lobortis pretium. Donec ut purus sed tortor malesuada venenatis eget eget lorem.
-                        </p>
-                      </div>
-                    </li>
-                    <li class="flex-active-slide" style="width: 457px; float: left; display: block;">
-                      <div class="about-testimonial-image ">
-                        <img alt="" src="../../../Template/img/person_2.png">
-                      </div>
-                      <a class="about-testimonial-author" href="#">
-                        Steven gerrard
-                      </a>
-                      <span class="about-testimonial-company">
-                        Molt BVG
-                      </span>
-                      <div class="about-testimonial-content">
-                        <p class="about-testimonial-quote">
-                          Pellentesque et pulvinar enim. Quisque at tempor ligula. Maecenas augue ante, euismod vitae egestas sit amet, accumsan eu nulla. Nullam tempor lectus a ligula lobortis pretium. Donec ut purus sed tortor malesuada venenatis eget eget lorem.
-                        </p>
-                      </div>
-                    </li>
-                  <li style="width: 457px; float: left; display: block;" class="clone">
-                      <div class="about-testimonial-image ">
-                        <img alt="" src="../../../Template/img/person_1.png">
-                      </div>
-                      <a class="about-testimonial-author" href="#">
-                        Russel Reagan
-                      </a>
-                      <span class="about-testimonial-company">
-                        CCD Realestate
-                      </span>
-                      <div class="about-testimonial-content">
-                        <p class="about-testimonial-quote">
-                          Donec ut purus sed tortor malesuada venenatis eget eget lorem. Nullam tempor lectus a ligula lobortis pretium. Donec ut purus sed tortor malesuada venenatis eget eget lorem.
-                        </p>
-                      </div>
-                    </li></ul></div><ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="flex-active">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div>
-              </section>
-            </div>
+           
+           
+             
+           
             <!--testimonial end-->
           </div>
+         
           <div class="col-lg-7" id="skillz">
             <h3 class="skills">
-              Our Crazy Skills
+             
             </h3>
 
             <div class="skill_bar">
@@ -283,51 +213,23 @@
           <h2>
             Unsere TEAM
           </h2>
-          <div class="col-xs-12 col-sm-6 col-md-3">
-            <div class="thumbnail wow fadeInUp animated" data-wow-delay=".1s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-              <img src="../../../Template/img/team/member1.jpg" alt="">
-              <div class="caption">
-                <h4>
-                  Chaima
-                </h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit
-                </p>
-              </div>
-            </div>
-          </div>
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail wow fadeInUp animated" data-wow-delay=".3s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-              <img src="../../../Template/img/team/member2.jpg" alt="">
+              <img src="" alt="">
               <div class="caption">
                 <h4>
-                  Thumbnail label
-                </h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit
-                </p>
+                 Ahmed Ayadi          
+                   </h4>
+               
                 <div class="team-social-link">
-                  <a href="#">
+                  <a href="https://www.facebook.com/LEADERa7mad">
                     <i class="fa fa-facebook">
                     </i>
                   </a>
-                  <a href="#">
-                    <i class="fa fa-twitter">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-pinterest">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-linkedin">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-google-plus">
-                    </i>
-                  </a>
+                 
+             
+                 
                   <a href="#">
                     <i class="fa fa-github">
                     </i>
@@ -339,36 +241,19 @@
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail wow fadeInUp animated" data-wow-delay=".5s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-              <img src="../../../Template/img/team/member3.jpg" alt="">
+              <img src="../../../Template/img/team/chayma rabhi.jpg" alt="">
               <div class="caption">
                 <h4>
-                  Thumbnail label
+                  Chayma Rabhi
                 </h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit
-                </p>
+               
                 <div class="team-social-link">
-                  <a href="#">
+                  <a href="https://www.facebook.com/shayma.rabhi.3">
                     <i class="fa fa-facebook">
                     </i>
                   </a>
-                  <a href="#">
-                    <i class="fa fa-twitter">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-pinterest">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-linkedin">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-google-plus">
-                    </i>
-                  </a>
-                  <a href="#">
+                 
+                  <a href="https://github.com/shayma98">
                     <i class="fa fa-github">
                     </i>
                   </a>
@@ -379,33 +264,15 @@
 
           <div class="col-xs-12 col-sm-6 col-md-3">
             <div class="thumbnail wow fadeInUp animated" data-wow-delay=".7s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
-              <img src="../../../Template/img/team/member4.jpg" alt="">
+              <img src="###" alt="">
               <div class="caption">
                 <h4>
-                  Thumbnail label
+                  Bayrem Trabelsi
                 </h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit
-                </p>
+               
                 <div class="team-social-link">
-                  <a href="#">
+                  <a href="https://www.facebook.com/bayrem.trabelsi">
                     <i class="fa fa-facebook">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-twitter">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-pinterest">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-linkedin">
-                    </i>
-                  </a>
-                  <a href="#">
-                    <i class="fa fa-google-plus">
                     </i>
                   </a>
                   <a href="#">
@@ -423,4 +290,3 @@
       </div>
       <!-- End container -->
     </div>
-
