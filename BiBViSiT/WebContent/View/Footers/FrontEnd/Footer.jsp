@@ -2,40 +2,21 @@
 <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-sm-3 address wow fadeInUp animated" data-wow-duration="2s" data-wow-delay=".1s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-duration: 2s; animation-delay: 0.1s; animation-name: fadeInUp;">
-                     <h1>contact info</h1>
+               <div class="text-footer wow fadeInUp animated" data-wow-duration="2s" data-wow-delay=".7s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-duration: 2s; animation-delay: 0.7s; animation-name: fadeInUp;">
+                <h1 style="font-size:24pt">Free Places: <span id="texti" class="FreePlaces"> </span>  </h1>
+         
+                     <h3>contact info</h3>
                      <address>
-                         <p><i class="fa fa-home pr-10"></i>Address: No.XXXXXX street</p>
-                         <p><i class="fa fa-globe pr-10"></i>Mars city, Country</p>
-                         <p><i class="fa fa-mobile pr-10"></i>Mobile : (123) 456-7890</p>
-                         <p><i class="fa fa-phone pr-10"></i>Phone : (123) 456-7890</p>
-                         <p><i class="fa fa-envelope pr-10"></i>Email : <a href="javascript:;">support@example.com</a></p>
+                         <span><i class="fa fa-home pr-10"></i>Address: No.XXXXXX street   
+                         <i class="fa fa-globe pr-10"></i>Mars city, Country
+                         <i class="fa fa-mobile pr-10"></i>Mobile : (123) 456-7890
+                         <i class="fa fa-phone pr-10"></i>Phone : (123) 456-7890
+                         <i class="fa fa-envelope pr-10"></i>Kontakt : <a href="http://localhost:8080/BiBViSiT/View/Bodys/FrontEnd/Main/Contact.jsp">Feedback</a></span>
                      </address>
-                 </div>
-                <div class="col-lg-3 col-sm-3 wow fadeInUp animated" data-wow-duration="2s" data-wow-delay=".3s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-duration: 2s; animation-delay: 0.3s; animation-name: fadeInUp;">
-                <div onload= "myVisitor()">
-                <h1>Free Places: <span id="texti" class="FreePlaces"> </span>  </h1>
-                </div>
-                </div>
-                <div class="col-lg-3 col-sm-3">
-                <div class="page-footer wow fadeInUp animated" data-wow-duration="2s" data-wow-delay=".5s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-duration: 2s; animation-delay: 0.5s; animation-name: fadeInUp;">
-                    <h1>Our Company</h1>
-                    
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-3">
-
-                    <div class="text-footer wow fadeInUp animated" data-wow-duration="2s" data-wow-delay=".7s" data-wow-animation-name="fadeInUp" style="visibility: visible; animation-duration: 2s; animation-delay: 0.7s; animation-name: fadeInUp;">
-                    <h1>Text Widget</h1>
-                        <p>
-                            This is a text widget.Lorem ipsum dolor sit amet.
-                            This is a text widget.Lorem ipsum dolor sit amet
-                        </p>
                     </div>
                 </div>
 
             </div>
-
         </div>
     </footer>
     
@@ -79,8 +60,10 @@
     </script><i id="back-to-top" style="display: none;"></i>
     <script src="../../../Template/js/wow.min.js">
     </script>
-    
     <script src="../../../Template/js/VisitorView.js"></script>
+    <!--  
+    <script src="../../../Template/js/VisitorNow.js"></script> 
+    -->
     
     
 
