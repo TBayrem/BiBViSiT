@@ -12,15 +12,17 @@
 
 <%! public String denullify(String s){if (s == null) return ""; else return s;} %>
 <%
-String abmelden    = this.denullify(request.getParameter("Abmelden"));
 
+String zurLogout   = this.denullify(request.getParameter("zurLogout"));
 
-if (!admin.isLoggedIn()){
+//if (!admin.isLoggedIn()){
 	// msg.setNotLoggedIn();
 	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
 	
-}else if(abmelden.equals("Abmelden")){
-	admin.setLoggedIn(false);
+//}else 
+	if(zurLogout.equals("zurLogout")){
+	//admin.setLoggedIn(false);
+	session.invalidate();
 	// msg.setLoggedOff();
 	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Login.jsp");
 }else{
