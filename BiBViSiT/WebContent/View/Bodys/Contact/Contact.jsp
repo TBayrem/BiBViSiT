@@ -1,4 +1,4 @@
-
+<jsp:useBean id="contact" class="Model.Contact" scope="session"/>
 <div class="container">
 
 
@@ -48,39 +48,33 @@
 
           </section>
         </div>
+        
         <div class="col-lg-7 col-sm-7 address">
+         
           <h4>
             Drop us a line so that we can hear from you
           </h4>
+          
           <div class="contact-form">
-            <form role="form">
-              <div class="form-group">
-                <label for="name">
-                  Name
-                </label>
-                <input type="text" placeholder="" id="name" class="form-control">
-              </div>
+           
+            <form action="../../../../Controller/BackEnd/Admin/Contact.jsp" method="get">
+            
               <div class="form-group">
                 <label for="email">
-                  Email
+                 Ihren Email :
                 </label>
-                <input type="text" placeholder="" id="email" class="form-control">
+                <input type="email" placeholder="" id="email" name="besucher" class="form-control" value="">
               </div>
+              
               <div class="form-group">
                 <label for="phone">
-                  Phone
+                  Ihren Feedback:
                 </label>
-                <input type="text" id="phone" class="form-control">
+                <textarea  name="feedback" rows="7" class="form-control">                </textarea>
               </div>
-              <div class="form-group">
-                <label for="phone">
-                  Message
-                </label>
-                <textarea placeholder="" rows="5" class="form-control">                </textarea>
-              </div>
-              <button class="btn btn-info" type="submit">
-                Submit
-              </button>
+              
+              <input type="submit" name="senden" value="Senden" class="btn btn-info"/>
+              
             </form>
 
           </div>
