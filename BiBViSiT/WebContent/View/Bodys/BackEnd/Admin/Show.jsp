@@ -37,8 +37,8 @@
 		   
 		   
 		    <td><a href="../../../../Controller/BackEnd/Admin/Delete.jsp?Email=<%=A.getEmail()%>&Att=Delete">Delete</a></td>
-			<td><a href="../../../../Controller/BackEnd/Admin/Update.jsp?Email=<%=A.getEmail()%>&Att=Admin&A=<%=A.getAdmin()%>"><% if (A.getAdmin().equalsIgnoreCase("Y"))out.print("nicht admin machen") ;else out.print("admin machen") ;%></a></td>
-			<td><a href="../../../../Controller/BackEnd/Admin/Update.jsp?Email=<%=A.getEmail()%>&Att=Active&A=<%=A.getActive()%>"><% if (A.getActive().equalsIgnoreCase("Y"))out.print("nicht active machen") ;else out.print("active machen") ;%></a></td>
+			<td><a href="../../../../Controller/BackEnd/Admin/Update.jsp?Email=<%=A.getEmail()%>&Att=Admin&A=<%=A.getAdmin()%>"><% if (A.getAdmin().equalsIgnoreCase("Y"))out.print("Nicht Admin") ;else out.print("Admin setzen") ;%></a></td>
+			<td><a href="../../../../Controller/BackEnd/Admin/Update.jsp?Email=<%=A.getEmail()%>&Att=Active&A=<%=A.getActive()%>"><% if (A.getActive().equalsIgnoreCase("Y"))out.print("Konto Activieren") ;else out.print("Konto Desaktivieren") ;%></a></td>
 		
 			
 		</tr>
