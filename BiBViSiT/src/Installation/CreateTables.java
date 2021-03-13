@@ -19,6 +19,8 @@ public class CreateTables {
 		createTableOfVisitor();
 		createTableOfRservation();
 		insertFirstAdmin();
+		insertSecondAdmin();
+		insertThirdAdmin();
 		insertFirstPlace();
 		insertFirstVisitor();
 		insertFirstReservation();
@@ -39,6 +41,19 @@ public class CreateTables {
 		stmt.executeUpdate(sql);
 	}
 
+	
+	 public void createTableOfFeedback() throws SQLException {
+
+		 String sql = "DROP TABLE IF EXISTS feedback CASCADE;"
+		 + "create table feedback                ("
+		 + " userid   SERIAL  PRIMARY KEY," // Serielle UserId, wie wir bereits kommuniziert haben
+		 + " email VARCHAR(256)                 ,"
+		 + " bearbeitung   CHAR(1)  NOT NULL DEFAULT 'N',"
+		 + " feedback    VARCHAR(750)                 )";///unique
+		 Statement stmt = this.dbConn.createStatement();
+		 stmt.executeUpdate(sql);
+		 }
+	 
 	public void createTableOfPlace() throws SQLException {
 
 		String sql = "DROP TABLE IF EXISTS place CASCADE;"
@@ -71,8 +86,8 @@ public class CreateTables {
 				+ "				visitor INT ,"
 				+ "				Day date NOT NULL,"
 				+ "				expired INT Default 0,"
-				+ "             FOREIGN KEY (place) REFERENCES place(Num),"
-				+ "             FOREIGN KEY (visitor) REFERENCES visitor(Imma))";
+				+ "             FOREIGN KEY (place) REFERENCES place(Num) ON DELETE CASCADE,"
+				+ "             FOREIGN KEY (visitor) REFERENCES visitor(Imma) ON DELETE CASCADE)";
 		Statement stmt = this.dbConn.createStatement();
 		stmt.executeUpdate(sql);
 	}
@@ -82,11 +97,35 @@ public class CreateTables {
 				+ "values" + "(?,?,?,?,?)";
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
 	
-		prep.setString(1, "S6ny+Va56");
+		prep.setString(1, "1234");
 		prep.setString(2, "Y");
 		prep.setString(3, "Y");
 		prep.setString(4, "BayremTr");
 		prep.setString(5, "bayrem.trabelsi@outlook.com");
+		prep.executeUpdate();
+	}
+	public void insertSecondAdmin() throws SQLException {
+		String sql = "insert into admin " + "( password, active, admin, username, email) "
+				+ "values" + "(?,?,?,?,?)";
+		PreparedStatement prep = this.dbConn.prepareStatement(sql);
+	
+		prep.setString(1, "1234");
+		prep.setString(2, "Y");
+		prep.setString(3, "Y");
+		prep.setString(4, "AhmedAyadi");
+		prep.setString(5, "Ahmed19ayadi@gmail.com");
+		prep.executeUpdate();
+	}
+	public void insertThirdAdmin() throws SQLException {
+		String sql = "insert into admin " + "( password, active, admin, username, email) "
+				+ "values" + "(?,?,?,?,?)";
+		PreparedStatement prep = this.dbConn.prepareStatement(sql);
+	
+		prep.setString(1, "1234");
+		prep.setString(2, "Y");
+		prep.setString(3, "Y");
+		prep.setString(4, "ShaymaRebhi");
+		prep.setString(5, "ShaymaRebhi15@gmail.com");
 		prep.executeUpdate();
 	}
 	
