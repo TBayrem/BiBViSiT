@@ -10,7 +10,15 @@ import DataBase.PostgreSQLAccess;
 
 public class Visitor {
 
-	private int ID;// Serial back to createtables//
+	public int getImma() {
+		return Imma;
+	}
+
+	public void setImma(int imma) {
+		Imma = imma;
+	}
+
+	private int ID;
 	private int Imma;
 	private String Psydo;
 	private String Fach;
@@ -19,40 +27,39 @@ public class Visitor {
 
 	}
 
-	public Visitor( int ID ,String Psydo, String Fach) {
-		
+	public Visitor(int ID, int Imma, String Psydo, String Fach) {
+
+		this.ID = ID;
+		this.Imma = Imma;
 		this.Psydo = Psydo;
 		this.Fach = Fach;
 	}
 
-	
-	public  Visitor getVisitor(String Psydo) throws SQLException {
+	public Visitor getVisitor(String Psydo) throws SQLException {
 
 		String sql = "select * from Place where Psydo = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setString(1, Psydo);
 		ResultSet dbRes = prep.executeQuery();
-		return  new Visitor(dbRes.getInt("ID"), dbRes.getString("Psydo"), dbRes.getString("Fach"));
-		
+		return new Visitor(dbRes.getInt("ID"), dbRes.getInt("Imma"), dbRes.getString("Psydo"), dbRes.getString("Fach"));
 
 	}
-	public boolean SearchVisitor(int Imma) throws SQLException {
-		
-		
+
+	public static boolean SearchVisitor(int Imma) throws SQLException {
 
 		String sql = "select * from Visitor where Imma = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setInt(1, Imma);
 		ResultSet dbRes = prep.executeQuery();
-		return  dbRes.next();
+		return dbRes.next();
 
 	}
 
-	public boolean DeleteVisitor(int Imma) throws SQLException {
+	public static boolean DeleteVisitor(int Imma) throws SQLException {
 
-		String sql = "delete from Visitor where Imma = ?";
+		String sql = "delete cascade from Visitor where Imma = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 
@@ -66,7 +73,7 @@ public class Visitor {
 
 	public boolean DeleteAllVisitors() throws SQLException {
 
-		String sql = "delete from Visitor";
+		String sql = "delete cascade from Visitor";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 
@@ -78,9 +85,8 @@ public class Visitor {
 
 	}
 
-	public boolean InsertVisitor(int Imma, String Psydo, String Fach) throws SQLException {
+	public static boolean InsertVisitor(int Imma, String Psydo, String Fach) throws SQLException {
 
-	
 		String sql = "insert into Visitor (Imma, Psydo, Fach) values (?,?,?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
@@ -94,14 +100,15 @@ public class Visitor {
 			return false;
 	}
 
-	public Vector<Visitor> getAll() throws SQLException {
+	public static Vector<Visitor> getAll() throws SQLException {
 
 		Vector<Visitor> Vectorofvisitors = new Vector<Visitor>();
-		String sql = "select ID, Psydo, Fach from Visitor ";
+		String sql = "select * from Visitor ";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		ResultSet dbRes = dbConn.createStatement().executeQuery(sql);
 		while (dbRes.next()) {
-			Visitor V = new Visitor(dbRes.getInt("ID"), dbRes.getString("Psydo"), dbRes.getString("Fach"));
+			Visitor V = new Visitor(dbRes.getInt("ID"), dbRes.getInt("Imma"), dbRes.getString("Psydo"),
+					dbRes.getString("Fach"));
 			Vectorofvisitors.add(V);
 		}
 		return Vectorofvisitors;
