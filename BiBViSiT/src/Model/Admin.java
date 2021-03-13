@@ -10,13 +10,24 @@ import DataBase.PostgreSQLAccess;
 
 public class Admin {
 
+<<<<<<< Updated upstream
     private int Userid; // wir brauchen diese Attribute nicht mehr? den UserId ist automatich angegeben jetzt oder?
+=======
+  
+	private int Userid; 
+>>>>>>> Stashed changes
 	private String password;
 	private String active ;
 	private String admin  ;
 	private String username;
 	private String email;
+<<<<<<< Updated upstream
 	//boolean isLoggedIn;
+=======
+
+	
+
+>>>>>>> Stashed changes
 
 	public Admin() {
 	//	this.email = "";
@@ -34,6 +45,7 @@ public class Admin {
 		
 	}
 	
+<<<<<<< Updated upstream
 //	public String getLoginCheckRedirectHtml() {
 //		String html = "";
 //		if (this.isLoggedIn() == false){
@@ -50,6 +62,8 @@ public class Admin {
 //		this.isLoggedIn = isLoggedIn;
 //	}
 	
+=======
+>>>>>>> Stashed changes
 	
 	public Admin AdminperEmailPassword(String email, String password) throws SQLException {
 
@@ -67,8 +81,6 @@ public class Admin {
 		
 	}
 
-
-	// die suche ist mit den username in diesen fall da den id serial ist!
 	public boolean SearchAdmin(String username) throws SQLException {
 
 		String sql = "select * from admin where username = ?";
@@ -106,7 +118,7 @@ public class Admin {
 			return false;
 	}
 
-	public boolean DeleteAdmin(String email) throws SQLException {
+	public static boolean DeleteAdmin(String email) throws SQLException {
 
 		String sql = "delete from admin where email = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -136,7 +148,7 @@ public class Admin {
 			return false;
 	}
 
-	public Vector<Admin> getAll() throws SQLException {
+	public static Vector<Admin> getAll() throws SQLException {
 
 		Vector<Admin> Vectoradmin = new Vector<Admin>();
 		Vectoradmin.clear(); // ??
@@ -159,7 +171,7 @@ public class Admin {
 
 	// update admin : if admin = yes dann kan er andere admin loschen zB.
 
-	public boolean updateAdmin(String email, String admin ) throws SQLException {
+	public static boolean updateAdmin(String email, String admin ) throws SQLException {
 
 		String sql = "update admin Set admin = ? where  email = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -172,7 +184,7 @@ public class Admin {
 		else
 			return false;
 	}
-	public boolean updateActive(String email, String activ ) throws SQLException {
+	public static boolean updateActive(String email, String activ ) throws SQLException {
 
 		String sql = "update admin Set active = ? where  email = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -234,13 +246,6 @@ public class Admin {
 		Userid = userid;
 	}
 	
-//	public String getAdminsaccess() {
-//	if (admin.equalsIgnoreCase("Y"))
-//	{
-//		
-//		return "<li><a href='../../../Bodys/BackEnd/Main/Admins.jsp'>Admins</a> </li>";
-//	}
-//	else return "";
-//	}
+
 	
 }
