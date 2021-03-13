@@ -56,7 +56,8 @@ public  Reservation getReservation(int ID) throws SQLException {
 
 
 
-public boolean DeleteReservation(int ID) throws SQLException {
+public static
+boolean DeleteReservation(int ID) throws SQLException {
 
 	String sql = "delete from reservation where ID = ?";
 	Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -101,7 +102,7 @@ public boolean DeleteReservation(int ID) throws SQLException {
 	
 
 	
-	public boolean InsertReservation(int Num, int Imma, Date day  ) throws SQLException, ParseException {
+	public static boolean InsertReservation(int Num, int Imma, Date day  ) throws SQLException, ParseException {
 
 		String sql = "insert into reservation (place, visitor, day) values (?,?,?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -135,7 +136,7 @@ public boolean DeleteReservation(int ID) throws SQLException {
 	}
 	
 	//blayess reservee fi nhar day
-	public Vector<Integer> getAlldayplaces(Date Day) throws SQLException {
+	public static Vector<Integer> getAlldayplaces(Date Day) throws SQLException {
 
 		Vector<Integer> VectorAlldayplaces = new Vector<Integer>();
 		String sql = "select place from Reservation where Day = ? ";
