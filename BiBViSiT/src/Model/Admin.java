@@ -10,19 +10,18 @@ import DataBase.PostgreSQLAccess;
 
 public class Admin {
 
-  
-	private int Userid; // wir brauchen diese Attribute nicht mehr? den UserId ist automatich angegeben jetzt oder?
+    private int Userid; // wir brauchen diese Attribute nicht mehr? den UserId ist automatich angegeben jetzt oder?
 	private String password;
 	private String active ;
 	private String admin  ;
 	private String username;
 	private String email;
-
-	boolean isLoggedIn = false;
-	
-
+	//boolean isLoggedIn;
 
 	public Admin() {
+	//	this.email = "";
+	//	this.password = "";
+	//	this.isLoggedIn = false;
 	}
 
 	public Admin(int Userid, String password, String active, String admin, String username, String email) {
@@ -35,21 +34,21 @@ public class Admin {
 		
 	}
 	
-	public String getLoginCheckRedirectHtml() {
-		String html = "";
-		if (!this.isLoggedIn()){
-			html += "<meta http-equiv='refresh' content='0; URL=../../../../Controller/BackEnd/Admin/Home.jsp' >";
-		}
-		return html;
-	}
+//	public String getLoginCheckRedirectHtml() {
+//		String html = "";
+//		if (this.isLoggedIn() == false){
+//			html += "<meta http-equiv='refresh' content='0; URL=../../../../Controller/BackEnd/Admin/Home.jsp' >";
+//		}
+//		return html;
+//	}
 
-	public boolean isLoggedIn() {
-		return isLoggedIn;
-	}
-
-	public void setLoggedIn(boolean isLoggedIn) {
-		this.isLoggedIn = isLoggedIn;
-	}
+//	public boolean isLoggedIn() {
+//		return isLoggedIn;
+//	}
+//
+//	public void setLoggedIn(boolean isLoggedIn) {
+//		this.isLoggedIn = isLoggedIn;
+//	}
 	
 	
 	public Admin AdminperEmailPassword(String email, String password) throws SQLException {
