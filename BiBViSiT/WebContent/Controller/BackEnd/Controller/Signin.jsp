@@ -1,7 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+
 <jsp:useBean id="admin" class="Model.Admin" scope="session" />
-<jsp:useBean id="msg" class="Model.Message" scope="session"></jsp:useBean>
 <%!
 public String denullify(String s){
 	if (s == null) return "";
@@ -23,28 +21,23 @@ public String denullify(String s){
 
 	try{	
 		boolean adminExist = admin.SearchAdminperEmail(email, password);
-		if (!adminExist){//alles ok)
+		if (!adminExist){
 			
 			admin.InsertAdmin();
-			msg.setAdminInserted(username);
-		}else{//userid schon belegt
+		}else{
 			
-			msg.setAdminAlreadyExists(username);
 		}
-	}catch(Exception e){//unerwarteter Fehler
+	}catch(Exception e){
 		
 		e.printStackTrace();
-		msg.setUnexpectedError();
 		
 	}
 	response.sendRedirect("../View/Login.jsp");
 }else if(zumLogin.equals("zumLogin")){
-	msg.setGeneralWelcome();
+
 	response.sendRedirect("../View/Login.jsp");
 }else{
 	
-
-	msg.setGeneralWelcome();
 	response.sendRedirect("../View/Signin.jsp");
 }
  
