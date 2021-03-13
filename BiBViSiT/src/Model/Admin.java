@@ -10,24 +10,15 @@ import DataBase.PostgreSQLAccess;
 
 public class Admin {
 
-<<<<<<< Updated upstream
-    private int Userid; // wir brauchen diese Attribute nicht mehr? den UserId ist automatich angegeben jetzt oder?
-=======
-  
+
 	private int Userid; 
->>>>>>> Stashed changes
+
 	private String password;
 	private String active ;
 	private String admin  ;
 	private String username;
 	private String email;
-<<<<<<< Updated upstream
-	//boolean isLoggedIn;
-=======
 
-	
-
->>>>>>> Stashed changes
 
 	public Admin() {
 	//	this.email = "";
@@ -45,25 +36,7 @@ public class Admin {
 		
 	}
 	
-<<<<<<< Updated upstream
-//	public String getLoginCheckRedirectHtml() {
-//		String html = "";
-//		if (this.isLoggedIn() == false){
-//			html += "<meta http-equiv='refresh' content='0; URL=../../../../Controller/BackEnd/Admin/Home.jsp' >";
-//		}
-//		return html;
-//	}
 
-//	public boolean isLoggedIn() {
-//		return isLoggedIn;
-//	}
-//
-//	public void setLoggedIn(boolean isLoggedIn) {
-//		this.isLoggedIn = isLoggedIn;
-//	}
-	
-=======
->>>>>>> Stashed changes
 	
 	public Admin AdminperEmailPassword(String email, String password) throws SQLException {
 
@@ -166,10 +139,6 @@ public class Admin {
 		}
 		return Vectoradmin;
 	}
-	// ist alles ok Oder sollen wir userid zuerst als string eintragen ? klappt es
-	// so ?
-
-	// update admin : if admin = yes dann kan er andere admin loschen zB.
 
 	public static boolean updateAdmin(String email, String admin ) throws SQLException {
 
