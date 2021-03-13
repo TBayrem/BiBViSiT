@@ -11,7 +11,7 @@ if(request.getParameter("Att").equals("Admin")){
 	if (A.equals("Y")) A = "N"; else A = "Y"; 
 	admin.updateAdmin(request.getParameter("Email"), A);
 }
-else if(request.getParameter("Att").equals("Activ")){
+else if(request.getParameter("Att").equals("Active")){
 	String A =request.getParameter("A");
 	if (A.equals("Y")) A = "N"; else A = "Y"; 
 	admin.updateActive(request.getParameter("Email"), A);
