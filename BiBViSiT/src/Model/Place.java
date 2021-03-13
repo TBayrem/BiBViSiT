@@ -32,7 +32,7 @@ public class Place {
 	}
 
 	
-	public Place getPlace(int num) throws SQLException {
+	public static Place getPlace(int num) throws SQLException {
 
 		String sql = "select * from Place where num = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -84,7 +84,7 @@ public class Place {
 			return false;
 	}
 
-	public boolean InsertPlace(Place P) throws SQLException {
+	public static boolean InsertPlace(Place P) throws SQLException {
 
 		String sql = "insert into Place (Num ) values (?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -97,7 +97,7 @@ public class Place {
 			return false;
 	}
 
-	public Vector<Place> getAll() throws SQLException {
+	public static Vector<Place> getAll() throws SQLException {
 
 		Vector<Place> Vectorofplaces = new Vector<Place>();
 		String sql = "select * from Place ";
@@ -110,7 +110,7 @@ public class Place {
 		return Vectorofplaces;
 	}
 
-	public boolean UpdateAvailability(int Num, int Availability) throws SQLException {
+	public static boolean UpdateAvailability(int Num, int Availability) throws SQLException {
 
 		String sql = "update Place Set Available = ? where Num = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
