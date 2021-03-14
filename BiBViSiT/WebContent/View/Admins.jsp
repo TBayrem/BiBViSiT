@@ -45,13 +45,8 @@
 						<th>#</th>
 						<th>Username</th>
 						<th>Email</th>
-<<<<<<< HEAD
 						<th>Admin-Status </th>
 						<th>Konto-Status</th>
-=======
-						<th>Admin </th>
-						<th>Activation</th>
->>>>>>> cb179479c1ce256a5dcb778a4d97fe599b6ec25b
 						<th>Löschen</th>
 						<th>Update Admin</th>
 						<th>Update Activ</th>
@@ -102,11 +97,7 @@
 							href="../Controller/UpdateAdmin.jsp?Email=<%=A.getEmail()%>&Att=Active&A=<%=A.getActive()%>">
 								<%
 									if (A.getActive().equalsIgnoreCase("Y"))
-<<<<<<< HEAD
 									out.print("Konto deaktivieren");
-=======
-									out.print("Konto desactivieren");
->>>>>>> cb179479c1ce256a5dcb778a4d97fe599b6ec25b
 								else
 									out.print("Konto aktivieren");
 								%>
