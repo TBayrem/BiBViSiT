@@ -25,12 +25,12 @@ if (senden.equals("Senden")){
 	contact.setFeedback(feedback);
 	contact.merksDir();
 
-	response.sendRedirect("../../../View/Bodys/FrontEnd/Main/Home.jsp");
+	response.sendRedirect("../View/Home.jsp");
 }else if(zurContact.equals("zurContact")){
 	
-	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Feedback.jsp");
+	response.sendRedirect("../Feedback.jsp");
 }else{
-	response.sendRedirect("../../../View/Bodys/BackEnd/Admin/Home.jsp");
+	response.sendRedirect("../View/Home.jsp");
 }
 
 

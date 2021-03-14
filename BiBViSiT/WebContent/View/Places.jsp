@@ -13,7 +13,7 @@
 <div class="bs-example col-sm-6">
     <form class="form-inline" action="../Controller/AddPlace.jsp">
         <div class="form-group">
-        <input type="text" class="form-control" name="Num"  placeholder="Nummer eingeben">
+        <input type="number" maxlength="6" class="form-control" name="Num"  placeholder="Nummer eingeben">
         </div>
       <input type="submit" name="Add" class="btn btn-primary btn-flat" Value="Platz Addieren"/>
     </form>
