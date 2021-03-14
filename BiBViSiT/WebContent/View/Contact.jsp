@@ -33,18 +33,18 @@
 
 				<div class="contact-form">
 
-					<form action="../../../../Controller/BackEnd/Admin/Contact.jsp"
+					<form action="../Controller/Contact.jsp"
 						method="get">
 
 						<div class="form-group">
-							<label for="email"> Ihren Email : </label> <input type="email"
-								placeholder="" id="email" name="email" class="form-control"
+							<label for="email">Email : </label> <input type="email"
+								placeholder="E-Mail" name="Email" class="form-control"
 								value="">
 						</div>
 
 						<div class="form-group">
-							<label for="phone"> Ihren Feedback: </label>
-							<textarea name="feedback" rows="7" class="form-control">                </textarea>
+							<label for="phone">Message: </label>
+							<textarea name="MSG" rows="7" class="form-control">  </textarea>
 						</div>
 
 						<input type="submit" name="senden" value="Senden"

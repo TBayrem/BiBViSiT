@@ -21,9 +21,7 @@ public class Admin {
 
 
 	public Admin() {
-	//	this.email = "";
-	//	this.password = "";
-	//	this.isLoggedIn = false;
+	
 	}
 
 	public Admin(int Userid, String password, String active, String admin, String username, String email) {
@@ -38,7 +36,7 @@ public class Admin {
 	
 
 	
-	public Admin AdminperEmailPassword(String email, String password) throws SQLException {
+	public static Admin AdminperEmailPassword(String email, String password) throws SQLException {
 
 		String sql = "select * from admin where email = ? and password = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -53,19 +51,8 @@ public class Admin {
 		
 		
 	}
-
-	public boolean SearchAdmin(String username) throws SQLException {
-
-		String sql = "select * from admin where username = ?";
-		Connection dbConn = new PostgreSQLAccess().getConnection();
-		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setString(1, username);
-		ResultSet dbRes = prep.executeQuery();
-		return dbRes.next();
-
-	}
 	
-	public boolean SearchAdminperEmail(String email, String password) throws SQLException {
+	public static boolean SearchAdminperEmail(String email, String password) throws SQLException {
 
 		String sql = "select * from admin where email= ? and password = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -78,18 +65,6 @@ public class Admin {
 
 	}
 
-	public boolean DeleteAllAdmins() throws SQLException {
-
-		String sql = "delete from admin";
-		Connection dbConn = new PostgreSQLAccess().getConnection();
-		PreparedStatement prep = dbConn.prepareStatement(sql);
-
-		int result = prep.executeUpdate();
-		if (result != 0)
-			return true;
-		else
-			return false;
-	}
 
 	public static boolean DeleteAdmin(String email) throws SQLException {
 
@@ -104,16 +79,16 @@ public class Admin {
 		else
 			return false;
 	}
-// 2et Methode : einfach Admin einfügen !!
 
-	public boolean InsertAdmin() throws SQLException {
+
+	public static boolean InsertAdmin(String password, String username, String email) throws SQLException {
 
 		String sql = "insert into admin (password, username, email) values (?,?,?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setString(1, this.password);
-		prep.setString(2, this.username);
-		prep.setString(3, this.email);
+		prep.setString(1, password);
+		prep.setString(2, username);
+		prep.setString(3, email);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;

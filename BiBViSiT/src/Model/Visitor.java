@@ -10,14 +10,6 @@ import DataBase.PostgreSQLAccess;
 
 public class Visitor {
 
-	public int getImma() {
-		return Imma;
-	}
-
-	public void setImma(int imma) {
-		Imma = imma;
-	}
-
 	private int ID;
 	private int Imma;
 	private String Psydo;
@@ -71,20 +63,6 @@ public class Visitor {
 			return false;
 	}
 
-	public boolean DeleteAllVisitors() throws SQLException {
-
-		String sql = "delete cascade from Visitor";
-		Connection dbConn = new PostgreSQLAccess().getConnection();
-		PreparedStatement prep = dbConn.prepareStatement(sql);
-
-		int result = prep.executeUpdate();
-		if (result != 0)
-			return true;
-		else
-			return false;
-
-	}
-
 	public static boolean InsertVisitor(int Imma, String Psydo, String Fach) throws SQLException {
 
 		String sql = "insert into Visitor (Imma, Psydo, Fach) values (?,?,?)";
@@ -120,6 +98,14 @@ public class Visitor {
 
 	public void setID(int iD) {
 		ID = iD;
+	}
+
+	public int getImma() {
+		return Imma;
+	}
+
+	public void setImma(int imma) {
+		Imma = imma;
 	}
 
 	public String getPsydo() {

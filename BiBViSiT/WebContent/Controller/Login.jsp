@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<jsp:useBean id="admin" class="Model.Admin" scope="session" />
+<%@page import="Model.Admin"%>
+
 <%!public String denullify(String s) {
 		if (s == null)
 			return "";
@@ -16,15 +15,15 @@ String login = this.denullify(request.getParameter("login"));
 String zurReg = this.denullify(request.getParameter("zurReg"));
 
 if (login.equals("Anmelden")) {
-	admin = admin.AdminperEmailPassword(email, password);
+	Admin A = Admin.AdminperEmailPassword(email, password);
 
 	try {
 
-		if (admin != null) {
-	if (admin.getActive().equalsIgnoreCase("Y")) {
+		if (A != null) {
+	if (A.getActive().equalsIgnoreCase("Y")) {
 		session.setAttribute("Account", 1);
 		session.setAttribute("Admin", 0);
-		if (admin.getAdmin().equalsIgnoreCase("Y")) {
+		if (A.getAdmin().equalsIgnoreCase("Y")) {
 			session.setAttribute("Admin", 1);
 		}
 		
@@ -36,13 +35,13 @@ if (login.equals("Anmelden")) {
 		response.sendRedirect("../View/Error.jsp");
 	}
 		} else {
-	session.setAttribute("Accoutn", -1);
+	session.setAttribute("Accoutn", 0);
 
 	response.sendRedirect("../View/Error.jsp");
 
 		}
 	} catch (Exception e) {
-		session.setAttribute("Accoutn", -2);
+		session.setAttribute("Accoutn", 0);
 
 		response.sendRedirect("../View/Error.jsp");
 	}

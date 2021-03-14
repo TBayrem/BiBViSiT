@@ -71,18 +71,7 @@ public class Place {
 			return false;
 	}
 
-	public boolean DeleteAllPlaces() throws SQLException {
 
-		String sql = "delete from Place";
-		Connection dbConn = new PostgreSQLAccess().getConnection();
-		PreparedStatement prep = dbConn.prepareStatement(sql);
-
-		int result = prep.executeUpdate();
-		if (result != 0)
-			return true;
-		else
-			return false;
-	}
 
 	public static boolean InsertPlace(Place P) throws SQLException {
 
