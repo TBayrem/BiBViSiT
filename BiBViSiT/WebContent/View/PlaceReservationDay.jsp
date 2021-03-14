@@ -19,7 +19,7 @@
 	Vector<Integer> Vectorofalldayplaces = Reservation.getAlldayplaces(day);
 	int notavailable = 0;
 	for (Place P : vectorofplaces) {
-		if (Vectorofalldayplaces.contains(P.getNum())) {
+		if ((Vectorofalldayplaces.contains(P.getNum()))||(P.getAvailable()==0)) {
 			notavailable++;
 	%>
 	<div class="col-lg-2 col-sm-2 mar-two">
