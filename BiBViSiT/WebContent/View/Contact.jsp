@@ -1,6 +1,6 @@
 <jsp:include page="./Header.jsp" />
 <body>
-	<jsp:include page="./BackEndNavigationbar.jsp" />
+	<jsp:include page="./FrontEndNavigationbar.jsp" />
 KONTAKT
 	<jsp:include page="./Copyright.jsp" />
 

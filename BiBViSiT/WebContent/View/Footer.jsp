@@ -1,18 +1,18 @@
 
 <!-- js placed at the end of the document so the pages load faster -->
-<script src="../../../View/Template/js/footer.js"></script>
-<script src="../../../View/Template/js/jquery.js">
+<script src="../Template/js/footer.js"></script>
+<script src="../Template/js/jquery.js">
 	
 </script>
-<script src="../../../View/Template/js/bootstrap.min.js">
-	
-</script>
-<script type="text/javascript"
-	src="../../../View/Template/js/hover-dropdown.js">
+<script src="../Template/js/bootstrap.min.js">
 	
 </script>
 <script type="text/javascript"
-	src="../../../View/Template/assets/bxslider/jquery.bxslider.js">
+	src="../Template/js/hover-dropdown.js">
+	
+</script>
+<script type="text/javascript"
+	src="../Template/assets/bxslider/jquery.bxslider.js">
 	
 </script>
 
@@ -24,14 +24,14 @@
 
 
 <!--common script for all pages-->
-<script src="../../../View/Template/js/common-scripts.js">
+<script src="../Template/js/common-scripts.js">
 	
 </script>
 <i id="back-to-top" style="display: none;"></i>
-<script src="../../../View/Template/js/wow.min.js">
+<script src="../Template/js/wow.min.js">
 	
 </script>
 
-<script src="../../../View/Template/js/management.js"></script>
+<script src="../Template/js/management.js"></script>
 
 

@@ -29,7 +29,7 @@ if (login.equals("Anmelden")) {
 		}
 		
 	
-		response.sendRedirect("../View/Home.jsp");
+		response.sendRedirect("../View/BackEndHome.jsp");
 	} else {
 		session.setAttribute("Account", 0);
 

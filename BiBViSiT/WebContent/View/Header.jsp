@@ -7,32 +7,32 @@
 
 <html>
 <meta charset="utf-8">
-<link rel="shortcut icon" href="../../../View/Template/img/favicon.png">
+<link rel="shortcut icon" href="../Template/img/favicon.png">
 
 <title>BiB|ViSiT</title>
 
 <!-- Bootstrap core CSS -->
-<link href="../../../View/Template/css/bootstrap.min.css"
+<link href="../Template/css/bootstrap.min.css"
 	rel="stylesheet">
-<link href="../../../View/Template/css/theme.css" rel="stylesheet">
-<link href="../../../View/Template/css/bootstrap-reset.css"
+<link href="../Template/css/theme.css" rel="stylesheet">
+<link href="../Template/css/bootstrap-reset.css"
 	rel="stylesheet">
 <!--external css-->
 <link
-	href="../../../View/Template/assets/font-awesome/css/font-awesome.css"
+	href="../Template/assets/font-awesome/css/font-awesome.css"
 	rel="stylesheet">
-<link rel="stylesheet" href="../../../View/css/flexslider.css">
-<link href="../../../View/Template/assets/bxslider/jquery.bxslider.css"
+<link rel="stylesheet" href="../Template/css/flexslider.css">
+<link href="../Template/assets/bxslider/jquery.bxslider.css"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css"
-	href="../../../View/Template/css/animate.css">
+	href="../View/Template/css/animate.css">
 <link href="http://fonts.googleapis.com/css?family=Lato"
 	rel="stylesheet" type="text/css">
 
 
 <!-- Custom styles for this template -->
-<link href="../../../View/Template/css/style.css" rel="stylesheet">
-<link href="../../../View/Template/css/style-responsive.css"
+<link href="../Template/css/style.css" rel="stylesheet">
+<link href="../Template/css/style-responsive.css"
 	rel="stylesheet">
 
 

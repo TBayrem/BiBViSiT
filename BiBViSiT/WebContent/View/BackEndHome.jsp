@@ -3,7 +3,7 @@
 
 
 <body>
-	<jsp:include page="./FrontEndNavigationbar.jsp" />
+	<jsp:include page="./BackEndNavigationbar.jsp" />
 
 	<div class="col-lg-9">
 		<iframe id="ShowReservationday" frameBorder="0" height="700px"
