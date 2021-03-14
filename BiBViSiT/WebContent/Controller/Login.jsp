@@ -1,4 +1,5 @@
 <%@page import="Model.Admin"%>
+<jsp:useBean id="admin" class="Model.Admin" scope="session" />
 
 <%!public String denullify(String s) {
 		if (s == null)

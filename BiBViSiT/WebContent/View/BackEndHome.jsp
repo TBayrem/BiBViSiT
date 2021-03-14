@@ -1,3 +1,4 @@
+<jsp:useBean id="admin" class="Model.Admin" scope="session" />
 
 <jsp:include page="./Header.jsp" />
 

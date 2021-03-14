@@ -1,5 +1,8 @@
 <%@page import="Model.Admin"%>
+<jsp:useBean id="admin" class="Model.Admin" scope="session" />
+
 <%
+
 	if (request.getParameter("Att").equals("Admin")) {
 	String A = request.getParameter("A");
 	if (A.equals("Y"))
