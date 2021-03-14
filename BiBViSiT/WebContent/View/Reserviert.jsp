@@ -1,7 +1,7 @@
 <jsp:include page="./Header.jsp" />
 
 
-    <body>
+
     <div class="gray-bg">
     <div class="fof">
             <!-- 404 error -->

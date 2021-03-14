@@ -1,5 +1,5 @@
 <jsp:include page="./Header.jsp" />
-<body>
+
 	<jsp:include page="./BackEndNavigationbar.jsp" />
 <%@page import="Model.Visitor"%>
 <%@page import="java.util.Vector"%>
@@ -15,7 +15,7 @@ response.sendRedirect("../View/Error.jsp");
 int all_Visitors = vectorofvisitors.size();
 %>
 <div class="bs-docs-section">
-	<h2 id="tables-example">Visitors</h2>
+	<h2 id="tables-example">Besucher</h2>
 	
 
 
@@ -23,7 +23,7 @@ int all_Visitors = vectorofvisitors.size();
 	<div class="bs-example col-sm-6">
 		<input type="text" id="SearchInput" class="form-control"
 			onkeyup="SearchPlace(<%=all_Visitors%>)"
-			placeholder="Visitor Suchen">
+			placeholder="Besucher Suchen">
 
 	</div>
 	<div class="bs-example">
@@ -31,7 +31,8 @@ int all_Visitors = vectorofvisitors.size();
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>Psydo</th>
+					<th>Immatrikulationsnummer</th>
+					<th>Name/Vorname</th>
 					<th>Studiengang</th>
 					<th>Löschen</th>
 					
@@ -47,7 +48,7 @@ int all_Visitors = vectorofvisitors.size();
 					<td><%=V.getImma()%></td>
 					<td id="<%=i%>"><%=V.getPsydo()%></td>
 					<td><%=V.getFach()%></td>					<td><a
-						href="../Controller/DeleteVisitor.jsp?Imma=<%=V.getImma()%>">Delete</a></td>
+						href="../Controller/DeleteVisitor.jsp?Id=<%=V.getID()%>">Löschen</a></td>
 				</tr>
 				<%
 					i++;

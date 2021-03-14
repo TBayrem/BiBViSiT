@@ -2,7 +2,7 @@
 <jsp:include page="./Header.jsp" />
 
 
-<body>
+
 	<div class="login-bg">
 		<div class="container">
 			<div class="form-wrapper">
@@ -29,7 +29,6 @@
 			</div>
 		</div>
 	</div>
-		<jsp:include page="./Copyright.jsp" />
 	<jsp:include page="./Footer.jsp" />
 </body>
 </html>

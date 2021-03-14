@@ -17,12 +17,12 @@
 		Vector<Messages> vectorContact = Messages.getAll();
 	%>
 	<div class="bs-docs-section">
-		<h2 id="tables-example">Admins</h2>
+		<h2 id="tables-example">Nachrichten</h2>
 
 		<p>
-			Wir Sind :
+			Wir haben :
 			<code><%=vectorContact.size()%></code>
-			Admins
+			Nachrichten
 		</p>
 
 
@@ -31,7 +31,7 @@
 		<div class="bs-example col-sm-6">
 			<input type="text" id="SearchAdmin" class="form-control"
 				onkeyup="SearchAdmin(<%=vectorContact.size()%>)"
-				placeholder="Admin Suchen">
+				placeholder="Nachricht Suchen">
 
 		</div>
 
@@ -42,8 +42,8 @@
 					<tr>
 						<th>#</th>
 						<th>Email</th>
-						<th>MSG</th>
-						<th>Delete</th>
+						<th>Nachrichten</th>
+						<th>Löschen</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -51,15 +51,15 @@
 					<%
 						int i = 0;
 
-					for (Messages C : vectorContact) {
+					for (Messages M : vectorContact) {
 					%>
 
 					<tr id="<%out.print(i + "tr");%>">
-						<td><%=C.getID()%></td>
-						<td id="<%=i%>"><%=C.getEmail()%></td>
-						<td><%=C.getMSG()%></td>
+						<td><%=M.getID()%></td>
+						<td id="<%=i%>"><%=M.getEmail()%></td>
+						<td><%=M.getMSG()%></td>
 						<td><a
-							href="../Controller/DeleteMessages.jsp?ID=<%=C.getID()%>">Delete</a></td>
+							href="../Controller/DeleteMessages.jsp?ID=<%=M.getID()%>">Löschen</a></td>
 					</tr>
 
 					<%

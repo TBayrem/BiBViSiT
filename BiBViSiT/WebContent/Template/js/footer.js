@@ -1,7 +1,10 @@
-  
+ function noBack() {
+      window.history.forward();
+    }  
 
 function chnageday(day){
-document.getElementById('ShowReservationday').src = './PlaceReservationDay.jsp?day='+day;
+
+window.location.href ='./PlaceReservationDay.jsp?day='+day;
 }
 
 wow = new WOW(

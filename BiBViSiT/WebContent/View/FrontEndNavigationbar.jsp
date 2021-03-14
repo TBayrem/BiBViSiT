@@ -15,8 +15,8 @@
 			<ul class="nav navbar-nav">
 
 				<li><a href="../Controller/Main.jsp?Page=1">Home</a></li>
-				<li><a href="../Controller/Main.jsp?Page=2">Über uns</a></li>
-				<li><a href="../Controller/Main.jsp?Page=3">Kontakt</a></li>
+				<li><a href="../Controller/Main.jsp?Page=2">Kontakt</a></li>
+				<li><a href="../Controller/Main.jsp?Page=3"> Über uns</a></li>
 
 </ul>
 

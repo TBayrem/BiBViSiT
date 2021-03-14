@@ -37,7 +37,6 @@ if (Visitor.SearchVisitor(Imma)) {
 	if (Visitor.InsertVisitor(Imma, Psydo, Fach)) {
 		if (Reservation.InsertReservation(Num, Imma, day)) {
 	if (Place.getPlace(Num) != null) {
-		Place.UpdateAvailability(Num, 0);
 		response.sendRedirect("../View/Reserviert.jsp");
 	} else {
 		response.sendRedirect("../View/Error.jsp"); //Place nicht gefunden		

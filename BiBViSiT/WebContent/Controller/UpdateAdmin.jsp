@@ -10,7 +10,7 @@
 	else
 		A = "Y";
 	Admin.updateAdmin(request.getParameter("Email"), A);
-} else if (request.getParameter("Att").equals("Activ")) {
+} else if (request.getParameter("Att").equals("Active")) {
 	String A = request.getParameter("A");
 	if (A.equals("Y"))
 		A = "N";

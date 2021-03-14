@@ -1,5 +1,5 @@
 <jsp:include page="./Header.jsp" />
-<body>
+
 	<jsp:include page="./BackEndNavigationbar.jsp" />
 	
  <%@page import="Model.Place"%>
@@ -44,9 +44,9 @@
 		
 	    
 		<tr id="<%out.print(i+"tr");%>">
-		<td><%= P.getID()%></td><td id="<%= i%>"><%= P.getNum()%></td><td><% if (P.getAvailable()==1) out.print("Free") ;else out.print("Occupied") ;%></td>
-	    <td><a href="../Controller/UpdatePlace.jsp?Num=<%=P.getNum()%>&Availability=<%=P.getAvailable()%>">Change Availability</a></td>
-		<td><a href="../Controller/DeletePlace.jsp?Num=<%=P.getNum()%>">Delete</a></td>
+		<td><%= P.getID()%></td><td id="<%= i%>"><%= P.getNum()%></td><td><% if (P.getAvailable()==1) out.print("Frei") ;else out.print("Besetzt") ;%></td>
+	    <td><a href="../Controller/UpdatePlace.jsp?Num=<%=P.getNum()%>&Availability=<%=P.getAvailable()%>">Verf&uuml;gbarkeit &auml;ndern</a></td>
+		<td><a href="../Controller/DeletePlace.jsp?Num=<%=P.getNum()%>">Löschen</a></td>
 		
                                     
                                     </tr>

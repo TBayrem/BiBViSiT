@@ -113,7 +113,7 @@ case 9: {
 case 10:
 	session.setAttribute("Account", 0);
 	session.invalidate();
-	response.sendRedirect("../View/Home.jsp");
+	response.sendRedirect("../View/BackEndHome.jsp");
 	break;
 }
 %>

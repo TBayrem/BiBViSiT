@@ -5,21 +5,29 @@
 <%@page import="Model.Place"%>
 <%@page import="Model.Reservation"%>
 <%@page import="java.util.Vector"%>
-
-	<%!public Date denullidate(String d) {
+<%!public Date denullidate(String d) {
 		if (d == null)
 			return Date.valueOf(java.time.LocalDate.now());
 		else
 			return Date.valueOf(d);
-	}%>
-	<%
-		Date day = this.denullidate(request.getParameter("day"));
 
-	Vector<Place> vectorofplaces = Place.getAll();
-	Vector<Integer> Vectorofalldayplaces = Reservation.getAlldayplaces(day);
+	}%>
+<%
+	Date day = this.denullidate(request.getParameter("day"));
+Vector<Integer> Vectorofalldayplaces = Reservation.getAlldayplaces(day);
+int Reservierte = Vectorofalldayplaces.size();
+%>
+<div class="container">
+	<div class="row">
+		<h3>Bibliothek</h3>
+	</div>
+</div>
+<div class="col-lg-9">
+	<%
+		Vector<Place> vectorofplaces = Place.getAll();
 	int notavailable = 0;
 	for (Place P : vectorofplaces) {
-		if ((Vectorofalldayplaces.contains(P.getNum()))||(P.getAvailable()==0)) {
+		if ((Vectorofalldayplaces.contains(P.getNum())) || (P.getAvailable() == 0)) {
 			notavailable++;
 	%>
 	<div class="col-lg-2 col-sm-2 mar-two">
@@ -53,6 +61,43 @@
 		}
 	}
 	%>
+</div>
+<div class="col-lg-3">
+<ul class="list-unstyled">
+	<div class="search-row">
+                <li class="form-inline">
+		<h3>
+			Buchungstag: </h3><input type="date" id="day" name="day"
+				class="form-control placeholder-no-fix"
+				min="<%=java.time.LocalDate.now()%>" value="<%=day%>"
+				onchange="chnageday(this.value)">
+		
+                </li>
+
+                <li>
+                 <h3>
+                    <i class="fa fa-angle-right pr-10">
+                    </i>
+                    Anzahl der Plätze: <%=vectorofplaces.size() %>
+                    </h3>
+                  
+                </li>
+                <li><h3>
+                    <i class="fa fa-angle-right pr-10">
+                    </i>
+                    Verfügbar : <%=vectorofplaces.size()- notavailable%>
+                 </h3>
+                </li>
+                <li><h3>
+                    <i class="fa fa-angle-right pr-10">
+                    </i>
+                    Besetzt : <%= notavailable%>
+</h3>
+                </li>
+              </ul>
+
+	</div>
+</div>
 
 <jsp:include page="./Reservation.jsp" />
 <jsp:include page="./Footer.jsp" />

@@ -1,7 +1,8 @@
 <jsp:include page="./Header.jsp" />
-<body>
+
 	<jsp:include page="./FrontEndNavigationbar.jsp" />
 	<div class="container">
+	<h1>Über uns</h1>
 		<div class="row">
 			<div class="col-lg-5">
 				<div class="about-carousel wow fadeInLeft animated"
@@ -11,11 +12,15 @@
 						<!-- Carousel items -->
 						<div class="carousel-inner">
 							<div class="active item">
-								<img src="../Template/img/service3.jpg" alt="">
+								<img src="../Template/img/teamwork.jpg" alt="">
 								<div class="carousel-caption"></div>
 							</div>
 							<div class="item">
-								<img src="../Template/img/hochschule.jpg" alt="">
+								<img src="../Template/img/HS.jpg" alt="">
+								<div class="carousel-caption"></div>
+							</div>
+							<div class="item">
+								<img src="../Template/img/HWG.jpg" alt="">
 								<div class="carousel-caption"></div>
 							</div>
 						</div>
@@ -71,7 +76,7 @@
 						data-wow-duration="1s" data-wow-delay=".1s"
 						data-wow-animation-name="zoomIn"
 						style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: zoomIn;">
-						<i class="fa fa-user"> </i>
+						<i class="fa fa-Desktop"> </i>
 					</div>
 					<div class="content">
 						<h3 class="title wow flipInX animated"
@@ -88,7 +93,7 @@
 						data-wow-duration="1s" data-wow-delay=".3s"
 						data-wow-animation-name="zoomIn"
 						style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: zoomIn;">
-						<i class="fa fa-user"> </i>
+						<i class="fa fa-leaf"> </i>
 					</div>
 					<div class="content">
 						<h3 class="title wow flipInX animated"
@@ -106,7 +111,7 @@
 						data-wow-duration="1s" data-wow-delay=".5s"
 						data-wow-animation-name="zoomIn"
 						style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: zoomIn;">
-						<i class="fa fa-user"> </i>
+						<i class="fa fa-cogs"> </i>
 					</div>
 					<div class="content">
 						<h3 class="title wow flipInX animated"
@@ -122,7 +127,7 @@
 						data-wow-duration="1s" data-wow-delay=".7s"
 						data-wow-animation-name="zoomIn"
 						style="visibility: visible; animation-duration: 1s; animation-delay: 0.7s; animation-name: zoomIn;">
-						<i class="fa fa-user"> </i>
+						<i class="fa fa-code"> </i>
 					</div>
 					<div class="content">
 						<h3 class="title wow flipInX animated"
@@ -145,8 +150,7 @@
 				<div class="col-lg-5">
 
 					<h3>
-						Unsere gesammelten <br> Skills <br> während unserer
-						Studium :
+						Unsere gesammelten <br> Skills <br> 
 					</h3>
 
 				</div>
@@ -157,28 +161,28 @@
 					<div class="skill_bar">
 						<div class="skill_bar_progress skill_one"
 							style="width: 59.9974%; overflow: hidden;">
-							<p>Web Design : 60% Complete</p>
+							<p>JSP : 60% Complete</p>
 						</div>
 					</div>
 
 					<div class="skill_bar">
 						<div class="skill_bar_progress skill_two"
 							style="width: 89.9987%; overflow: hidden;">
-							<p>Html/CSS : 90% Complete</p>
+							<p>Html : 90% Complete</p>
 						</div>
 					</div>
 
 					<div class="skill_bar">
 						<div class="skill_bar_progress skill_three"
 							style="width: 70.0068%; overflow: hidden;">
-							<p>Wordpress : 70% Complete</p>
+							<p>CSS : 70% Complete</p>
 						</div>
 					</div>
 
 					<div class="skill_bar">
 						<div class="skill_bar_progress skill_four"
 							style="width: 55.0013%; overflow: hidden;">
-							<p>Graphic Design : 55% Complete</p>
+							<p>SQL : 55% Complete</p>
 						</div>
 					</div>
 				</div>
@@ -197,12 +201,12 @@
 					<div class="thumbnail wow fadeInUp animated" data-wow-delay=".3s"
 						data-wow-animation-name="fadeInUp"
 						style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-						<img src="" alt="">
+						<img src="../Template/img/team/ahmed ayadi.jpg" alt="">
 						<div class="caption">
 							<h4>Ahmed Ayadi</h4>
 
 							<div class="team-social-link">
-								<a href="https://www.facebook.com/LEADERa7mad"> <i
+								<a href="#"> <i
 									class="fa fa-facebook"> </i>
 								</a> <a href="#"> <i class="fa fa-github"> </i>
 								</a>
@@ -222,7 +226,7 @@
 							<div class="team-social-link">
 								<a href="https://www.facebook.com/shayma.rabhi.3"> <i
 									class="fa fa-facebook"> </i>
-								</a> <a href="https://github.com/shayma98"> <i
+								</a> <a href="#"> <i
 									class="fa fa-github"> </i>
 								</a>
 							</div>
@@ -234,12 +238,12 @@
 					<div class="thumbnail wow fadeInUp animated" data-wow-delay=".7s"
 						data-wow-animation-name="fadeInUp"
 						style="visibility: visible; animation-delay: 0.7s; animation-name: fadeInUp;">
-						<img src="###" alt="">
+						<img src="../Template/img/team/Bayrem Trabelsi.jpg" alt="">
 						<div class="caption">
 							<h4>Bayrem Trabelsi</h4>
 
 							<div class="team-social-link">
-								<a href="https://www.facebook.com/bayrem.trabelsi"> <i
+								<a href="#"> <i
 									class="fa fa-facebook"> </i>
 								</a> <a href="#"> <i class="fa fa-github"> </i>
 								</a>

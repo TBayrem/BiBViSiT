@@ -54,13 +54,13 @@ public class Messages {
 	
 
 
-	public static boolean DeleteMessages(String ID) throws SQLException {
+	public static boolean DeleteMessages(int ID) throws SQLException {
 
 		String sql = "delete from Messages where ID = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 
-		prep.setString(1, ID);
+		prep.setInt(1, ID);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;

@@ -10,8 +10,11 @@
 			<div class="login-wrap">
 
 				<input type="text" class="form-control" placeholder="User Name"
-					name="username"> <input type="email" class="form-control"
-					placeholder="Email" name="email"> <input type="password"
+					name="username"> 
+				<input type="email" class="form-control"
+					placeholder="Email" name="email"> 
+					<br>
+				<input type="password"
 					class="form-control" placeholder="Password" name="password">
 				<input class="btn btn-lg btn-login btn-block" type="submit"
 					name="registrieren" value="Registrieren">
@@ -25,7 +28,6 @@
 	</div>
 
 </div>
-	<jsp:include page="./Copyright.jsp" />
 	<jsp:include page="./Footer.jsp" />
 </body>
 </html>

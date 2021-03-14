@@ -49,13 +49,13 @@ public class Visitor {
 
 	}
 
-	public static boolean DeleteVisitor(int Imma) throws SQLException {
+	public static boolean DeleteVisitor(int Id) throws SQLException {
 
-		String sql = "delete cascade from Visitor where Imma = ?";
+		String sql = "delete from Visitor where Id = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 
-		prep.setInt(1, Imma);
+		prep.setInt(1, Id);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
