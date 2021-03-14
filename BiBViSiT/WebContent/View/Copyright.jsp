@@ -21,11 +21,9 @@
 			</div>
 			<div class="col-md-4">
 				<div class="copyright">
-<<<<<<< HEAD
+
 					<p> &#169; Copyright - Team BiB|ViSiT.</p>
-=======
-					<p> © Copyright - Team BiB|ViSiT.</p>
->>>>>>> cb179479c1ce256a5dcb778a4d97fe599b6ec25b
+
 				</div>
 			</div>
 		</div>

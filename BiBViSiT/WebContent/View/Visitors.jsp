@@ -1,22 +1,21 @@
 <jsp:include page="./Header.jsp" />
 
-	<jsp:include page="./BackEndNavigationbar.jsp" />
+<jsp:include page="./BackEndNavigationbar.jsp" />
 <%@page import="Model.Visitor"%>
 <%@page import="java.util.Vector"%>
 <%
-try {
+	try {
 	if (session.equals(null) || (session.getAttribute("Account").equals(0))) {
-response.sendRedirect("../View/Error.jsp");
+		response.sendRedirect("../View/Error.jsp");
 
 	} else if (session.getAttribute("Account").equals(1)) {
-	
 
-	Vector<Visitor> vectorofvisitors = Visitor.getAll();
-int all_Visitors = vectorofvisitors.size();
+		Vector<Visitor> vectorofvisitors = Visitor.getAll();
+		int all_Visitors = vectorofvisitors.size();
 %>
 <div class="bs-docs-section">
 	<h2 id="tables-example">Besucher</h2>
-	
+
 
 
 
@@ -35,7 +34,7 @@ int all_Visitors = vectorofvisitors.size();
 					<th>Name/Vorname</th>
 					<th>Studiengang</th>
 					<th>Löschen</th>
-					
+
 				</tr>
 			</thead>
 			<tbody>
@@ -47,8 +46,8 @@ int all_Visitors = vectorofvisitors.size();
 					<td><%=V.getID()%></td>
 					<td><%=V.getImma()%></td>
 					<td id="<%=i%>"><%=V.getPsydo()%></td>
-					<td><%=V.getFach()%></td>					<td><a
-
+					<td><%=V.getFach()%></td>
+					<td><a
 						href="../Controller/DeleteVisitor.jsp?Id=<%=V.getID()%>">Löschen</a></td>
 
 				</tr>
@@ -64,10 +63,11 @@ int all_Visitors = vectorofvisitors.size();
 <jsp:include page="./Footer.jsp" />
 </body>
 </html>
-<%		}
-		} catch (Exception e) {
-			response.sendRedirect("../View/Error.jsp");
-		
-		}
-	 %>
+<%
+	}
+} catch (Exception e) {
+response.sendRedirect("../View/Error.jsp");
+
+}
+%>
 
