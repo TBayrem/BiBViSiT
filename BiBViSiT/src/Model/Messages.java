@@ -8,20 +8,20 @@ import java.util.Vector;
 
 import DataBase.PostgreSQLAccess;
 
-public class Contact {
+public class Messages {
 
 	private int ID;
 	private String Email;
 	private String MSG;
 
-	public Contact(int iD, String email, String mSG) {
+	public Messages(int iD, String email, String mSG) {
 
 		this.ID = iD;
 		this.Email = email;
 		this.MSG = mSG;
 	}
 
-	public Contact() {
+	public Messages() {
 
 	}
 
@@ -31,7 +31,7 @@ public class Contact {
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setString(1, Email);
-		prep.setString(1, MSG);
+		prep.setString(2, MSG);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
@@ -39,14 +39,14 @@ public class Contact {
 			return false;
 	}
 
-	public static Vector<Contact> getAll() throws SQLException {
+	public static Vector<Messages> getAll() throws SQLException {
 
-		Vector<Contact> VectorofContacts = new Vector<Contact>();
+		Vector<Messages> VectorofContacts = new Vector<Messages>();
 		String sql = "select * from Contact ";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		ResultSet dbRes = dbConn.createStatement().executeQuery(sql);
 		while (dbRes.next()) {
-			Contact C = new Contact(dbRes.getInt("ID"), dbRes.getString("Email"), dbRes.getString("MSG"));
+			Messages C = new Messages(dbRes.getInt("ID"), dbRes.getString("Email"), dbRes.getString("MSG"));
 			VectorofContacts.add(C);
 		}
 		return VectorofContacts;

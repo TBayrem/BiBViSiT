@@ -15,8 +15,6 @@
 			<ul class="nav navbar-nav">
 
 				<li><a href="./Home.jsp">Home</a></li>
-				<li><a href="./AboutUs.jsp">Über uns</a></li>
-				<li><a href="./Contact.jsp">Kontakt</a></li>
 
 
 				<%

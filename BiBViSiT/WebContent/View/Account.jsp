@@ -17,6 +17,8 @@
 
 		<li><a href="./Reservations.jsp">Buchungen</a>
 		</li>
+		<li><a href="./Messages.jsp">Messages</a>
+		</li>
 
 
 	</ul></li>

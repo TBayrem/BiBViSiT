@@ -2,12 +2,12 @@
 <body>
 	<jsp:include page="./BackEndNavigationbar.jsp" />
 
-	<%@page import="Model.Contact"%>
+	<%@page import="Model.Messages"%>
 	<%@page import="java.util.Vector"%>
 
 
 	<%
-		Vector<Contact> vectorContact = Contact.getAll();
+		Vector<Messages> vectorContact = Messages.getAll();
 	%>
 	<div class="bs-docs-section">
 		<h2 id="tables-example">Admins</h2>
@@ -44,7 +44,7 @@
 					<%
 						int i = 0;
 
-					for (Contact C : vectorContact) {
+					for (Messages C : vectorContact) {
 					%>
 
 					<tr id="<%out.print(i + "tr");%>">
@@ -52,7 +52,7 @@
 						<td id="<%=i%>"><%=C.getEmail()%></td>
 						<td><%=C.getMSG()%></td>
 						<td><a
-							href="../Controller/DeleteContact.jsp?ID=<%=C.getID()%>">Delete</a></td>
+							href="../Controller/DeleteMessages.jsp?ID=<%=C.getID()%>">Delete</a></td>
 					</tr>
 
 					<%

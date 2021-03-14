@@ -1,5 +1,5 @@
 
-<%@page import="Model.Contact"%>
+<%@page import="Model.Messages"%>
 
 
 <%!public String denullify(String s) {
@@ -15,7 +15,7 @@ String MSG = this.denullify(request.getParameter("MSG"));
 String senden = this.denullify(request.getParameter("senden"));
 
 if (senden.equals("Senden")) {
-	Contact.Insert(Email, MSG);
+	Messages.Insert(Email, MSG);
 
 	response.sendRedirect("../View/Home.jsp");
 } else {
