@@ -12,11 +12,15 @@
 						<!-- Carousel items -->
 						<div class="carousel-inner">
 							<div class="active item">
+<<<<<<< HEAD
 								<img src="../Template/img/teamwork.jpg" alt="">
 								<div class="carousel-caption"></div>
 							</div>
 							<div class="item">
 								<img src="../Template/img/HS.jpg" alt="">
+=======
+								<img src="../Template/img/teamwork.png" alt="">
+>>>>>>> cb179479c1ce256a5dcb778a4d97fe599b6ec25b
 								<div class="carousel-caption"></div>
 							</div>
 							<div class="item">
@@ -208,7 +212,7 @@
 							<div class="team-social-link">
 								<a href="#"> <i
 									class="fa fa-facebook"> </i>
-								</a> <a href="#"> <i class="fa fa-github"> </i>
+								</a> <a href="https://github.com/631481"> <i class="fa fa-github"> </i>
 								</a>
 							</div>
 						</div>

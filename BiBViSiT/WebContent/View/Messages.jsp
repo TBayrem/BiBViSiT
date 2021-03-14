@@ -59,7 +59,11 @@
 						<td id="<%=i%>"><%=M.getEmail()%></td>
 						<td><%=M.getMSG()%></td>
 						<td><a
+<<<<<<< HEAD
 							href="../Controller/DeleteMessages.jsp?ID=<%=M.getID()%>">Löschen</a></td>
+=======
+							href="../Controller/DeleteMessages.jsp?ID=<%=C.getID()%>">Löschen</a></td>
+>>>>>>> cb179479c1ce256a5dcb778a4d97fe599b6ec25b
 					</tr>
 
 					<%

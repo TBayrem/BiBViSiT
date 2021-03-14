@@ -48,7 +48,11 @@ int all_Visitors = vectorofvisitors.size();
 					<td><%=V.getImma()%></td>
 					<td id="<%=i%>"><%=V.getPsydo()%></td>
 					<td><%=V.getFach()%></td>					<td><a
+<<<<<<< HEAD
 						href="../Controller/DeleteVisitor.jsp?Id=<%=V.getID()%>">Löschen</a></td>
+=======
+						href="../Controller/DeleteVisitor.jsp?Imma=<%=V.getImma()%>">Löschen</a></td>
+>>>>>>> cb179479c1ce256a5dcb778a4d97fe599b6ec25b
 				</tr>
 				<%
 					i++;
