@@ -1,6 +1,8 @@
   
 
-
+function chnageday(day){
+document.getElementById('ShowReservationday').src = './PlaceReservationDay.jsp?day='+day;
+}
 
 wow = new WOW(
   {

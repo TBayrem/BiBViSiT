@@ -19,8 +19,10 @@
 					class="form-control placeholder-no-fix"
 					min="<%=java.time.LocalDate.now()%>"
 					value="<%=java.time.LocalDate.now()%>"
-					onchange="document.getElementById('ShowReservationday').src = './PlaceReservationDay.jsp?day='+this.value">
+					onchange="chnageday(this.value)">
 			</h3>
+
+
 		</div>
 	</div>
 
