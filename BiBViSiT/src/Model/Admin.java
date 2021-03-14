@@ -10,18 +10,18 @@ import DataBase.PostgreSQLAccess;
 
 public class Admin {
 
-    private int Userid; // wir brauchen diese Attribute nicht mehr? den UserId ist automatich angegeben jetzt oder?
+
+	private int Userid; 
+
 	private String password;
 	private String active ;
 	private String admin  ;
 	private String username;
 	private String email;
-	//boolean isLoggedIn;
+
 
 	public Admin() {
-	//	this.email = "";
-	//	this.password = "";
-	//	this.isLoggedIn = false;
+	
 	}
 
 	public Admin(int Userid, String password, String active, String admin, String username, String email) {
@@ -34,24 +34,9 @@ public class Admin {
 		
 	}
 	
-//	public String getLoginCheckRedirectHtml() {
-//		String html = "";
-//		if (this.isLoggedIn() == false){
-//			html += "<meta http-equiv='refresh' content='0; URL=../../../../Controller/BackEnd/Admin/Home.jsp' >";
-//		}
-//		return html;
-//	}
 
-//	public boolean isLoggedIn() {
-//		return isLoggedIn;
-//	}
-//
-//	public void setLoggedIn(boolean isLoggedIn) {
-//		this.isLoggedIn = isLoggedIn;
-//	}
 	
-	
-	public Admin AdminperEmailPassword(String email, String password) throws SQLException {
+	public static Admin AdminperEmailPassword(String email, String password) throws SQLException {
 
 		String sql = "select * from admin where email = ? and password = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -66,21 +51,8 @@ public class Admin {
 		
 		
 	}
-
-
-	// die suche ist mit den username in diesen fall da den id serial ist!
-	public boolean SearchAdmin(String username) throws SQLException {
-
-		String sql = "select * from admin where username = ?";
-		Connection dbConn = new PostgreSQLAccess().getConnection();
-		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setString(1, username);
-		ResultSet dbRes = prep.executeQuery();
-		return dbRes.next();
-
-	}
 	
-	public boolean SearchAdminperEmail(String email, String password) throws SQLException {
+	public static boolean SearchAdminperEmail(String email, String password) throws SQLException {
 
 		String sql = "select * from admin where email= ? and password = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -93,20 +65,8 @@ public class Admin {
 
 	}
 
-	public boolean DeleteAllAdmins() throws SQLException {
 
-		String sql = "delete from admin";
-		Connection dbConn = new PostgreSQLAccess().getConnection();
-		PreparedStatement prep = dbConn.prepareStatement(sql);
-
-		int result = prep.executeUpdate();
-		if (result != 0)
-			return true;
-		else
-			return false;
-	}
-
-	public boolean DeleteAdmin(String email) throws SQLException {
+	public static boolean DeleteAdmin(String email) throws SQLException {
 
 		String sql = "delete from admin where email = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -119,16 +79,16 @@ public class Admin {
 		else
 			return false;
 	}
-// 2et Methode : einfach Admin einfügen !!
 
-	public boolean InsertAdmin() throws SQLException {
+
+	public static boolean InsertAdmin(String password, String username, String email) throws SQLException {
 
 		String sql = "insert into admin (password, username, email) values (?,?,?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
-		prep.setString(1, this.password);
-		prep.setString(2, this.username);
-		prep.setString(3, this.email);
+		prep.setString(1, password);
+		prep.setString(2, username);
+		prep.setString(3, email);
 		int result = prep.executeUpdate();
 		if (result != 0)
 			return true;
@@ -136,7 +96,7 @@ public class Admin {
 			return false;
 	}
 
-	public Vector<Admin> getAll() throws SQLException {
+	public static Vector<Admin> getAll() throws SQLException {
 
 		Vector<Admin> Vectoradmin = new Vector<Admin>();
 		Vectoradmin.clear(); // ??
@@ -154,12 +114,8 @@ public class Admin {
 		}
 		return Vectoradmin;
 	}
-	// ist alles ok Oder sollen wir userid zuerst als string eintragen ? klappt es
-	// so ?
 
-	// update admin : if admin = yes dann kan er andere admin loschen zB.
-
-	public boolean updateAdmin(String email, String admin ) throws SQLException {
+	public static boolean updateAdmin(String email, String admin ) throws SQLException {
 
 		String sql = "update admin Set admin = ? where  email = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -172,7 +128,7 @@ public class Admin {
 		else
 			return false;
 	}
-	public boolean updateActive(String email, String activ ) throws SQLException {
+	public static boolean updateActive(String email, String activ ) throws SQLException {
 
 		String sql = "update admin Set active = ? where  email = ?";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
@@ -234,13 +190,6 @@ public class Admin {
 		Userid = userid;
 	}
 	
-//	public String getAdminsaccess() {
-//	if (admin.equalsIgnoreCase("Y"))
-//	{
-//		
-//		return "<li><a href='../../../Bodys/BackEnd/Main/Admins.jsp'>Admins</a> </li>";
-//	}
-//	else return "";
-//	}
+
 	
 }
