@@ -4,8 +4,16 @@
 	
  <%@page import="Model.Place"%>
 <%@page import="java.util.Vector"%>
-<jsp:useBean id="place" class="Model.Place" scope="session" />
- <% Vector<Place> vectorofplaces = Place.getAll(); int all_Places = vectorofplaces.size();%>
+ <% 
+	try {
+		if (session.equals(null) || (session.getAttribute("Account").equals(0))) {
+	response.sendRedirect("../View/Error.jsp");
+	
+		} else if (session.getAttribute("Account").equals(1)) {
+		
+
+ 
+ Vector<Place> vectorofplaces = Place.getAll(); int all_Places = vectorofplaces.size();%>
 	<div class="bs-docs-section">
 		<h2 id="tables-example">Plätze</h2>
 		<p>Sie haben<code><%=all_Places%></code>Plätze</p>
@@ -55,3 +63,9 @@
 </body>
 </html>
 		
+<%		}
+		} catch (Exception e) {
+			response.sendRedirect("../View/Error.jsp");
+		
+		}
+	 %>

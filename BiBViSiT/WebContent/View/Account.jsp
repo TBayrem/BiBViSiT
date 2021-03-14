@@ -10,19 +10,19 @@
 <% if (session.getAttribute("Admin").equals(1)){%>
 		<jsp:include page="./Superior.jsp"/>
 <%} %>
-		<li><a href="./Places.jsp">Plätze</a></li>
+		<li><a href="../Controller/Main.jsp?Page=6">Plätze</a></li>
 
-		<li><a href="./Visitors.jsp">Besucher</a>
+		<li><a href="../Controller/Main.jsp?Page=7">Besucher</a>
 		</li>
 
-		<li><a href="./Reservations.jsp">Buchungen</a>
+		<li><a href="../Controller/Main.jsp?Page=8">Buchungen</a>
 		</li>
-		<li><a href="./Messages.jsp">Messages</a>
+		<li><a href="../Controller/Main.jsp?Page=9">Messages</a>
 		</li>
 
 
 	</ul></li>
-	<li><a href="../Controller/Signout.jsp">Logout</a></li>
+	<li><a href="../Controller/Main.jsp?Page=10">Logout</a></li>
 	
 	
 	

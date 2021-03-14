@@ -1,3 +1,6 @@
+
+
+
 <jsp:include page="./Header.jsp" />
 <body>
 	<jsp:include page="./FrontEndNavigationbar.jsp" />
@@ -33,13 +36,11 @@
 
 				<div class="contact-form">
 
-					<form action="../Controller/Contact.jsp"
-						method="get">
+					<form action="../Controller/Contact.jsp" method="get">
 
 						<div class="form-group">
 							<label for="email">Email : </label> <input type="email"
-								placeholder="E-Mail" name="Email" class="form-control"
-								value="">
+								placeholder="E-Mail" name="Email" class="form-control" value="">
 						</div>
 
 						<div class="form-group">

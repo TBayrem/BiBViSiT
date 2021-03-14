@@ -5,6 +5,14 @@
 	<%@page import="java.util.Vector"%>
 	<jsp:useBean id="reserv" class="Model.Reservation" scope="session" />
 	<%
+	try {
+		if (session.equals(null) || (session.getAttribute("Account").equals(0))) {
+	response.sendRedirect("../View/Error.jsp");
+	
+		} else if (session.getAttribute("Account").equals(1)) {
+		
+
+	
 		Vector<Reservation> vectorofreservations = reserv.getAll();
 	int all_Reservations = vectorofreservations.size();
 	%>
@@ -75,4 +83,9 @@
 	<jsp:include page="./Footer.jsp" />
 </body>
 </html>
-
+<%		}
+		} catch (Exception e) {
+			response.sendRedirect("../View/Error.jsp");
+		
+		}
+	 %>

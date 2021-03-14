@@ -7,6 +7,13 @@
 
 
 	<%
+	try {
+		if (session.equals(null) || (session.getAttribute("Account").equals(0))) {
+	response.sendRedirect("../View/Error.jsp");
+	
+		} else if (session.getAttribute("Account").equals(1)) {
+		
+
 		Vector<Messages> vectorContact = Messages.getAll();
 	%>
 	<div class="bs-docs-section">
@@ -68,4 +75,9 @@
 </body>
 </html>
 
-
+<%		}
+		} catch (Exception e) {
+			response.sendRedirect("../View/Error.jsp");
+		
+		}
+	 %>

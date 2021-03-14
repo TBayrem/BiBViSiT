@@ -4,6 +4,13 @@
 <%@page import="Model.Visitor"%>
 <%@page import="java.util.Vector"%>
 <%
+try {
+	if (session.equals(null) || (session.getAttribute("Account").equals(0))) {
+response.sendRedirect("../View/Error.jsp");
+
+	} else if (session.getAttribute("Account").equals(1)) {
+	
+
 	Vector<Visitor> vectorofvisitors = Visitor.getAll();
 int all_Visitors = vectorofvisitors.size();
 %>
@@ -54,3 +61,10 @@ int all_Visitors = vectorofvisitors.size();
 <jsp:include page="./Footer.jsp" />
 </body>
 </html>
+<%		}
+		} catch (Exception e) {
+			response.sendRedirect("../View/Error.jsp");
+		
+		}
+	 %>
+

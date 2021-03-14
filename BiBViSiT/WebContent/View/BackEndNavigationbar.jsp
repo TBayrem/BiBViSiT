@@ -14,7 +14,7 @@
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 
-				<li><a href="./BackEndHome.jsp">Home</a></li>
+				<li><a href="../Controller/Main.jsp?Page=4">Home</a></li>
 
 
 				<%

@@ -14,9 +14,9 @@
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 
-				<li><a href="./Home.jsp">Home</a></li>
-				<li><a href="./AboutUs.jsp">Über uns</a></li>
-				<li><a href="./Contact.jsp">Kontakt</a></li>
+				<li><a href="../Controller/Main.jsp?Page=1">Home</a></li>
+				<li><a href="../Controller/Main.jsp?Page=2">Über uns</a></li>
+				<li><a href="../Controller/Main.jsp?Page=3">Kontakt</a></li>
 
 </ul>
 
