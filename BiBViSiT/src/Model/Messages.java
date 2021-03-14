@@ -27,7 +27,7 @@ public class Messages {
 
 	public static boolean Insert(String Email, String MSG) throws SQLException {
 
-		String sql = "insert into Contact (Email, MSG ) values (?,?)";
+		String sql = "insert into Messages (Email, MSG ) values (?,?)";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		PreparedStatement prep = dbConn.prepareStatement(sql);
 		prep.setString(1, Email);
@@ -42,7 +42,7 @@ public class Messages {
 	public static Vector<Messages> getAll() throws SQLException {
 
 		Vector<Messages> VectorofContacts = new Vector<Messages>();
-		String sql = "select * from Contact ";
+		String sql = "select * from Messages ";
 		Connection dbConn = new PostgreSQLAccess().getConnection();
 		ResultSet dbRes = dbConn.createStatement().executeQuery(sql);
 		while (dbRes.next()) {
@@ -50,6 +50,22 @@ public class Messages {
 			VectorofContacts.add(C);
 		}
 		return VectorofContacts;
+	}
+	
+
+
+	public static boolean DeleteMessages(String ID) throws SQLException {
+
+		String sql = "delete from Messages where ID = ?";
+		Connection dbConn = new PostgreSQLAccess().getConnection();
+		PreparedStatement prep = dbConn.prepareStatement(sql);
+
+		prep.setString(1, ID);
+		int result = prep.executeUpdate();
+		if (result != 0)
+			return true;
+		else
+			return false;
 	}
 
 	public int getID() {

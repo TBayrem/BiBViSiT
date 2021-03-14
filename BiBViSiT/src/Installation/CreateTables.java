@@ -18,12 +18,14 @@ public class CreateTables {
 		createTableOfPlace();
 		createTableOfVisitor();
 		createTableOfRservation();
+		createTableOfMessages();
 		insertFirstAdmin();
 		insertSecondAdmin();
 		insertThirdAdmin();
 		insertFirstPlace();
 		insertFirstVisitor();
 		insertFirstReservation();
+		insertFirstMessages();
 	}
 
 	public void createTableOfAdmin() throws SQLException {
