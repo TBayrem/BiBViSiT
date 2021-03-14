@@ -43,11 +43,11 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>username</th>
-						<th>email</th>
-						<th>admin</th>
-						<th>active</th>
-						<th>Delete</th>
+						<th>Username</th>
+						<th>Email</th>
+						<th>Admin </th>
+						<th>Activation</th>
+						<th>Löschen</th>
 						<th>Update Admin</th>
 						<th>Update Activ</th>
 					</tr>
@@ -83,23 +83,23 @@
 
 
 						<td><a
-							href="../Controller/DeleteAdmin.jsp?Email=<%=A.getEmail()%>&Att=Delete">Delete</a></td>
+							href="../Controller/DeleteAdmin.jsp?Email=<%=A.getEmail()%>&Att=Delete">Löschen</a></td>
 						<td><a
 							href="../Controller/UpdateAdmin.jsp?Email=<%=A.getEmail()%>&Att=Admin&A=<%=A.getAdmin()%>">
 								<%
 									if (A.getAdmin().equalsIgnoreCase("Y"))
-									out.print("nicht admin machen");
+									out.print("nicht als Hauptadmin einstellen");
 								else
-									out.print("admin machen");
+									out.print("als Hauptadmin einstellen");
 								%>
 						</a></td>
 						<td><a
 							href="../Controller/UpdateAdmin.jsp?Email=<%=A.getEmail()%>&Att=Active&A=<%=A.getActive()%>">
 								<%
 									if (A.getActive().equalsIgnoreCase("Y"))
-									out.print("nicht active machen");
+									out.print("Konto desactivieren");
 								else
-									out.print("active machen");
+									out.print("Konto aktivieren");
 								%>
 						</a></td>
 

@@ -11,7 +11,7 @@
 						<!-- Carousel items -->
 						<div class="carousel-inner">
 							<div class="active item">
-								<img src="../Template/img/service3.jpg" alt="">
+								<img src="../Template/img/teamwork.png" alt="">
 								<div class="carousel-caption"></div>
 							</div>
 							<div class="item">
@@ -197,14 +197,14 @@
 					<div class="thumbnail wow fadeInUp animated" data-wow-delay=".3s"
 						data-wow-animation-name="fadeInUp"
 						style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-						<img src="" alt="">
+						<img src="../Template/img/team/ahmed ayadi.jpg" alt="">
 						<div class="caption">
 							<h4>Ahmed Ayadi</h4>
 
 							<div class="team-social-link">
 								<a href="https://www.facebook.com/LEADERa7mad"> <i
 									class="fa fa-facebook"> </i>
-								</a> <a href="#"> <i class="fa fa-github"> </i>
+								</a> <a href="https://github.com/631481"> <i class="fa fa-github"> </i>
 								</a>
 							</div>
 						</div>

@@ -12,16 +12,14 @@
 				<section class="contact-infos">
 					<h4 class="title custom-font text-black">Addressen</h4>
 					<address>
-						Ernst-Boehe-Stra�e 4, <br> 67059 Ludwigshafen am Rhein
+						Ernst-Boehe-Str 4, <br> 67059 Ludwigshafen am Rhein
 
 					</address>
 				</section>
 
 				<section class="contact-infos">
 					<h4>TELEPHONE</h4>
-					<p>
-						<i class="icon-phone"> </i> +088-01234567890
-					</p>
+					
 
 					<p>
 						<i class="icon-phone"> </i> +49176516174
@@ -32,7 +30,8 @@
 
 			<div class="col-lg-7 col-sm-7 address">
 
-				<h4>Schreiben Sie uns Ihr Feedback</h4>
+				<h4>Schreiben Sie uns Ihre Feedback</h4>
+				
 
 				<div class="contact-form">
 
