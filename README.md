@@ -1,5 +1,7 @@
 # BiBViSiT: Platzreservierung für die Bibliothek
 
+**Webseite mit Prototyp zum Ausprobieren:** https://tbayrem.github.io/bibliotheks-platzreservierung/
+
 Java-Webanwendung (JSP, Servlet-Container, PostgreSQL), mit der Besucher einer Hochschulbibliothek Arbeitsplätze reservieren und Administratoren Plätze, Besucher, Reservierungen und Nachrichten verwalten. Entstanden 2021 als Teamprojekt im Bachelorstudium Wirtschaftsinformatik (Hochschule Ludwigshafen).
 
 ## Funktionen
