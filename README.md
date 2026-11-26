@@ -54,6 +54,11 @@ export BIBVISIT_ADMIN_PASSWORD=<sicheres Passwort>
 
 Das Verzeichnis `WebContent/Template/` enthält ein frei verfügbares Bootstrap-Webdesign-Template mit Bibliotheken (Bootstrap, jQuery, Font Awesome und weitere). Diese Teile stammen nicht von mir und unterliegen ihren eigenen Lizenzen.
 
+## Dokumentation
+
+- [`docs/Artikel_Bibliotheks_Platzreservierung.md`](docs/Artikel_Bibliotheks_Platzreservierung.md): Artikel
+- [`docs/Bibliotheks_Platzreservierung.pdf`](docs/Bibliotheks_Platzreservierung.pdf): Präsentation
+
 ## Autor
 
 Bayrem Trabelsi (Teamprojekt, Mitentwickler:innen auf Wunsch nicht genannt)
