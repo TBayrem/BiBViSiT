@@ -16,7 +16,7 @@ In Prüfungsphasen sind Bibliotheksplätze knapp. BiBViSiT ist eine Java-Webanwe
 
 ## Architektur
 
-Die Anwendung nutzt JSP für die Oberfläche, Java-Klassen für die Datenmodelle und PostgreSQL per JDBC. Die JSP-Seiten sind in **Views** (Darstellung) und **Controller** (Formulare verarbeiten, Modell aufrufen) getrennt. Die Model-Klassen kapseln alle Datenbankzugriffe und verwenden `PreparedStatement`, wodurch SQL-Injection über Formularfelder vermieden wird.
+Die Anwendung nutzt JSP für die Oberfläche, Java-Klassen für die Datenmodelle und PostgreSQL per JDBC. Die JSP-Seiten sind in **Views** (Darstellung) und **Controller** (Formulare verarbeiten, Modell aufrufen) getrennt. Die Model-Klassen kapseln alle Datenbankzugriffe und verwenden `PreparedStatement` (JDBC, [1]), wodurch SQL-Injection über Formularfelder vermieden wird.
 
 ## Was ich 2026 überarbeitet habe
 
@@ -31,7 +31,7 @@ Die alten Zugangsdaten stehen weiter in der Git-Historie. Das ist ein gutes Beis
 
 ## Bekannte Einschränkungen
 
-- **Passwörter im Klartext.** Die Spalte ist `CHAR(32)`, die Anmeldung vergleicht direkt in SQL. Für den echten Einsatz bräuchte es einen Hash mit Salz (zum Beispiel bcrypt oder Argon2).
+- **Passwörter im Klartext.** Die Spalte ist `CHAR(32)`, die Anmeldung vergleicht direkt in SQL. Für den echten Einsatz bräuchte es einen Hash mit Salz (zum Beispiel bcrypt oder Argon2, siehe [2]).
 - **Keine automatisierten Tests.** Der Java-Code lässt sich kompilieren, ein Lauf gegen eine Datenbank steht aus.
 - **Fremdmaterial:** Das Design nutzt eine Bootstrap-Vorlage samt Bibliotheken mit eigenen Lizenzen.
 - **Stand 2021:** Seitdem nicht gewartet.
@@ -41,6 +41,13 @@ Die alten Zugangsdaten stehen weiter in der Git-Historie. Das ist ein gutes Beis
 1. **Zugangsdaten gehören nie in den Quellcode**, auch nicht in ein Studentenprojekt.
 2. **Sicherheit gehört in die Architektur.** Passwort-Hashing später nachzurüsten ist aufwendiger als es von Anfang an einzuplanen.
 3. **Klare Schichten** erlauben es einem Team, parallel an Views, Controllern und Modellen zu arbeiten.
+
+## Quellen
+
+1. PostgreSQL JDBC Driver: Dokumentation. https://jdbc.postgresql.org/documentation/
+2. OWASP: Password Storage Cheat Sheet. https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html
+
+*Hinweis: Preise, Herstellerangaben und Aussagen zu Produkten geben den Stand der jeweiligen Studienarbeit wieder. Alle Links wurden zuletzt im November 2026 gesucht oder abgerufen; Quellen mit dem Vermerk "wie in der Studienarbeit zitiert" sind dort im Literaturverzeichnis nachzuschlagen.*
 
 ---
 
