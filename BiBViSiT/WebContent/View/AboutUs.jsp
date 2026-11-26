@@ -201,42 +201,9 @@
 			<div class="profile">
 				<h2>Unsere TEAM</h2>
 
-				<div class="col-xs-12 col-sm-6 col-md-3">
-					<div class="thumbnail wow fadeInUp animated" data-wow-delay=".3s"
-						data-wow-animation-name="fadeInUp"
-						style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-						<img src="../Template/img/team/ahmed ayadi.jpg" alt="">
-						<div class="caption">
-							<h4>Ahmed Ayadi</h4>
+				
 
-							<div class="team-social-link">
-								<a href="#"> <i
-									class="fa fa-facebook"> </i>
-								</a> <a href="https://github.com/631481"> <i class="fa fa-github"> </i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-xs-12 col-sm-6 col-md-3">
-					<div class="thumbnail wow fadeInUp animated" data-wow-delay=".5s"
-						data-wow-animation-name="fadeInUp"
-						style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-						<img src="../Template/img/team/chayma rabhi.jpg" alt="">
-						<div class="caption">
-							<h4>Chayma Rabhi</h4>
-
-							<div class="team-social-link">
-								<a href="https://www.facebook.com/shayma.rabhi.3"> <i
-									class="fa fa-facebook"> </i>
-								</a> <a href="#"> <i
-									class="fa fa-github"> </i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 
 				<div class="col-xs-12 col-sm-6 col-md-3">
 					<div class="thumbnail wow fadeInUp animated" data-wow-delay=".7s"

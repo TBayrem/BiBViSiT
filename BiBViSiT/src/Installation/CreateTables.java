@@ -20,8 +20,6 @@ public class CreateTables {
 		createTableOfRservation();
 		createTableOfMessages();
 		insertFirstAdmin();
-		insertSecondAdmin();
-		insertThirdAdmin();
 		insertFirstPlace();
 		insertFirstVisitor();
 		insertFirstReservation();
@@ -81,39 +79,25 @@ public class CreateTables {
 		stmt.executeUpdate(sql);
 	}
 
+	/**
+	 * Legt den ersten Administrator an. E-Mail und Passwort kommen aus den
+	 * Umgebungsvariablen BIBVISIT_ADMIN_EMAIL und BIBVISIT_ADMIN_PASSWORD.
+	 */
 	public void insertFirstAdmin() throws SQLException {
+		String email = System.getenv("BIBVISIT_ADMIN_EMAIL");
+		String password = System.getenv("BIBVISIT_ADMIN_PASSWORD");
+		if (email == null || email.isEmpty() || password == null || password.isEmpty()) {
+			throw new SQLException(
+					"Bitte BIBVISIT_ADMIN_EMAIL und BIBVISIT_ADMIN_PASSWORD als Umgebungsvariablen setzen.");
+		}
 		String sql = "insert into admin " + "( password, active, admin, username, email) " + "values" + "(?,?,?,?,?)";
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
 
-		prep.setString(1, "1234");
+		prep.setString(1, password);
 		prep.setString(2, "Y");
 		prep.setString(3, "Y");
-		prep.setString(4, "BayremTr");
-		prep.setString(5, "bayrem.trabelsi@outlook.com");
-		prep.executeUpdate();
-	}
-
-	public void insertSecondAdmin() throws SQLException {
-		String sql = "insert into admin " + "( password, active, admin, username, email) " + "values" + "(?,?,?,?,?)";
-		PreparedStatement prep = this.dbConn.prepareStatement(sql);
-
-		prep.setString(1, "1234");
-		prep.setString(2, "Y");
-		prep.setString(3, "Y");
-		prep.setString(4, "AhmedAyadi");
-		prep.setString(5, "Ahmed19ayadi@gmail.com");
-		prep.executeUpdate();
-	}
-
-	public void insertThirdAdmin() throws SQLException {
-		String sql = "insert into admin " + "( password, active, admin, username, email) " + "values" + "(?,?,?,?,?)";
-		PreparedStatement prep = this.dbConn.prepareStatement(sql);
-
-		prep.setString(1, "1234");
-		prep.setString(2, "Y");
-		prep.setString(3, "Y");
-		prep.setString(4, "ShaymaRebhi");
-		prep.setString(5, "ShaymaRebhi15@gmail.com");
+		prep.setString(4, "Administrator");
+		prep.setString(5, email);
 		prep.executeUpdate();
 	}
 
@@ -129,9 +113,9 @@ public class CreateTables {
 	public void insertFirstVisitor() throws SQLException {
 		String sql = "insert into visitor " + "(Imma, Psydo, Fach) " + "values" + "(?,?,?)";
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
-		prep.setInt(1, 632996);
+		prep.setInt(1, 100001);
 
-		prep.setString(2, "Bayrem");
+		prep.setString(2, "Beispielnutzer");
 		prep.setString(3, "Wirtschaftsinformatik");
 		prep.executeUpdate();
 	}
@@ -145,7 +129,7 @@ public class CreateTables {
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
 
 		prep.setInt(1, 1);
-		prep.setInt(2, 632996);
+		prep.setInt(2, 100001);
 		prep.setDate(3, day);
 		prep.executeUpdate();
 	}
@@ -156,7 +140,7 @@ public class CreateTables {
 		String sql = "insert into Messages " + "( Email, MSG) " + "values" + "(?,?)";
 		PreparedStatement prep = this.dbConn.prepareStatement(sql);
 
-		prep.setString(1, "ShaymaRebhi15@gmail.com");
+		prep.setString(1, "beispiel@example.com");
 		prep.setString(2, "Willkommen");
 		prep.executeUpdate();
 	}
